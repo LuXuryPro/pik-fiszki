@@ -7,6 +7,14 @@ buildscript {
     }
 }
 
+// code coverage
+plugins {
+    id "net.saliman.cobertura" version "2.3.0"
+    id "com.github.kt3k.coveralls" version "2.6.3"
+}
+
+cobertura.coverageFormats = ['html', 'xml'] // coveralls plugin depends on xml format report
+
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
@@ -31,10 +39,3 @@ dependencies {
     testCompile("junit:junit")
 }
 
-// code coverage
-plugins {
-    id "net.saliman.cobertura" version "2.3.0"
-    id "com.github.kt3k.coveralls" version "2.6.3"
-}
-
-cobertura.coverageFormats = ['html', 'xml'] // coveralls plugin depends on xml format report
