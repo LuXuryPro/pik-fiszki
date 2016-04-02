@@ -16,3 +16,6 @@ bin/*
 .gradle/*
 
 *.html
+
+# IDE
+.idea/*
