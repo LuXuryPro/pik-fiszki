@@ -19,3 +19,8 @@ bin/*
 
 # IDE
 .idea/*
+# IntelliJ IDEA project files
+*.iml
+*.ipr
+*.iws
+
