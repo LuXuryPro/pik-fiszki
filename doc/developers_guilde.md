@@ -1,5 +1,16 @@
 # Opis zaplecza projektowego
 
+## Gradle
+### Przeładowanie projektu w IntelliJ IDEA
+Zawsze gdy zmieni się plik build.gradle trzeba ponownie go przeładować
+w IntelliJ IDEA. Bez tego nie będzie działać uzupełnianie składni i
+mogą się pojawić problemy z kompilowaniem i sprawdzaniem błędów w kodzie
+w czasie pisania.
+```
+View -> Tool Windows -> Gradle
+```
+W nowym oknie naciskami na pierwszy niebieski guzik z lewej (↻)
+
 ## CI
 ### Jenkis
 Jenkis jest zainstalowany na serwerze pik01. Do jego odpalenia jest używany
@@ -28,3 +39,31 @@ Travis jest zintegrowany z repozytroim na github. Wyniku budowania są dostępn
 pod [linkiem](https://travis-ci.org/LuXuryPro/pik-fiszki)
 
 ## Docker
+
+
+## Spring
+### Tutorials
+- [spring.io](https://spring.io/guides)
+
+## IntelliJ IDEA
+### Checkstyle
+Aby używać ujednoliconego formatowania kodu w IntelliJ IDEA należy
+wykonać:
+
+#### Instalacja
+1. File -> Settings -> Plugins -> Browse Repositories
+2. W pole wyszukiwania wpisać Checkstyle-IDEA
+3. Zainstalować plugin
+
+#### Konfiguracja
+1. File -> Settings -> Other Settings -> Checkstyle
+2. Configuration File -> +
+3. Description: pik
+4. Use local configuration file
+5. File config/checkstyle/checkstyle.xml
+6. OK
+
+#### Używanie
+1. View -> Tool Windows -> Checkstyle
+2. Rules: pik
+3. Wybieramy plik java do przeskanowania lub odpalamy na całym projekcie

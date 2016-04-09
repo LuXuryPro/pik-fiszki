@@ -14,12 +14,16 @@ hs_err_pid*
 build/*
 bin/*
 .gradle/*
+gradlew
+*.bat
+/gradle
 
 *.html
 
 # IDE
 .idea/*
+# IntelliJ IDEA project files
 *.iml
-gradle/
-*.bat
-gradlew
+*.ipr
+*.iws
+
