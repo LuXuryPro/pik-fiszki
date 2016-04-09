@@ -12,11 +12,4 @@ public class ApplicationTest
         int sum = 6;
         assertEquals(6, sum);
     }
-
-    @Test
-    public void failTest()
-    {
-        int sum = 4;
-        assertEquals(6, sum);
-    }
 }
