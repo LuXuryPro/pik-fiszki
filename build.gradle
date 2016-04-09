@@ -20,6 +20,11 @@ apply plugin: 'idea'
 apply plugin: 'spring-boot'
 apply plugin: 'checkstyle'
 
+checkstyle {
+    showViolations = false
+    ignoreFailures = true
+}
+
 jar {
     baseName = 'gs-serving-web-content'
     version =  '0.1.0'
