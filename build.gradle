@@ -18,6 +18,7 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
+apply plugin: 'checkstyle'
 
 jar {
     baseName = 'gs-serving-web-content'
