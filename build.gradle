@@ -26,6 +26,18 @@ checkstyle {
     ignoreFailures = true
 }
 
+findbugs {
+    reportLevel = 'low'
+    ignoreFailures = true
+}
+
+tasks.withType(FindBugs) {
+    reports {
+        xml.enabled = true
+        html.enabled = false
+    }
+}
+
 jar {
     baseName = 'gs-serving-web-content'
     version =  '0.1.0'
