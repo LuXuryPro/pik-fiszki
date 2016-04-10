@@ -67,3 +67,6 @@ wykonać:
 1. View -> Tool Windows -> Checkstyle
 2. Rules: pik
 3. Wybieramy plik java do przeskanowania lub odpalamy na całym projekcie
+
+## Bug tracker
+### Mantisbt
