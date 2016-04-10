@@ -17,9 +17,8 @@ bin/*
 gradlew*
 gradle/*
 
-# IDE
-.idea/*
 # IntelliJ IDEA project files
+.idea/*
 *.iml
 *.ipr
 *.iws
