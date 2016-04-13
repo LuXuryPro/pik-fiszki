@@ -67,3 +67,15 @@ wykonać:
 1. View -> Tool Windows -> Checkstyle
 2. Rules: pik
 3. Wybieramy plik java do przeskanowania lub odpalamy na całym projekcie
+
+## Bug tracker
+### Mantisbt
+#### Zestawienie połączenia
+```bash
+ssh -NL 8989:pik01:8989 user@galera.ii.pw.edu.pl
+```
+
+#### Format commitu który automatycznie zamknie issue
+```
+/(?:fixe?d?s?|resolved?s?)+\s*:?\s+(?:#(?:\d+)[,\.\s]*)+/i
+```
