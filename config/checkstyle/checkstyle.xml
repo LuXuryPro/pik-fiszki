@@ -165,6 +165,9 @@
         <module name="TodoComment"/>
         <module name="UpperEll"/>
 
+        <module name="Indentation">
+            <property name="basicOffset" value="4"/>
+        </module>
     </module>
 
 </module>
