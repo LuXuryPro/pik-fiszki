@@ -25,11 +25,10 @@ public class FacebookController extends WebSecurityConfigurerAdapter {
         http.antMatcher("/**").authorizeRequests()
                 .antMatchers("/", "/login**", "/webjars/**", "/mappings").permitAll()
                 .anyRequest().authenticated()
-                  .and()
-                    .logout()
-                        .deleteCookies("JSESSIONID")
-                        .logoutUrl("/logout")
-                        .logoutSuccessUrl("/")
+//                .and()         .logout()
+//                        .deleteCookies("JSESSIONID")
+//                        .logoutUrl("/logout")
+//                        .logoutSuccessUrl("/")
                 .and().logout().logoutSuccessUrl("/").permitAll();
     }
 }
