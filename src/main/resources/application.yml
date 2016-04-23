@@ -19,6 +19,10 @@ spring:
   resources:
     chain:
       enabled: true
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017
+      database: test
 
 server:
   port: 7777
