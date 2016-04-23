@@ -5,11 +5,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class LoginController
+public class IndexController
 {
-        @RequestMapping("/login2")
-        public String login()
+        @RequestMapping("/")
+        public String index()
         {
-            return "login";
+            return "index";
         }
 }
