@@ -19,11 +19,4 @@ public class GreetingController {
         model.addAttribute("name", name);
         return "greeting-test";
     }
-    
-    @RequestMapping("/login")
-    public String login(@RequestParam(value="username", required=true) String username, Model model) {
-        model.addAttribute("username", username);
-        return "login";
-    }
-
 }

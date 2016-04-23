@@ -1,14 +1,28 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Getting Started: Serving Web Content</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link href="../static/css/common.css" th:href="@{/css/common.css}"
-	rel="stylesheet" media="screen" />
+  <meta charset="utf-8"></meta>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <!-- The above 3 meta tags must come first in the head; any other head content must come after these tags -->
+
+  <title>Fiszki</title>
+
+  <link href="../static/css/common.css" th:href="@{/css/common.css}" rel="stylesheet" media="screen" />
+  <link href="../static/css/singing.css" th:href="@{/css/singing.css}" rel="stylesheet" media="screen" />
+  <link th:href="@{/webjars/bootstrap/3.3.1/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+
 </head>
+
 <body>
-	<p class="error-box" th:text="'Logged as user ' + ${username} + ' !'" />
-	<p th:text="'Logged as user ' + ${username} + ' !'" />
-	<p th:text="'Logged as user ' + ${username} + ' !'" />
+<h1 align="center">Fiszki</h1>
+<div class="container">
+
+  <form class="form-signin">
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Zaloguj sie przez facebook</button>
+  </form>
+
+</div>
+
 </body>
-</html>
+</html>>
