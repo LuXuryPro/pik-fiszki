@@ -20,3 +20,6 @@ spring:
     chain:
       enabled: true
 
+server:
+  port: 7777
+
