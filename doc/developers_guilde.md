@@ -79,3 +79,11 @@ ssh -NL 8989:pik01:8989 user@galera.ii.pw.edu.pl
 ```
 /(?:fixe?d?s?|resolved?s?)+\s*:?\s+(?:#(?:\d+)[,\.\s]*)+/i
 ```
+#### Wszystkie potrzebne tunele działające w tle
+```bash
+Jenkins: ssh -4Nf -L 8080:pik01:8080 login@galera.ii.pw.edu.pl
+Mantis: ssh -4Nf -L 8989:pik01:8989 login@galera.ii.pw.edu.pl
+Wiki: ssh -4Nf -L 8181:piko1:8181 login@galera.ii.pw.edu.pl
+
+Zamknięcie tuneli: pkill ssh
+```
