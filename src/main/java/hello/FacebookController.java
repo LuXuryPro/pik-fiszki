@@ -29,16 +29,25 @@ public class FacebookController extends WebSecurityConfigurerAdapter {
         model.addAttribute("facebookProfile", f.userOperations().getUserProfile());
         return "user";
     }
+    @RequestMapping("/")
+    public String index(Principal principal, Model model) {
+        if (principal == null)
+            return "LoginPage";
+        else {
+            OAuth2Authentication u = (OAuth2Authentication) principal;
+            OAuth2AuthenticationDetails d = (OAuth2AuthenticationDetails) u.getDetails();
+            Facebook f = new FacebookTemplate(d.getTokenValue());
+            model.addAttribute("facebookProfile", f.userOperations().getUserProfile());
+            return "user";
+        }
+    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.antMatcher("/**").authorizeRequests()
                 .antMatchers("/", "/login**", "/webjars/**", "/mappings").permitAll()
                 .anyRequest().authenticated()
-//                .and()         .logout()
-//                        .deleteCookies("JSESSIONID")
-//                        .logoutUrl("/logout")
-//                        .logoutSuccessUrl("/")
                 .and().logout().logoutSuccessUrl("/").permitAll();
+
     }
 }
