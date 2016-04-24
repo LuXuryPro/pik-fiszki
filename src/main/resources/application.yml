@@ -14,7 +14,7 @@ security:
 
 logging:
   level:
-    org.springframework.security: RELEASE
+    org.springframework.security: DEBUG
 
 spring:
   resources:

@@ -10,7 +10,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.HttpStatus;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"repositories"})
 public class Application {
 	@Bean
 	public EmbeddedServletContainerCustomizer containerCustomizer() {
