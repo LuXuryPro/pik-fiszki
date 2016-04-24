@@ -1,4 +1,4 @@
-package repositories;
+package hello;
 
 import dto.UserInfo;
 import org.springframework.data.mongodb.repository.MongoRepository;
