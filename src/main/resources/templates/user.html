@@ -6,5 +6,10 @@
 <h3>Name, <span th:text="${facebookProfile.name}"></span>!</h3>
 <h3>Email, <span th:text="${facebookProfile.email}"></span>!</h3>
 <h3>ID, <span th:text="${facebookProfile.id}"></span>!</h3>
+<br></br>
+<form action="logout" method="post">
+    <button type="submit">Logout</button>
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+</form>
 </body>
 </html>
