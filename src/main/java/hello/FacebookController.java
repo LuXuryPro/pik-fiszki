@@ -1,6 +1,9 @@
 package hello;
 
+import dto.UserInfo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
@@ -11,12 +14,14 @@ import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.security.web.csrf.CsrfTokenRepository;
 import org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository;
 import org.springframework.social.facebook.api.Facebook;
+import org.springframework.social.facebook.api.User;
 import org.springframework.social.facebook.api.impl.FacebookTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.filter.OncePerRequestFilter;
 import org.springframework.web.util.WebUtils;
+import repositories.UserRepository;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -29,7 +34,11 @@ import java.security.Principal;
 
 @EnableOAuth2Sso
 @Controller
+@ComponentScan(basePackages = {"repositories"})
 public class FacebookController extends WebSecurityConfigurerAdapter {
+    @Autowired
+    UserRepository users;
+
     @RequestMapping("/user")
     public String user(Principal principal, Model model) {
         getUserInfo(principal, model);
@@ -60,7 +69,20 @@ public class FacebookController extends WebSecurityConfigurerAdapter {
         OAuth2Authentication u = (OAuth2Authentication)principal;
         OAuth2AuthenticationDetails d = (OAuth2AuthenticationDetails)u.getDetails();
         Facebook f = new FacebookTemplate(d.getTokenValue());
+        User usr = f.userOperations().getUserProfile();
+
+        UserInfo userData;
+        if(!users.exists(usr.getId())){
+            userData = new UserInfo(usr.getId(),usr.getFirstName(),usr.getLastName(),usr.getEmail());
+            users.save(userData);
+        }
+        else
+            userData = users.findByuserId(usr.getId());
+
         model.addAttribute("facebookProfile", f.userOperations().getUserProfile());
+        model.addAttribute("dataBaseProfile",userData);
+
+
     }
 
     private CsrfTokenRepository csrfTokenRepository() {
