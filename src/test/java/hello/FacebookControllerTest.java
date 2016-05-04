@@ -18,17 +18,25 @@ public class FacebookControllerTest
     public void userMethodTest()
     {
         ExtendedFacebookController FC = new ExtendedFacebookController();
-        Model model = Mockito.mock(Model.class);
+        ExtendedModel model = new ExtendedModel();
 
         String returnValue = FC.user(null, model);
         assertEquals(returnValue, "user");
+        assertTrue(model.containsAttribute("facebookProfile"));
+        assertTrue(model.containsAttribute("dataBaseProfile"));
+        assertEquals(model.getValue("facebookProfile"), "FacebookInfo");
+        UserInfo userInfo = (UserInfo) model.getValue("dataBaseProfile");
+        assertEquals(userInfo.getUserId(), "1273178312719");
+        assertEquals(userInfo.getFirstName(), "Adam");
+        assertEquals(userInfo.getLastName(), "Pierwszy");
+        assertEquals(userInfo.getEmail(), "a.pierwszy@gmail.com");
     }
 
     @Test
     public void indexMethodTest()
     {
         ExtendedFacebookController FC = new ExtendedFacebookController();
-        Model model = Mockito.mock(Model.class);
+        ExtendedModel model = new ExtendedModel();
 
         String returnValue = FC.index(null, model);
         assertEquals(returnValue, "LoginPage");
@@ -37,6 +45,14 @@ public class FacebookControllerTest
 
         returnValue = FC.index(principal, model);
         assertEquals(returnValue, "user");
+        assertTrue(model.containsAttribute("facebookProfile"));
+        assertTrue(model.containsAttribute("dataBaseProfile"));
+        assertEquals(model.getValue("facebookProfile"), "FacebookInfo");
+        UserInfo userInfo = (UserInfo) model.getValue("dataBaseProfile");
+        assertEquals(userInfo.getUserId(), "1273178312719");
+        assertEquals(userInfo.getFirstName(), "Adam");
+        assertEquals(userInfo.getLastName(), "Pierwszy");
+        assertEquals(userInfo.getEmail(), "a.pierwszy@gmail.com");
     }
 }
 
@@ -64,5 +80,72 @@ class ExtendedPrincipal implements Principal
     @Override
     public String getName() {
         return null;
+    }
+}
+
+class ExtendedModel implements Model
+{
+    private String firstParamName = "facebookProfile";
+    private String secondParamName = "dataBaseProfile";
+    private String firstParamValue;
+    private UserInfo secondParamValue;
+
+    @Override
+    public Model addAttribute(String attributeName, Object attributeValue)
+    {
+        if(attributeName.equals(firstParamName))
+        {
+            firstParamValue = (String) attributeValue;
+        }
+        else
+        {
+            secondParamValue = (UserInfo) attributeValue;
+        }
+        return this;
+    }
+
+    @Override
+    public Model addAttribute(Object attributeValue) {
+        return null;
+    }
+
+    @Override
+    public Model addAllAttributes(Collection<?> attributeValues) {
+        return null;
+    }
+
+    @Override
+    public Model addAllAttributes(Map<String, ?> attributes) {
+        return null;
+    }
+
+    @Override
+    public Model mergeAttributes(Map<String, ?> attributes) {
+        return null;
+    }
+
+    @Override
+    public boolean containsAttribute(String attributeName)
+    {
+        if(attributeName.equals(firstParamName) && firstParamValue != null)
+            return true;
+        else if(attributeName.equals(secondParamName) && secondParamValue != null)
+            return true;
+        return false;
+    }
+
+    @Override
+    public Map<String, Object> asMap() {
+        return null;
+    }
+
+    public Object getValue(String attributName)
+    {
+        if(attributName.equals(firstParamName))
+            return firstParamValue;
+        else if(attributName.equals(secondParamName))
+            return secondParamValue;
+        else
+            return null;
     }
 }
