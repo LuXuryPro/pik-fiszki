@@ -64,7 +64,7 @@ public class FacebookController extends WebSecurityConfigurerAdapter {
 
     }
 
-    private void getUserInfo(Principal principal, Model model) {
+    protected void getUserInfo(Principal principal, Model model) {
         OAuth2Authentication u = (OAuth2Authentication)principal;
         OAuth2AuthenticationDetails d = (OAuth2AuthenticationDetails)u.getDetails();
         Facebook f = new FacebookTemplate(d.getTokenValue());
