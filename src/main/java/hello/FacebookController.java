@@ -35,8 +35,18 @@ import java.security.Principal;
 @Controller
 @ComponentScan(basePackages = {"repositories"})
 public class FacebookController extends WebSecurityConfigurerAdapter {
-    @Autowired
+
     UserRepository users;
+
+    FacebookController() {
+
+    }
+
+    @Autowired
+    FacebookController(UserRepository users)
+    {
+        this.users = users;
+    }
 
     @RequestMapping("/user")
     public String user(Principal principal, Model model) {
@@ -64,10 +74,10 @@ public class FacebookController extends WebSecurityConfigurerAdapter {
 
     }
 
-    private void getUserInfo(Principal principal, Model model) {
+    protected void getUserInfo(Principal principal, Model model) {
         OAuth2Authentication u = (OAuth2Authentication)principal;
         OAuth2AuthenticationDetails d = (OAuth2AuthenticationDetails)u.getDetails();
-        Facebook f = new FacebookTemplate(d.getTokenValue());
+        FacebookTemplate f = new FacebookTemplate(d.getTokenValue());
         User usr = f.userOperations().getUserProfile();
 
         UserInfo userData;
@@ -79,7 +89,7 @@ public class FacebookController extends WebSecurityConfigurerAdapter {
             userData = users.findByuserId(usr.getId());
 
         model.addAttribute("facebookProfile", f.userOperations().getUserProfile());
-        model.addAttribute("dataBaseProfile",userData);
+        model.addAttribute("dataBaseProfile", userData);
 
 
     }
