@@ -5,6 +5,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.PersistenceConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.math.BigInteger;
+
 
 /**
  * Created by Michał on 01.06.2016
@@ -15,20 +17,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class QuestionInfo {
 
     @Id
-    private long id;
+    private BigInteger id;
+
+    private BigInteger courseId;
 
     private String question;
 
     private String answer;
 
-    public QuestionInfo() {
-    }
-
-    @PersistenceConstructor
-    public QuestionInfo(String question, String answer) {
-        this.question = question;
-        this.answer = answer;
-    }
 
     @Override
     public String toString() {
