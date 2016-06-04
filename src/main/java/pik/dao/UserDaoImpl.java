@@ -1,5 +1,6 @@
 package pik.dao;
 
+import java.math.BigInteger;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -30,6 +31,14 @@ public class UserDaoImpl implements UserDao{
 		return userRepository.save(user);
 	}
 
+	public UserInfo getById(String Id){
+		return userRepository.findByUserId(Id);
+	}
+
+	public UserInfo getByUserName(String username){
+		return userRepository.findByUserName(username);
+	}
+
 	public UserInfo read(UserInfo user) {
 		return user;
 	}
@@ -54,7 +63,7 @@ public class UserDaoImpl implements UserDao{
 		existingUser.setEmail(user.getEmail());
 		existingUser.setMarks(user.getMarks());
 		existingUser.setUserName(user.getUserName());
-		existingUser.setSubscribedcourses(user.getSubscribedcourses());
+		existingUser.setSubscribedCourses(user.getSubscribedCourses());
 		// We must save both separately since there is no cascading feature
 		// in Spring Data MongoDB (for now)
 		markRepository.save(existingUser.getMarks());
@@ -76,7 +85,7 @@ public class UserDaoImpl implements UserDao{
 		return true;
 	}
 
-	public Boolean IdExists(String userId)
+	public Boolean idExists(String userId)
 	{
 		return userRepository.exists(userId);
 	}
@@ -85,6 +94,16 @@ public class UserDaoImpl implements UserDao{
 	{
 		UserInfo user = userRepository.findByUserName(username);
 		return (user !=null);
+	}
+
+	public Boolean subscribe(UserInfo user, BigInteger course)
+	{
+		return false;
+	}
+
+	public Boolean unsubscribe(UserInfo user, BigInteger course)
+	{
+		return false;
 	}
 }
 

@@ -82,11 +82,11 @@ public class UserInfo {
         this.userName = userName;
     }
 
-    public List<BigInteger> getSubscribedcourses() {
+    public List<BigInteger> getSubscribedCourses() {
         return subscribedcourses;
     }
 
-    public void setSubscribedcourses(List<BigInteger> subscribedcourses) {
+    public void setSubscribedCourses(List<BigInteger> subscribedcourses) {
         this.subscribedcourses = subscribedcourses;
     }
 
