@@ -1,22 +1,20 @@
-package hello;
+package pik.controllers;
 
-import dto.UserInfo;
+import pik.controllers.FacebookController;
+import pik.repositories.UserRepository;
+import pik.dto.UserInfo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationDetails;
-import org.springframework.social.facebook.api.Facebook;
 import org.springframework.social.facebook.api.User;
 import org.springframework.social.facebook.api.UserOperations;
 import org.springframework.social.facebook.api.impl.FacebookTemplate;
 import org.springframework.ui.Model;
 
 import java.security.Principal;
-import java.util.Collection;
-import java.util.Map;
 
-import static org.mockito.Mockito.*;
 import static org.junit.Assert.*;
 
 import org.powermock.api.mockito.PowerMockito;
