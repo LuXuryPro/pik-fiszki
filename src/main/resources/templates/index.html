@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8"></meta>
     <title>Fiszki - strona główna</title>
+    <script src="/webjars/jquery/2.0.3/jquery.js"></script>
+    <script src="/webjars/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <link href="/css/common.css" rel="stylesheet" media="screen"/>
     <link href="/css/singing.css" rel="stylesheet" media="screen"/>
     <link href="/webjars/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
-    <link href="/webjars/jquery/2.0.3/jquery.js" type="text/javascript"/>
+    <link href="/webjars/bootstrap/3.3.1/css/bootstrap-theme.min.css" rel="stylesheet" media="screen"/>
 </head>
 <body>
+
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -19,26 +22,41 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Project name</a>
+            <a class="navbar-brand" href="index">Fiszki</a>
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
+        <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li class="active"><a href="index">Fiszki</a></li>
+                <li class="active"><a href="me">Moje konto</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Moje kursy<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="add-course">Dodaj kursy</a></li>
+                        <li><a href="show-course">Zobacz kursy</a></li>
+                        <li><a href="remove-course">Usuń kursy</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Kursy innych użytkowników<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="find-all-courses">Wyszukaj</a></li>
+                        <li><a href="add-sub">Dodaj subskrypcje</a></li>
+                        <li><a href="remove-sub">Usuń subskrypcje</a></li>
+                    </ul>
+                </li>
+                <li><a href="#about">O projekcie</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="index">Wyloguj</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
 </nav>
 
 <div class="container">
-
-    <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project. All you get is this text and a
-            mostly barebones HTML document.</p>
-    </div>
-
+    <h1>Witamy na stronie do nauki z użyciem fiszek. Aby rozpocząć dodaj nowy kurs do swojej biblioteki.</h1>
 </div><!-- /.container -->
 </body>
 </html>
