@@ -1,5 +1,6 @@
 package pik.dao;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import pik.dto.UserInfo;
