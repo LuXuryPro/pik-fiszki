@@ -15,7 +15,9 @@ import java.util.Date;
 @Data
 @Document(collection="mark")
 public class MarkInfo {
-    private BigInteger question_id;
+    private BigInteger questionId;
+
+    private  BigInteger courseId;
 
     private Float ef;
 
@@ -26,12 +28,20 @@ public class MarkInfo {
 
     private Integer interval;
 
-    public BigInteger getQuestion_id() {
-        return question_id;
+    public BigInteger getQuestionId() {
+        return questionId;
     }
 
-    public void setQuestion_id(BigInteger question_id) {
-        this.question_id = question_id;
+    public void setQuestionId(BigInteger questionId) {
+        this.questionId = questionId;
+    }
+
+    public BigInteger getCourseId() {
+        return courseId;
+    }
+
+    public void setCourseId(BigInteger courseId) {
+        this.courseId = courseId;
     }
 
     public Float getEf() {

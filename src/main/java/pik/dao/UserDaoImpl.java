@@ -2,6 +2,8 @@ package pik.dao;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -11,14 +13,18 @@ import pik.repositories.MarkRepository;
 import pik.repositories.UserRepository;
 
 @Service
+@ComponentScan(basePackages = {"repositories"})
 public class UserDaoImpl implements UserDao{
 
-	@Autowired
 	private UserRepository userRepository;
 
-    @Autowired
     private MarkRepository markRepository;
 
+	@Autowired
+	public UserDaoImpl(UserRepository userRepository, MarkRepository markRepository) {
+		this.userRepository = userRepository;
+		this.markRepository = markRepository;
+	}
 
 	public UserInfo create(UserInfo user) {
 		return userRepository.save(user);

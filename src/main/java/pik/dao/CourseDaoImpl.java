@@ -1,16 +1,22 @@
 package pik.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
 import pik.dto.CourseInfo;
+import pik.dto.MarkInfo;
 import pik.repositories.CourseRepository;
 import pik.repositories.QuestionRepository;
 import pik.repositories.MarkRepository;
+
+import java.math.BigInteger;
+import java.util.List;
 
 /**
  * Created by Michał on 04.06.2016.
  */
 @Service
+@ComponentScan(basePackages = {"repositories"})
 public class CourseDaoImpl implements CourseDao{
 
     private static final String COURSE_SEQ_KEY = "course";
@@ -47,8 +53,10 @@ public class CourseDaoImpl implements CourseDao{
         if (existingCourse == null) {
             return false;
         }
+        BigInteger courseId = existingCourse.getId();
+        List<MarkInfo> marks = markRepository.findByCourseId(courseId);
 
-
+        markRepository.delete(marks);
         courseRepository.delete(existingCourse);
         return true;
     }
