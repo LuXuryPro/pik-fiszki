@@ -1,6 +1,6 @@
-package repositories;
+package pik.repositories;
 
-import dto.MarkInfo;
+import pik.dto.MarkInfo;
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
 

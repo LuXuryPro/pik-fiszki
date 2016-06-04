@@ -1,4 +1,4 @@
-package exceptions;
+package pik.exceptions;
 
 public class SequenceException extends RuntimeException {
 
