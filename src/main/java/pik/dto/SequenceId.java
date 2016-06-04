@@ -3,6 +3,8 @@ package pik.dto;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.math.BigInteger;
+
 /*
  db.sequence.insert({_id: "hosting",seq: 0})
  */
@@ -12,7 +14,7 @@ public class SequenceId {
     @Id
     private String id;
 
-    private long seq;
+    private BigInteger seq;
 
     public String getId() {
         return id;
@@ -22,11 +24,11 @@ public class SequenceId {
         this.id = id;
     }
 
-    public long getSeq() {
+    public BigInteger getSeq() {
         return seq;
     }
 
-    public void setSeq(long seq) {
+    public void setSeq(BigInteger seq) {
         this.seq = seq;
     }
 

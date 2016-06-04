@@ -68,7 +68,7 @@ class ExtendedFacebookController extends FacebookController
         when(usr.getEmail()).thenReturn("a.pierwszy@gmail.com");
         UserInfo userData;
 
-        userData = new UserInfo(usr.getId(),usr.getFirstName(),usr.getLastName(),usr.getEmail());
+        userData = new UserInfo(usr.getId(),usr.getFirstName(),usr.getLastName(),usr.getEmail(),"username");
 
         model.addAttribute("facebookProfile", "FacebookInfo");
         model.addAttribute("dataBaseProfile", userData);

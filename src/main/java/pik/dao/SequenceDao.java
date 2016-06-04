@@ -2,8 +2,10 @@ package pik.dao;
 
 import pik.exceptions.SequenceException;
 
+import java.math.BigInteger;
+
 public interface SequenceDao {
 
-    long getNext(String key) throws SequenceException;
+    BigInteger getNext(String key) throws SequenceException;
 
 }
