@@ -82,11 +82,11 @@ public class FacebookController extends WebSecurityConfigurerAdapter {
 
         UserInfo userData;
         if(!users.exists(usr.getId())){
-            userData = new UserInfo(usr.getId(),usr.getFirstName(),usr.getLastName(),usr.getEmail());
+            userData = new UserInfo(usr.getId(),usr.getFirstName(),usr.getLastName(),usr.getEmail(), "username");
             users.save(userData);
         }
         else
-            userData = users.findByuserId(usr.getId());
+            userData = users.findByUserId(usr.getId());
 
         model.addAttribute("facebookProfile", f.userOperations().getUserProfile());
         model.addAttribute("dataBaseProfile", userData);

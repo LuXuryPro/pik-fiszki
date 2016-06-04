@@ -2,10 +2,12 @@ package pik.services;
 
 import java.util.List;
 ;
+import org.apache.el.parser.BooleanNode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import pik.dto.MarkInfo;
 import pik.dto.UserInfo;
 import pik.repositories.MarkRepository;
 import pik.repositories.UserRepository;
@@ -36,8 +38,8 @@ public class UserService {
         return userRepository.findAll(pageable);
 	}
 
-	/*public UserInfo update(UserInfo user) {
-		UserInfo existingUser = userRepository.findByUsername(user.getUsername());
+	public UserInfo update(UserInfo user) {
+		UserInfo existingUser = userRepository.findByUserId(user.getUserId());
 
 		if (existingUser == null) {
 			return null;
@@ -45,26 +47,40 @@ public class UserService {
 
 		existingUser.setFirstName(user.getFirstName());
 		existingUser.setLastName(user.getLastName());
-		existingUser.getRole().setRole(user.getRole().getRole());
-
+		existingUser.setEmail(user.getEmail());
+		existingUser.setMarks(user.getMarks());
+		existingUser.setUserName(user.getUserName());
+		existingUser.setSubscribedcourses(user.getSubscribedcourses());
 		// We must save both separately since there is no cascading feature
 		// in Spring Data MongoDB (for now)
-		roleRepository.save(existingUser.getRole());
+		markRepository.save(existingUser.getMarks());
 		return userRepository.save(existingUser);
 	}
 
-	public Boolean delete(User user) {
-		User existingUser = userRepository.findByUsername(user.getUsername());
+	public Boolean delete(UserInfo user) {
+		UserInfo existingUser = userRepository.findByUserId(user.getUserId());
 
 		if (existingUser == null) {
 			return false;
 		}
+		List<MarkInfo> marks = existingUser.getMarks();
 
-		// We must delete both separately since there is no cascading feature
-		// in Spring Data MongoDB (for now)
-		roleRepository.delete(existingUser.getRole());
+		for(MarkInfo mark : marks) {
+			markRepository.delete(mark);
+		}
 		userRepository.delete(existingUser);
 		return true;
-	}*/
+	}
+
+	public Boolean IdExists(String userId)
+	{
+		return userRepository.exists(userId);
+	}
+
+	public Boolean UserNameExists(String username)
+	{
+		UserInfo user = userRepository.findByUserName(username);
+		return (user !=null);
+	}
 }
 
