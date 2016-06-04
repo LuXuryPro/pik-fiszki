@@ -1,4 +1,4 @@
-package hello;
+package pik.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
