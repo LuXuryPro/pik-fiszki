@@ -1,4 +1,4 @@
-package dto;
+package pik.dto;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;

@@ -1,6 +1,6 @@
-package hello;
+package pik.repositories;
 
-import dto.UserInfo;
+import pik.dto.UserInfo;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import java.util.List;
 
