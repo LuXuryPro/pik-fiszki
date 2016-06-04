@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.math.BigInteger;
 
 /*
- db.sequence.insert({_id: "hosting",seq: 0})
+ db.sequence.insert({_id: "course",seq: 0})
  */
 @Document(collection = "sequence")
 public class SequenceId {

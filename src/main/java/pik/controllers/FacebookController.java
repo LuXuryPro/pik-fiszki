@@ -1,5 +1,8 @@
 package pik.controllers;
 
+import pik.dao.CourseDao;
+import pik.dao.UserDao;
+import pik.dto.CourseInfo;
 import pik.dto.UserInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
@@ -38,14 +41,20 @@ public class FacebookController extends WebSecurityConfigurerAdapter {
 
     UserRepository users;
 
+    UserDao userDao;
+
+    CourseDao courseDao;
+
     FacebookController() {
 
     }
 
     @Autowired
-    FacebookController(UserRepository users)
+    FacebookController(UserRepository users, UserDao userDao, CourseDao courseDao)
     {
         this.users = users;
+        this.userDao = userDao;
+        this.courseDao = courseDao;
     }
 
     @RequestMapping("/user")
@@ -81,15 +90,35 @@ public class FacebookController extends WebSecurityConfigurerAdapter {
         User usr = f.userOperations().getUserProfile();
 
         UserInfo userData;
-        if(!users.exists(usr.getId())){
+
+        if(!userDao.idExists(usr.getId()))
+        {
+            userData = new UserInfo(usr.getId(),usr.getFirstName(),usr.getLastName(),usr.getEmail(), "username");
+            userData = userDao.create(userData);
+        }
+        /*if(!users.exists(usr.getId())){
             userData = new UserInfo(usr.getId(),usr.getFirstName(),usr.getLastName(),usr.getEmail(), "username");
             users.save(userData);
+        }*/
+        else
+            //userData = users.findByUserId(usr.getId());
+            userData = userDao.getById(usr.getId());
+
+        CourseInfo course;
+
+        if(! courseDao.exists(userData.getUserId(),"Kurs Testowy")){
+            course = new CourseInfo();
+            course.setName("Kurs testowy");
+            course.setDescription("Acha");
+            course.setOwnerId(userData.getUserId());
+            course = courseDao.create(course);
         }
         else
-            userData = users.findByUserId(usr.getId());
+            course = courseDao.get(userData.getUserId(),"Kurs testowy");
 
         model.addAttribute("facebookProfile", f.userOperations().getUserProfile());
         model.addAttribute("dataBaseProfile", userData);
+        model.addAttribute("course", course);
 
 
     }

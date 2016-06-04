@@ -1,6 +1,9 @@
 package pik.controllers;
 
 import pik.controllers.FacebookController;
+import pik.dao.CourseDao;
+import pik.dao.UserDao;
+import pik.dao.UserDaoImpl;
 import pik.repositories.UserRepository;
 import pik.dto.UserInfo;
 import org.junit.Test;
@@ -38,8 +41,11 @@ public class FullMockedFacebookControllerTest {
         // Given
         // Empty database with no users
         UserRepository userRepository = PowerMockito.mock(UserRepository.class);
+        UserDao userDao = PowerMockito.mock(UserDao.class);
+        CourseDao courseDao = PowerMockito.mock(CourseDao.class);
+
         Mockito.when(userRepository.exists(Mockito.any(String.class))).thenReturn(false);
-        FacebookController facebookController = new FacebookController(userRepository);
+        FacebookController facebookController = new FacebookController(userRepository, userDao, courseDao);
         // When new (mocked) user got logged in
         OAuth2AuthenticationDetails oAuth2AuthenticationDetails = PowerMockito.mock(OAuth2AuthenticationDetails.class);
         PowerMockito.when(oAuth2AuthenticationDetails.getTokenValue()).thenReturn("123456789");
@@ -75,9 +81,12 @@ public class FullMockedFacebookControllerTest {
         // Given
         // Empty database with no users
         UserRepository userRepository = PowerMockito.mock(UserRepository.class);
+        UserDao userDao = PowerMockito.mock(UserDao.class);
+        CourseDao courseDao = PowerMockito.mock(CourseDao.class);
+
         PowerMockito.when(userRepository.exists(Mockito.any(String.class))).thenReturn(true);
         PowerMockito.when(userRepository.findByUserId("1")).thenReturn(new UserInfo("1", "Jan", "Testowy", "user@example.com","username"));
-        FacebookController facebookController = new FacebookController(userRepository);
+        FacebookController facebookController = new FacebookController(userRepository, userDao, courseDao);
         // When existing (mocked) user got logged in
         OAuth2AuthenticationDetails oAuth2AuthenticationDetails = PowerMockito.mock(OAuth2AuthenticationDetails.class);
         PowerMockito.when(oAuth2AuthenticationDetails.getTokenValue()).thenReturn("123456789");
