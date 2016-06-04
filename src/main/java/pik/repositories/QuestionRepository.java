@@ -1,7 +1,7 @@
-package repositories;
+package pik.repositories;
 
 
-import dto.QuestionInfo;
+import pik.dto.QuestionInfo;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.math.BigInteger;

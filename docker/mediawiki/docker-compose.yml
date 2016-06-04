@@ -1,0 +1,30 @@
+mediawiki:
+  image: synctree/mediawiki
+  hostname: mediawiki
+  restart: always
+  ports:
+  - "8181:80"
+  - "8443:443"
+  links:
+  - wiki_database:mysql
+  volumes:
+  - /var/www/html
+  - /etc/ssl
+  environment:
+  - MYSQL_ROOT_PASSWORD=root
+  - MYSQL_SERVER=db
+  - MYSQL_USER=appadmin
+  - MYSQL_PASS=adminpassword123
+  - MYSQL_DB=mediawiki
+
+wiki_database:
+  image: mysql:latest
+  hostname: wiki_database
+  restart: always
+  volumes:
+  - /var/lib
+  environment:
+  - MYSQL_ROOT_PASSWORD=root
+  - MYSQL_USER=appadmin
+  - MYSQL_PASS=adminpassword123
+

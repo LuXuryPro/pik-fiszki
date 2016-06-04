@@ -1,15 +1,14 @@
-package services;
+package pik.services;
 
 import java.util.List;
-import java.util.UUID;
 ;
-import dto.UserInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import repositories.MarkRepository;
-import repositories.UserRepository;
+import pik.dto.UserInfo;
+import pik.repositories.MarkRepository;
+import pik.repositories.UserRepository;
 
 @Service
 public class UserService {

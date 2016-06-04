@@ -1,6 +1,6 @@
-package hello;
+package pik.controllers;
 
-import dto.UserInfo;
+import pik.dto.UserInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 import org.springframework.context.annotation.ComponentScan;
@@ -20,7 +20,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.filter.OncePerRequestFilter;
 import org.springframework.web.util.WebUtils;
-import repositories.UserRepository;
+import pik.repositories.UserRepository;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -82,11 +82,11 @@ public class FacebookController extends WebSecurityConfigurerAdapter {
 
         UserInfo userData;
         if(!users.exists(usr.getId())){
-            userData = new UserInfo(usr.getId(),usr.getFirstName(),usr.getLastName(),usr.getEmail(),"username");
+            userData = new UserInfo(usr.getId(),usr.getFirstName(),usr.getLastName(),usr.getEmail());
             users.save(userData);
         }
         else
-            userData = users.findByUserId(usr.getId());
+            userData = users.findByuserId(usr.getId());
 
         model.addAttribute("facebookProfile", f.userOperations().getUserProfile());
         model.addAttribute("dataBaseProfile", userData);

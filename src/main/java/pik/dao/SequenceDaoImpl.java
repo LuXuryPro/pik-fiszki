@@ -1,4 +1,4 @@
-package dao;
+package pik.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.FindAndModifyOptions;
@@ -7,8 +7,8 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Repository;
-import dto.SequenceId;
-import exceptions.SequenceException;
+import pik.dto.SequenceId;
+import pik.exceptions.SequenceException;
 
 @Repository
 public class SequenceDaoImpl implements SequenceDao {

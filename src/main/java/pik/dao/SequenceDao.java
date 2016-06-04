@@ -1,6 +1,6 @@
-package dao;
+package pik.dao;
 
-import exceptions.SequenceException;
+import pik.exceptions.SequenceException;
 
 public interface SequenceDao {
 
