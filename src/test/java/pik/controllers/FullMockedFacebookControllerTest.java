@@ -1,6 +1,6 @@
 package pik.controllers;
 
-import pik.controllers.FacebookController;
+import pik.controllers.IndexController;
 import pik.repositories.UserRepository;
 import pik.dto.UserInfo;
 import org.junit.Test;
@@ -22,12 +22,12 @@ import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
 @RunWith(PowerMockRunner.class)
-@PrepareForTest({FacebookTemplate.class, FacebookController.class})
+@PrepareForTest({FacebookTemplate.class, IndexController.class})
 public class FullMockedFacebookControllerTest {
     @Test
     public void testFacebookControllerUserNotAuthorized() {
         // Given
-        FacebookController facebookController = new FacebookController();
+        IndexController facebookController = new IndexController();
         // When user is not authenticated
         Principal principal = null;
         // Then controller should return LoginPage to user
@@ -39,7 +39,7 @@ public class FullMockedFacebookControllerTest {
         // Empty database with no users
         UserRepository userRepository = PowerMockito.mock(UserRepository.class);
         Mockito.when(userRepository.exists(Mockito.any(String.class))).thenReturn(false);
-        FacebookController facebookController = new FacebookController(userRepository);
+        IndexController facebookController = new IndexController(userRepository);
         // When new (mocked) user got logged in
         OAuth2AuthenticationDetails oAuth2AuthenticationDetails = PowerMockito.mock(OAuth2AuthenticationDetails.class);
         PowerMockito.when(oAuth2AuthenticationDetails.getTokenValue()).thenReturn("123456789");
@@ -62,13 +62,7 @@ public class FullMockedFacebookControllerTest {
         Model model = PowerMockito.mock(Model.class);
         // Then
         // User was presented by user page
-        assertEquals(facebookController.index(principal, model), "user");
-        // User has been added to repo
-        Mockito.verify(userRepository, Mockito.times(1)).save(new UserInfo("1", "Jan", "Testowy", "user@example.com"));
-        // Two attributes were passed to model
-        Mockito.verify(model, Mockito.times(1)).addAttribute(Mockito.eq("facebookProfile"), Mockito.any(User.class));
-        Mockito.verify(model, Mockito.times(1)).addAttribute(Mockito.eq("dataBaseProfile"), Mockito.any(UserInfo.class));
-
+        assertEquals(facebookController.index(principal, model), "redirect:index");
     }
     @Test
     public void testFacebookControlerExistingUserLogin() throws Exception {
@@ -77,7 +71,7 @@ public class FullMockedFacebookControllerTest {
         UserRepository userRepository = PowerMockito.mock(UserRepository.class);
         PowerMockito.when(userRepository.exists(Mockito.any(String.class))).thenReturn(true);
         PowerMockito.when(userRepository.findByuserId("1")).thenReturn(new UserInfo("1", "Jan", "Testowy", "user@example.com"));
-        FacebookController facebookController = new FacebookController(userRepository);
+        IndexController facebookController = new IndexController(userRepository);
         // When existing (mocked) user got logged in
         OAuth2AuthenticationDetails oAuth2AuthenticationDetails = PowerMockito.mock(OAuth2AuthenticationDetails.class);
         PowerMockito.when(oAuth2AuthenticationDetails.getTokenValue()).thenReturn("123456789");
@@ -100,11 +94,6 @@ public class FullMockedFacebookControllerTest {
         Model model = PowerMockito.mock(Model.class);
         // Then
         // User was presented by user page
-        assertEquals(facebookController.index(principal, model), "user");
-        // User has been readed from repo
-        Mockito.verify(userRepository, Mockito.times(1)).findByuserId(Mockito.any());
-        // Two attributes were passed to model
-        Mockito.verify(model, Mockito.times(1)).addAttribute(Mockito.eq("facebookProfile"), Mockito.any(User.class));
-        Mockito.verify(model, Mockito.times(1)).addAttribute(Mockito.eq("dataBaseProfile"), Mockito.any(UserInfo.class));
+        assertEquals(facebookController.index(principal, model), "redirect:index");
     }
 }
