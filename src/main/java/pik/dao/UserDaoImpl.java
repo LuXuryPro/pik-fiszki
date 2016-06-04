@@ -1,8 +1,6 @@
-package pik.services;
+package pik.dao;
 
 import java.util.List;
-;
-import org.apache.el.parser.BooleanNode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -13,7 +11,7 @@ import pik.repositories.MarkRepository;
 import pik.repositories.UserRepository;
 
 @Service
-public class UserService {
+public class UserDaoImpl implements UserDao{
 
 	@Autowired
 	private UserRepository userRepository;

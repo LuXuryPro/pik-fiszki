@@ -10,6 +10,8 @@ import org.springframework.stereotype.Repository;
 import pik.dto.SequenceId;
 import pik.exceptions.SequenceException;
 
+import java.math.BigInteger;
+
 @Repository
 public class SequenceDaoImpl implements SequenceDao {
 
@@ -17,7 +19,7 @@ public class SequenceDaoImpl implements SequenceDao {
     private MongoOperations mongoOperation;
 
     @Override
-    public long getNext(String key) throws SequenceException {
+    public BigInteger getNext(String key) throws SequenceException {
 
         Query query = new Query(Criteria.where("_id").is(key));
 
