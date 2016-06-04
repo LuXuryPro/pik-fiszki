@@ -1,5 +1,5 @@
-package hello;
-import dto.UserInfo;
+package pik.controllers;
+import pik.dto.UserInfo;
 import org.junit.Test;
 import org.mockito.Mockito;
 import org.springframework.social.facebook.api.User;
