@@ -1,5 +1,6 @@
 package pik.controllers;
 
+import pik.Util.FacebookHelper;
 import pik.dto.UserInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
@@ -34,9 +35,36 @@ import java.security.Principal;
 @EnableOAuth2Sso
 @Controller
 public class IndexController {
+    private UserRepository userRepository;
+
+    IndexController() {
+    }
+
+    @Autowired
+    IndexController(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
     @RequestMapping("/index")
-    public String user(Model model) {
+    public String user(Principal principal, Model model) {
+        FacebookHelper f = new FacebookHelper(principal);
+        User user = f.getFacebookUser();
+        if (!this.userRepository.exists(user.getId())) {
+            UserInfo userData = new UserInfo(user.getId(), user.getFirstName(), user.getLastName(), user.getEmail());
+            this.userRepository.save(userData);
+        }
+        UserInfo userInfo = this.userRepository.findByuserId(user.getId());
+        model.addAttribute("user", userInfo);
         return "index";
+    }
+
+    @RequestMapping("/")
+    public String index(Principal principal, Model model) {
+        if (principal == null)
+            return "LoginPage";
+        else {
+            return "redirect:index";
+        }
     }
 }
 
