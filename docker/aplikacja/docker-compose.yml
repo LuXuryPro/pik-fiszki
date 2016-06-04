@@ -1,0 +1,15 @@
+application:
+  build: .
+  ports:
+    - "7777:7777"
+  links:
+    - mongodb
+  restart: always
+
+mongodb:
+  image: mongo
+  volumes:
+  - /srv/mongodb/data:/data/db
+  - /srv/mongodb/config:/data/configdb
+  restart: always
+
