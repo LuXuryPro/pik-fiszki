@@ -64,7 +64,7 @@ public class FullMockedFacebookControllerTest {
         // User was presented by user page
         assertEquals(facebookController.index(principal, model), "user");
         // User has been added to repo
-        Mockito.verify(userRepository, Mockito.times(1)).save(new UserInfo("1", "Jan", "Testowy", "user@example.com"));
+        Mockito.verify(userRepository, Mockito.times(1)).save(new UserInfo("1", "Jan", "Testowy", "user@example.com","username"));
         // Two attributes were passed to model
         Mockito.verify(model, Mockito.times(1)).addAttribute(Mockito.eq("facebookProfile"), Mockito.any(User.class));
         Mockito.verify(model, Mockito.times(1)).addAttribute(Mockito.eq("dataBaseProfile"), Mockito.any(UserInfo.class));
@@ -76,7 +76,7 @@ public class FullMockedFacebookControllerTest {
         // Empty database with no users
         UserRepository userRepository = PowerMockito.mock(UserRepository.class);
         PowerMockito.when(userRepository.exists(Mockito.any(String.class))).thenReturn(true);
-        PowerMockito.when(userRepository.findByuserId("1")).thenReturn(new UserInfo("1", "Jan", "Testowy", "user@example.com"));
+        PowerMockito.when(userRepository.findByUserId("1")).thenReturn(new UserInfo("1", "Jan", "Testowy", "user@example.com","username"));
         FacebookController facebookController = new FacebookController(userRepository);
         // When existing (mocked) user got logged in
         OAuth2AuthenticationDetails oAuth2AuthenticationDetails = PowerMockito.mock(OAuth2AuthenticationDetails.class);
@@ -102,7 +102,7 @@ public class FullMockedFacebookControllerTest {
         // User was presented by user page
         assertEquals(facebookController.index(principal, model), "user");
         // User has been readed from repo
-        Mockito.verify(userRepository, Mockito.times(1)).findByuserId(Mockito.any());
+        Mockito.verify(userRepository, Mockito.times(1)).findByUserId(Mockito.any());
         // Two attributes were passed to model
         Mockito.verify(model, Mockito.times(1)).addAttribute(Mockito.eq("facebookProfile"), Mockito.any(User.class));
         Mockito.verify(model, Mockito.times(1)).addAttribute(Mockito.eq("dataBaseProfile"), Mockito.any(UserInfo.class));
