@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>Fiszki - edytowanie profilu użytkownika</title>
+    <script src="/webjars/jquery/2.0.3/jquery.js"></script>
+    <script src="/webjars/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="/js/preferences.js"></script>
+    <link href="/css/common.css" rel="stylesheet" media="screen"/>
+    <link href="/css/singing.css" rel="stylesheet" media="screen"/>
+    <link href="/webjars/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+    <link href="/webjars/bootstrap/3.3.1/css/bootstrap-theme.min.css" rel="stylesheet" media="screen"/>
+</head>
+<body>
+
+<nav th:replace="header :: header"></nav>
+
+<h1>Profil użykownika <span th:text="${user.firstName}"></span></h1>
+<h2>Edytowanie profilu</h2>
+<form name = "edit" id="edit" action="editUser" method = "POST">
+<table class="table">
+    <tbody>
+    <tr id="nameRow">
+        <td>Imię</td>
+        <td th:text="${user.firstName}"></td>
+        <td>
+            <button id="nameButton" type="button" class="btn btn-lg btn-info">Edytuj</button>
+        </td>
+    </tr>
+    <tr id="secondNameRow">
+        <td>Nazwisko</td>
+        <td th:text="${user.lastName}"></td>
+        <td>
+            <button type="button" class="btn btn-lg btn-info">Edytuj</button>
+        </td>
+    </tr>
+    <tr id="emainRow">
+        <td>Email</td>
+        <td th:text="${user.email}"></td>
+        <td>
+            <button type="button" class="btn btn-lg btn-info">Edytuj</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</form>
+<button id="saveUser" type="button" class="btn btn-lg btn-success">Zapisz</button>
+<button type="button" class="btn btn-lg btn-danger">Anuluj</button>
+<br></br>
+<div id="success"></div>
+<div id="userID" style="display: none;" th:text="${user.userId}"></div>
+<footer th:replace="footer :: footer"></footer>
+
+</body>
+</html>
