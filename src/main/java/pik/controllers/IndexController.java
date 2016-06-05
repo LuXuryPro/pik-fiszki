@@ -54,10 +54,10 @@ public class IndexController {
         FacebookHelper f = new FacebookHelper(principal);
         User user = f.getFacebookUser();
         if (!this.userRepository.exists(user.getId())) {
-            UserInfo userData = new UserInfo(user.getId(), user.getFirstName(), user.getLastName(), user.getEmail());
+            UserInfo userData = new UserInfo(user.getId(), user.getFirstName(), user.getLastName(), user.getEmail(),"username");
             this.userRepository.save(userData);
         }
-        UserInfo userInfo = this.userRepository.findByuserId(user.getId());
+        UserInfo userInfo = this.userRepository.findByUserId(user.getId());
         model.addAttribute("user", userInfo);
         return "index";
     }
