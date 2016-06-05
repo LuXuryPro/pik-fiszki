@@ -15,7 +15,7 @@ import java.util.List;
 public interface QuestionDao {
     QuestionInfo add(QuestionInfo questionInfo);
     QuestionInfo update(QuestionInfo questionInfo);
-    QuestionInfo remove(QuestionInfo questionInfo);
+    Boolean remove(QuestionInfo questionInfo);
     List<QuestionInfo> getCourseQuestions(BigInteger courseId);
     Page<QuestionInfo> getQuestionToAnswer(UserInfo user, CourseInfo course, Pageable page);
 

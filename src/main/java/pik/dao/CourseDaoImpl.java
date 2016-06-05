@@ -1,12 +1,18 @@
 package pik.dao;
 
+import com.mongodb.WriteResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.mongodb.core.MongoOperations;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 import pik.dto.CourseInfo;
 import pik.dto.MarkInfo;
 import pik.dto.QuestionInfo;
 import pik.dto.UserInfo;
+import pik.exceptions.SequenceException;
 import pik.repositories.CourseRepository;
 import pik.repositories.QuestionRepository;
 import pik.repositories.MarkRepository;
@@ -14,6 +20,7 @@ import pik.repositories.UserRepository;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -40,9 +47,19 @@ public class CourseDaoImpl implements CourseDao{
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private MongoOperations mongoOperation;
+
 
     public CourseInfo create(CourseInfo course){
-        course.setId(sequenceDao.getNext(COURSE_SEQ_KEY));
+        try {
+            course.setId(sequenceDao.getNext(COURSE_SEQ_KEY));
+        }
+        catch(SequenceException seq){
+            sequenceDao.insert(COURSE_SEQ_KEY);
+            course.setId(sequenceDao.getNext(COURSE_SEQ_KEY));
+        }
+
         return courseRepository.save(course);
     }
 
@@ -62,12 +79,24 @@ public class CourseDaoImpl implements CourseDao{
             return false;
         }
         BigInteger courseId = existingCourse.getId();
-        List<MarkInfo> marks = markRepository.findByCourseId(courseId);
+        //List<MarkInfo> marks = markRepository.findByCourseId(courseId);
         List<QuestionInfo> quest = questionRepository.findByCourseId(courseId);
+
+        List<BigInteger> ids = Arrays.asList(courseId);
+
+        //Query removeQuery = Query.query(Criteria.where("marks.name").in(ids));
+
+        /*mongoOperation.upsert(
+                new Query(),
+                new Update().pull("marks.courseId", courseId),
+                UserInfo.class);*/
+
+        mongoOperation.updateMulti(new Query(),
+            new Update().pull("marks", Query.query(Criteria.where("courseId").is(courseId))), "user");
 
 
         questionRepository.delete(quest);
-        markRepository.delete(marks);
+        //markRepository.delete(marks);
         courseRepository.delete(existingCourse);
         return true;
     }

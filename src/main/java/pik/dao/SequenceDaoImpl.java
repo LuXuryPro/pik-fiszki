@@ -39,4 +39,12 @@ public class SequenceDaoImpl implements SequenceDao {
 
     }
 
+    public void insert(String key){
+        SequenceId seq =new SequenceId();
+        seq.setId(key);
+        seq.setSeq(BigInteger.ONE);
+        mongoOperation.insert(seq,"sequence");
+
+    }
+
 }

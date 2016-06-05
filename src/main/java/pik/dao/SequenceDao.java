@@ -8,4 +8,6 @@ public interface SequenceDao {
 
     BigInteger getNext(String key) throws SequenceException;
 
+    void insert(String key);
+
 }
