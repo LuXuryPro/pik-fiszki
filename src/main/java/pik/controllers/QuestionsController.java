@@ -94,7 +94,7 @@ public class QuestionsController {
         return questionDao.update(questionInfo) != null;
     }
 
-    public Boolean deleteQuesion(QuestionInfo questionInfo, String userId) throws CourseAccessException {
+    public Boolean deleteQuestion(QuestionInfo questionInfo, String userId) throws CourseAccessException {
         BigInteger courseId = questionInfo.getCourseId();
         CourseInfo courseInfo = courseDao.get(courseId);
         if (!courseInfo.getOwnerId().equals(userId))
