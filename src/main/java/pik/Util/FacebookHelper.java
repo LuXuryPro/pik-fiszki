@@ -14,11 +14,15 @@ public class FacebookHelper {
         this.principal = principal;
     }
 
-    public User getFacebookUser()
-    {
-        OAuth2Authentication u = (OAuth2Authentication)this.principal;
-        OAuth2AuthenticationDetails d = (OAuth2AuthenticationDetails)u.getDetails();
+    public User getFacebookUser() {
+        OAuth2Authentication u = (OAuth2Authentication) this.principal;
+        OAuth2AuthenticationDetails d = (OAuth2AuthenticationDetails) u.getDetails();
         FacebookTemplate f = new FacebookTemplate(d.getTokenValue());
         return f.userOperations().getUserProfile();
+    }
+
+    public String getId() {
+        User u = this.getFacebookUser();
+        return u.getId();
     }
 }

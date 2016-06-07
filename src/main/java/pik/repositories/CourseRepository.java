@@ -15,5 +15,4 @@ public interface CourseRepository extends MongoRepository<CourseInfo,BigInteger>
     CourseInfo findByName(String name);
     List<CourseInfo> findByOwnerId(String ownerId);
     CourseInfo findByOwnerIdAndName(String ownerId, String name);
-
 }
