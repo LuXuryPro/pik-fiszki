@@ -103,21 +103,33 @@ public class QuestionsController {
         return questionDao.remove(questionInfo);
     }
 
-    public Boolean markQuestion() {
-        return false;
+    public Boolean markQuestion(QuestionInfo questionInfo, String userId, int score) {
+        UserInfo userInfo = userDao.getById(userId);
+        List<MarkInfo> markInfoList = userInfo.getMarks();
+        BigInteger questionId = questionInfo.getId();
+        BigInteger courseId = questionInfo.getCourseId();
+        MarkInfo mark;
+        for (MarkInfo markInfo : markInfoList) {
+            if (markInfo.getCourseId().equals(courseId) && markInfo.getQuestionId().equals(questionId)) {
+                markAlgorithm(markInfo, score);
+                break;
+            }
+        }
+        return userDao.update(userInfo) != null;
     }
 
-    private MarkInfo markAlgorithm(MarkInfo markInfoOld, int score) {
+    private void markAlgorithm(MarkInfo markInfoOld, int score) {
         markInfoOld.setCounter(markInfoOld.getCounter() + 1);
         int counter = markInfoOld.getCounter();
-        float newEf = Math.max(1.3f, markInfoOld.getEf() - 0.8 + 0.28*score - 0.02*score*score;
+        float newEf = Math.max(1.3f, markInfoOld.getEf() - 0.8f + 0.28f*score - 0.02f*score*score);
         markInfoOld.setEf(newEf);
-        int add_to_date = 1000 * 60 * 60 * 24;
+        long add_to_date = 1000 * 60 * 60 * 24;
         if (counter == 2)
             add_to_date *= 6;
         else if (counter > 2)
             add_to_date += markInfoOld.getInterval();
+        markInfoOld.setInterval(add_to_date);
         Date date = new Date(markInfoOld.getDate().getTime() + add_to_date);
-        return markInfoOld;
+        markInfoOld.setDate(date);
     }
 }
