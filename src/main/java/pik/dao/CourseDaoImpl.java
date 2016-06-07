@@ -32,23 +32,30 @@ public class CourseDaoImpl implements CourseDao{
 
     private static final String COURSE_SEQ_KEY = "course";
 
-    @Autowired
     private SequenceDao sequenceDao;
 
-    @Autowired
     private CourseRepository courseRepository;
 
-    @Autowired
     private QuestionRepository questionRepository;
 
-    @Autowired
     private MarkRepository markRepository;
 
-    @Autowired
     private UserRepository userRepository;
 
-    @Autowired
     private MongoOperations mongoOperation;
+
+    @Autowired
+    public CourseDaoImpl(SequenceDao sequenceDao, CourseRepository courseRepository,
+                         QuestionRepository questionRepository, MarkRepository markRepository,
+                         UserRepository userRepository, MongoOperations mongoOperations){
+        this.sequenceDao = sequenceDao;
+        this.courseRepository = courseRepository;
+        this.questionRepository = questionRepository;
+        this.markRepository = markRepository;
+        this.userRepository = userRepository;
+        this.mongoOperation = mongoOperations;
+    }
+
 
 
     public CourseInfo create(CourseInfo course){
@@ -79,24 +86,13 @@ public class CourseDaoImpl implements CourseDao{
             return false;
         }
         BigInteger courseId = existingCourse.getId();
-        //List<MarkInfo> marks = markRepository.findByCourseId(courseId);
         List<QuestionInfo> quest = questionRepository.findByCourseId(courseId);
-
-        List<BigInteger> ids = Arrays.asList(courseId);
-
-        //Query removeQuery = Query.query(Criteria.where("marks.name").in(ids));
-
-        /*mongoOperation.upsert(
-                new Query(),
-                new Update().pull("marks.courseId", courseId),
-                UserInfo.class);*/
 
         mongoOperation.updateMulti(new Query(),
             new Update().pull("marks", Query.query(Criteria.where("courseId").is(courseId))), "user");
 
 
         questionRepository.delete(quest);
-        //markRepository.delete(marks);
         courseRepository.delete(existingCourse);
         return true;
     }
