@@ -19,28 +19,25 @@ import java.security.Principal;
 
 @Controller
 public class IndexController {
-    private UserDao userDao;
+    private UserController userControler;
 
     IndexController() {
     }
 
     @Autowired
-    IndexController(UserDao userDao) {
-        this.userDao = userDao;
+    IndexController(UserController userController) {
+        this.userControler = userController;
     }
 
     @RequestMapping("/index")
     public String user(Principal principal, Model model) {
         FacebookHelper f = new FacebookHelper(principal);
         User user = f.getFacebookUser();
-        if (!this.userDao.idExists(user.getId())) {
-            UserInfo userData = new UserInfo(user.getId(),
+        this.userControler.addUser(user.getId(),
                     user.getFirstName(),
                     user.getLastName(),
                     user.getEmail());
-            this.userDao.create(userData);
-        }
-        UserInfo userInfo = this.userDao.getById(user.getId());
+        UserInfo userInfo = this.userControler.getUser(user.getId());
         model.addAttribute("user", userInfo);
         return "index";
     }
