@@ -34,9 +34,8 @@ public class FullMockedFacebookControllerTest {
     public void testFacebookControlerNewUserLogin() throws Exception {
         // Given
         // Empty database with no users
-        UserDao userDao = PowerMockito.mock(UserDao.class);
-        Mockito.when(userDao.idExists(Mockito.any(String.class))).thenReturn(false);
-        IndexController facebookController = new IndexController(userDao);
+        UserController userController = PowerMockito.mock(UserController.class);
+        IndexController facebookController = new IndexController(userController);
         // When new (mocked) user got logged in
         OAuth2AuthenticationDetails oAuth2AuthenticationDetails = PowerMockito.mock(OAuth2AuthenticationDetails.class);
         PowerMockito.when(oAuth2AuthenticationDetails.getTokenValue()).thenReturn("123456789");
@@ -65,9 +64,8 @@ public class FullMockedFacebookControllerTest {
     public void testFacebookControlerExistingUserLogin() throws Exception {
         // Given
         // Empty database with no users
-        UserDao userDao = PowerMockito.mock(UserDao.class);
-        PowerMockito.when(userDao.idExists(Mockito.any(String.class))).thenReturn(true);
-        IndexController facebookController = new IndexController(userDao);
+        UserController userController = PowerMockito.mock(UserController.class);
+        IndexController facebookController = new IndexController(userController);
         // When existing (mocked) user got logged in
         OAuth2AuthenticationDetails oAuth2AuthenticationDetails = PowerMockito.mock(OAuth2AuthenticationDetails.class);
         PowerMockito.when(oAuth2AuthenticationDetails.getTokenValue()).thenReturn("123456789");
