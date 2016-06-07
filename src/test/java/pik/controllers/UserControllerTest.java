@@ -26,6 +26,7 @@ public class UserControllerTest {
     @Test
     public void testAddUserOk() throws Exception {
         Mockito.when(userDao.idExists(any(String.class))).thenReturn(false);
+        Mockito.when(userDao.create(any(UserInfo.class))).then(returnsFirstArg());
 
         Assert.assertTrue(userController.addUser("123", "Ala", "Makota", "abc@ghj.pl"));
     }
@@ -33,6 +34,7 @@ public class UserControllerTest {
     @Test
     public void testAddUserFail() throws Exception {
         Mockito.when(userDao.idExists(any(String.class))).thenReturn(true);
+        Mockito.when(userDao.create(any(UserInfo.class))).then(returnsFirstArg());
 
         Assert.assertFalse(userController.addUser("123", "Ala", "Makota", "abc@gfh.pl"));
     }

@@ -28,7 +28,6 @@ import java.util.*;
 import static org.mockito.AdditionalAnswers.returnsFirstArg;
 import static org.mockito.Matchers.any;
 
-
 public class QuestionsControllerTest {
     @Mock
     private UserDao userDao;
