@@ -1,6 +1,7 @@
 package pik.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import pik.dao.CourseDao;
 import pik.dao.UserDao;
@@ -12,7 +13,7 @@ import java.util.List;
  * Created by adrian on 07.06.16.
  */
 
-@Controller
+@Component
 public class CourseController {
     // dodaj, edytowac, usunac, pobrac rozne wersje
     private UserDao userDao;
@@ -32,7 +33,10 @@ public class CourseController {
         return courseDao.create(courseInfo) != null;
     }
 
+
     public List<CourseInfo> getSubscribedCourses(String userId) {
         return courseDao.getSubscribedCourses(userDao.getById(userId));
     }
+
+    //public List<CourseInfo> getAllCourses() {}
 }
