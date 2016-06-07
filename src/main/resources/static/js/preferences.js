@@ -34,6 +34,9 @@ function closeLastNameEdit() {
 
 function closeEmailEdit() {
     var input = $("#emailInput").val();
+    if (input == undefined) {
+        return;
+    }
     var r = $("#emailRow").children()[1];
     r.innerHTML = input;
     var b = $("#emailRow").children()[2];
