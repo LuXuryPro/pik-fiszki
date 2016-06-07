@@ -25,6 +25,9 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+import static org.mockito.AdditionalAnswers.returnsFirstArg;
+import static org.mockito.Matchers.any;
+
 
 public class QuestionsControllerTest {
     @Mock
@@ -213,6 +216,14 @@ public class QuestionsControllerTest {
 
         List<QuestionInfo> questionInfos = questionsController.getAllQuestions("123", BigInteger.ZERO);
 
+    }
+
+    @Test
+    public void addQuestion() throws Exception {
+        Mockito.when(courseDao.get(BigInteger.ONE)).thenReturn(courseInfoMock);
+        Mockito.when(questionDao.add(any(QuestionInfo.class))).then(returnsFirstArg());
+
+        Assert.assertTrue(questionsController.addQuestion("Co ma Ala?", "Ala ma kota", BigInteger.ONE, "123"));
     }
 
 }

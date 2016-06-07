@@ -67,4 +67,19 @@ public class QuestionsController {
         }
     }
 
+    public Boolean addQuestion(String answer, String question, BigInteger courseId, String userId)
+            throws CourseAccessException {
+        CourseInfo courseInfo = courseDao.get(courseId);
+        if (!courseInfo.getOwnerId().equals(userId))
+            throw new CourseAccessException("You are not owner of this course", courseId, userId);
+
+
+        QuestionInfo questionInfo = new QuestionInfo();
+        questionInfo.setCourseId(courseId);
+        questionInfo.setAnswer(answer);
+        questionInfo.setQuestion(question);
+
+        return questionDao.add(questionInfo) != null;
+    }
+
 }
