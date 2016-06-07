@@ -21,9 +21,7 @@ import java.util.List;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
-/**
- * Created by adrian on 07.06.16.
- */
+
 public class QuestionsControllerTest {
     @Mock
     private UserDao userDao;
@@ -55,7 +53,10 @@ public class QuestionsControllerTest {
 
     @Test
     public void countAllQuestions() throws Exception {
+        Mockito.when(questionDao.countQuestions(BigInteger.ONE)).thenReturn(5L);
 
+        long counter = questionsController.countAllQuestions(BigInteger.ONE);
+        Assert.assertEquals(counter, 5L);
     }
 
     @Test

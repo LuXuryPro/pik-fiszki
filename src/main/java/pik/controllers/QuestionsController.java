@@ -27,8 +27,8 @@ public class QuestionsController {
         this.questionDao = questionDao;
     }
 
-    public Integer countAllQuestions(BigInteger courseId) {
-        return 0;
+    public Long countAllQuestions(BigInteger courseId) {
+        return questionDao.countQuestions(courseId);
     }
 
     public Integer countActiveQuestions(String userId, BigInteger courseId) {
