@@ -13,26 +13,29 @@
 <body>
 
 <nav th:replace="header :: header"></nav>
-
-<h1>Profil użykownika <span th:text="${user.firstName}"></span></h1>
-<h2>Podstatowe dane</h2>
-<table class="table">
-    <tbody>
-      <tr>
-        <td>Imię</td>
-        <td th:text="${user.firstName}"></td>
-      </tr>
-      <tr>
-          <td>Nazwisko</td>
-          <td th:text="${user.lastName}"></td>
-      </tr>
-      <tr>
-          <td>Email</td>
-          <td th:text="${user.email}"></td>
-      </tr>
-    </tbody>
-  </table>
-<a href="preferences" class="btn btn-info" role="button">Edytuj profil</a>
-<footer th:replace="footer :: footer"></footer>
+<div class="jumbotron">
+    <div class="wid">
+        <h1>Profil użytkownika <span th:text="${user.firstName}"></span></h1>
+        <h2>Podstawowe dane</h2>
+        <table class="table">
+            <tbody>
+            <tr>
+                <td>Imię</td>
+                <td th:text="${user.firstName}"></td>
+            </tr>
+            <tr>
+                <td>Nazwisko</td>
+                <td th:text="${user.lastName}"></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td th:text="${user.email}"></td>
+            </tr>
+            </tbody>
+        </table>
+        <a href="preferences" class="btn btn-info" role="button">Edytuj profil</a>
+    </div>
+    <footer th:replace="footer :: footer"></footer>
+</div>
 </body>
 </html>

@@ -14,10 +14,12 @@
 
 <nav th:replace="header :: header"></nav>
 
-<div class="container">
-    <h1>Witaj <span th:text="${user.firstName}"></span></h1>
-    <h2>Witamy na stronie do nauki z użyciem fiszek. Aby rozpocząć dodaj nowy kurs do swojej biblioteki.</h2>
-</div><!-- /.container -->
-<footer th:replace="footer :: footer"></footer>
+<div class="jumbotron">
+    <div class="wid">
+        <h1>Witaj <span th:text="${user.firstName}"></span></h1>
+        <h2>Witamy na stronie do nauki z użyciem fiszek. Aby rozpocząć dodaj nowy kurs do swojej biblioteki.</h2>
+    </div>
+    <footer th:replace="footer :: footer"></footer>
+</div>
 </body>
 </html>
