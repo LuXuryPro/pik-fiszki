@@ -48,10 +48,6 @@ public class UserDaoImpl implements UserDao{
 		return userRepository.findByUserId(Id);
 	}
 
-	public UserInfo getByUserName(String username){
-		return userRepository.findByUserName(username);
-	}
-
 	public UserInfo read(UserInfo user) {
 		return user;
 	}
@@ -102,11 +98,6 @@ public class UserDaoImpl implements UserDao{
 		return userRepository.exists(userId);
 	}
 
-	public Boolean UserNameExists(String username)
-	{
-		UserInfo user = userRepository.findByUserName(username);
-		return (user !=null);
-	}
 
 	public Boolean subscribe(UserInfo user, BigInteger courseId)
 	{
