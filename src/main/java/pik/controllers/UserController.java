@@ -1,6 +1,7 @@
 package pik.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import pik.dao.UserDao;
 import pik.dto.UserInfo;
@@ -9,7 +10,7 @@ import pik.dto.UserInfo;
  * Created by adrian on 07.06.16.
  */
 
-@Controller
+@Component
 public class UserController {
     private UserDao userDao;
 
