@@ -25,4 +25,8 @@ public interface CourseDao {
     Boolean exists(BigInteger id);
 
     Boolean exists(String username, String name);
+
+    List<CourseInfo> getAll();
+
+    List<CourseInfo> getUnsubscribed(UserInfo user);
 }
