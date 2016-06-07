@@ -18,12 +18,10 @@
 <div class="container">
     <h1>Dodaj kurs</h1>
 
-    <p> id="lable">You can change this with JS. Just click the button bellow.</p>
-    <button type="button" onclick="changeLable()">Click Me!</button>
-
-
     <form action="/saveAddCourse" method="POST">
+        <label>Nazwa kursu:</label>
         <input  type="text" name="name"></input>
+        <label>Opis kursu:</label>
         <input  type="text" name="description"></input>
         <input type="submit" value="Dodaj"></input>
     </form>

@@ -24,12 +24,12 @@
                 <li th:each="item : *{list}" th:text="${item}">Item description here...</li>
             </th:block>
         </ul>
-    </div>
+    </div> -->
 
     <h1>Result</h1>
     <ul>
-        <li th:each="item : ${courses}" th:text="${item.getName}">Item description here...</li>
-    </ul> -->
+        <li th:each="item : ${courseList}" th:text="${item.getName}">Item description here...</li>
+    </ul>
 
 </div><!-- /.container -->
 <footer th:replace="footer :: footer"></footer>
