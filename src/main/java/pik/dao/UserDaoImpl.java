@@ -75,7 +75,6 @@ public class UserDaoImpl implements UserDao{
 		existingUser.setLastName(user.getLastName());
 		existingUser.setEmail(user.getEmail());
 		existingUser.setMarks(user.getMarks());
-		existingUser.setUserName(user.getUserName());
 		existingUser.setSubscribedCourses(user.getSubscribedCourses());
 		// We must save both separately since there is no cascading feature
 		// in Spring Data MongoDB (for now)
