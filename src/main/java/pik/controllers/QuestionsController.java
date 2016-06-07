@@ -2,6 +2,7 @@ package pik.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 import pik.dao.CourseDao;
 import pik.dao.QuestionDao;
 import pik.dao.UserDao;
@@ -14,7 +15,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-@Component
+@Controller
 public class QuestionsController {
     private UserDao userDao;
     private CourseDao courseDao;
@@ -31,8 +32,14 @@ public class QuestionsController {
         return questionDao.countQuestions(courseId);
     }
 
-    public Integer countActiveQuestions(String userId, BigInteger courseId) {
-        return 0;
+    public Integer countActiveQuestions(String userId, BigInteger courseId) throws CourseAccessException {
+        UserInfo userInfo = userDao.getById(userId);
+        if (userInfo.getSubscribedCourses().contains(courseId)) {
+            return questionDao.countActiveQuestions(userInfo, courseId);
+        }
+        else {
+            throw new CourseAccessException("You are not subscribed to this course", courseId, userId);
+        }
     }
 
     public QuestionInfo getFirstQuestion(String userId, BigInteger courseId) {

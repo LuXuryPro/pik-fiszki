@@ -61,7 +61,19 @@ public class QuestionsControllerTest {
 
     @Test
     public void countActiveQuestions() throws Exception {
+        Mockito.when(questionDao.countActiveQuestions(userInfoMock, BigInteger.ONE)).thenReturn(5);
+        Mockito.when(userDao.getById("123")).thenReturn(userInfoMock);
 
+        int counter = questionsController.countActiveQuestions("123", BigInteger.ONE);
+        Assert.assertEquals(counter, 5);
+    }
+
+    @Test(expected = CourseAccessException.class)
+    public void countActiveQuestionsError() throws Exception {
+        Mockito.when(questionDao.countActiveQuestions(userInfoMock, BigInteger.ZERO)).thenReturn(0);
+        Mockito.when(userDao.getById("123")).thenReturn(userInfoMock);
+
+        int counter = questionsController.countActiveQuestions("123", BigInteger.ZERO);
     }
 
     @Test

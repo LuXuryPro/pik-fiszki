@@ -19,4 +19,5 @@ public interface QuestionDao {
     List<QuestionInfo> getCourseQuestions(BigInteger courseId);
     Page<QuestionInfo> getQuestionToAnswer(UserInfo user, CourseInfo course, Pageable page);
     Long countQuestions(BigInteger courseId);
+    int countActiveQuestions(UserInfo user, BigInteger courseId);
 }
