@@ -27,7 +27,7 @@ public class QuestionsController {
         this.questionDao = questionDao;
     }
 
-    public Integer countAllQuestions(String userId, BigInteger courseId) {
+    public Integer countAllQuestions(BigInteger courseId) {
         return 0;
     }
 

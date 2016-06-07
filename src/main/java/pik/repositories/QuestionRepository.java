@@ -16,4 +16,5 @@ import java.util.List;
 public interface QuestionRepository extends MongoRepository<QuestionInfo, BigInteger> {
     QuestionInfo findById(BigInteger courseId);
     List<QuestionInfo> findByCourseId(BigInteger courseId);
+    Long countByCourseId(BigInteger id);
 }
