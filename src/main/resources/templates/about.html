@@ -2,7 +2,7 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8"></meta>
-    <title>Fiszki - strona główna</title>
+    <title>Fiszki - o projekcie</title>
     <script src="/webjars/jquery/2.0.3/jquery.js"></script>
     <script src="/webjars/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <link href="/css/common.css" rel="stylesheet" media="screen"/>
@@ -14,12 +14,10 @@
 
 <nav th:replace="header :: header"></nav>
 
-<div class="jumbotron">
-    <div class="wid">
-        <h1>Witaj <span th:text="${user.firstName}"></span></h1>
-        <h2>Witamy na stronie do nauki z użyciem fiszek. Aby rozpocząć dodaj nowy kurs do swojej biblioteki.</h2>
-    </div>
-    <footer th:replace="footer :: footer"></footer>
-</div>
+<div class="container">
+    <h1>O projekcie</h1>
+    <h2>Aplikacja powstała jako projekt z przedmiotu PIK. Pozwala na naukę przy pomocy fiszek.</h2>
+</div><!-- /.container -->
+<footer th:replace="footer :: footer"></footer>
 </body>
 </html>

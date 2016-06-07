@@ -1,14 +1,18 @@
 package pik.dao;
 
+import org.hamcrest.Matchers;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.powermock.modules.junit4.PowerMockRunner;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Query;
 import pik.dto.CourseInfo;
+import pik.dto.MarkInfo;
 import pik.dto.QuestionInfo;
 import pik.dto.UserInfo;
 import pik.exceptions.SequenceException;
@@ -18,17 +22,17 @@ import pik.repositories.UserRepository;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import static org.junit.Assert.*;
 import static org.mockito.AdditionalAnswers.returnsFirstArg;
 import static org.mockito.Matchers.any;
+import static org.mockito.Matchers.anyObject;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.when;
 
-/**
- * Created by Michał on 07.06.2016.
- */
+
 @RunWith(PowerMockRunner.class)
 public class QuestionDaoImplTest {
 
@@ -68,6 +72,17 @@ public class QuestionDaoImplTest {
             }
 
             return users;
+        });
+
+
+        when(mockQuestionRep.findAll(any(Iterable.class))).thenAnswer(invocation -> {
+            List<QuestionInfo> qlist = new ArrayList<QuestionInfo>();
+            for(int i =0; i<10; ++i){
+                QuestionInfo info = new QuestionInfo();
+                info.setId(BigInteger.valueOf(i));
+                qlist.add(info);
+            }
+            return qlist;
         });
     }
 
@@ -123,17 +138,6 @@ public class QuestionDaoImplTest {
         assertEquals(q.getAnswer(),"test");
         assertEquals(q.getQuestion(),"test");
         assertEquals(q.getCourseId(),BigInteger.ONE);
-        /*
-        BigInteger questionId = questionInfo.getId();
-        BigInteger courseId  = questionInfo.getCourseId();
-        Query query = new Query(new Criteria().andOperator(
-                Criteria.where("subscribedcourses").in(courseId),
-                Criteria.where("marks").elemMatch(Criteria.where("questionId").is(questionId))
-        ));
-        Update update = new Update().set("marks.$.ef", 2.5f).set("counter",0).set("date", new Date()).set("interval", 0);
-        mongoOperations.updateMulti(query,update,"user");
-
-        return questionRepository.save(questionInfo);*/
     }
 
     @Test
@@ -149,13 +153,50 @@ public class QuestionDaoImplTest {
 
     @Test
     public void getQuestionToAnswer() throws Exception {
+        QuestionDaoImpl dao = new QuestionDaoImpl(mockQuestionRep,mockUserRep,mockSeqDao,mockMongoOp);
 
+        UserInfo info = new UserInfo();
+        List<MarkInfo> marks = prepareMarks();
+
+        info.setMarks(marks);
+
+
+        CourseInfo course = new CourseInfo();
+        course.setId(BigInteger.ONE);
+
+        Page<QuestionInfo> page = dao.getQuestionToAnswer(info,course,new PageRequest(0,10));
+
+        Assert.assertNotNull(page);
+        List<QuestionInfo> list = page.getContent();
+        assertEquals(10,list.size());
     }
 
 
     @Test
     public void countActiveQuestions() throws Exception {
+        QuestionDaoImpl dao = new QuestionDaoImpl(mockQuestionRep,mockUserRep,mockSeqDao,mockMongoOp);
 
+        UserInfo info = new UserInfo();
+        List<MarkInfo> marks = prepareMarks();
+        info.setMarks(marks);
+        CourseInfo course = new CourseInfo();
+        course.setId(BigInteger.ONE);
+        int count = dao.countActiveQuestions(info,BigInteger.ONE);
+        assertEquals(10,count);
+    }
+
+    private List<MarkInfo> prepareMarks(){
+        List<MarkInfo> marks = new ArrayList<MarkInfo>();
+
+        for (int i = 0; i<10; ++i){
+            MarkInfo mark = new MarkInfo();
+            mark.setCourseId(BigInteger.ONE);
+            mark.setDate(new Date());
+            mark.setQuestionId(BigInteger.valueOf(i));
+            marks.add(mark);
+        }
+
+        return marks;
     }
 
 }

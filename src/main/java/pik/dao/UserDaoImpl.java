@@ -48,10 +48,6 @@ public class UserDaoImpl implements UserDao{
 		return userRepository.findByUserId(Id);
 	}
 
-	public UserInfo read(UserInfo user) {
-		return user;
-	}
-
     public List<UserInfo> readAll() {
         return userRepository.findAll();
     }
@@ -72,8 +68,6 @@ public class UserDaoImpl implements UserDao{
 		existingUser.setEmail(user.getEmail());
 		existingUser.setMarks(user.getMarks());
 		existingUser.setSubscribedCourses(user.getSubscribedCourses());
-		// We must save both separately since there is no cascading feature
-		// in Spring Data MongoDB (for now)
 		markRepository.save(existingUser.getMarks());
 		return userRepository.save(existingUser);
 	}
