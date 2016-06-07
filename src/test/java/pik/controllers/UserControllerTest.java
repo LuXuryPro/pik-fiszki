@@ -9,10 +9,14 @@ import org.mockito.MockitoAnnotations;
 import pik.dao.UserDao;
 import pik.dto.UserInfo;
 
+import java.math.BigInteger;
+
 import static org.mockito.AdditionalAnswers.returnsFirstArg;
 import static org.mockito.Matchers.any;
 
 public class UserControllerTest {
+
+
     @Mock
     private UserDao userDao;
     private UserController userController;
@@ -58,4 +62,21 @@ public class UserControllerTest {
         Assert.assertTrue(userController.editUser(userInfo));
     }
 
+    @Test
+    public void testAddSubscription() throws Exception {
+        UserInfo userInfo = new UserInfo("123", "Ala", "Makota", "abc@dcf.pl");
+        Mockito.when(userDao.getById(any(String.class))).thenReturn(userInfo);
+        Mockito.when(userDao.subscribe(any(UserInfo.class), any(BigInteger.class))).thenReturn(true);
+
+        Assert.assertTrue(userController.addSubscription(BigInteger.ONE, "123"));
+    }
+
+    @Test
+    public void testRemoveSubscription() throws Exception {
+        UserInfo userInfo = new UserInfo("123", "Ala", "Makota", "abc@dcf.pl");
+        Mockito.when(userDao.getById(any(String.class))).thenReturn(userInfo);
+        Mockito.when(userDao.unsubscribe(any(UserInfo.class), any(BigInteger.class))).thenReturn(true);
+
+        Assert.assertTrue(userController.removeSubscription(BigInteger.ONE, "123"));
+    }
 }
