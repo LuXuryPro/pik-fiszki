@@ -38,24 +38,20 @@ public class CourseDaoImpl implements CourseDao{
 
     private QuestionRepository questionRepository;
 
-    private MarkRepository markRepository;
-
     private UserRepository userRepository;
 
     private MongoOperations mongoOperation;
 
     @Autowired
     public CourseDaoImpl(SequenceDao sequenceDao, CourseRepository courseRepository,
-                         QuestionRepository questionRepository, MarkRepository markRepository,
-                         UserRepository userRepository, MongoOperations mongoOperations){
+                         QuestionRepository questionRepository,
+                         UserRepository userRepository, MongoOperations mongoOperation) {
         this.sequenceDao = sequenceDao;
         this.courseRepository = courseRepository;
         this.questionRepository = questionRepository;
-        this.markRepository = markRepository;
         this.userRepository = userRepository;
-        this.mongoOperation = mongoOperations;
+        this.mongoOperation = mongoOperation;
     }
-
 
 
     public CourseInfo create(CourseInfo course){
@@ -86,13 +82,24 @@ public class CourseDaoImpl implements CourseDao{
             return false;
         }
         BigInteger courseId = existingCourse.getId();
+        //List<MarkInfo> marks = markRepository.findByCourseId(courseId);
         List<QuestionInfo> quest = questionRepository.findByCourseId(courseId);
+
+        List<BigInteger> ids = Arrays.asList(courseId);
+
+        //Query removeQuery = Query.query(Criteria.where("marks.name").in(ids));
+
+        /*mongoOperation.upsert(
+                new Query(),
+                new Update().pull("marks.courseId", courseId),
+                UserInfo.class);*/
 
         mongoOperation.updateMulti(new Query(),
             new Update().pull("marks", Query.query(Criteria.where("courseId").is(courseId))), "user");
 
 
         questionRepository.delete(quest);
+        //markRepository.delete(marks);
         courseRepository.delete(existingCourse);
         return true;
     }

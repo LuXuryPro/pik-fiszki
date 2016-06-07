@@ -18,5 +18,6 @@ public interface QuestionDao {
     Boolean remove(QuestionInfo questionInfo);
     List<QuestionInfo> getCourseQuestions(BigInteger courseId);
     Page<QuestionInfo> getQuestionToAnswer(UserInfo user, CourseInfo course, Pageable page);
-
+    Long countQuestions(BigInteger courseId);
+    int countActiveQuestions(UserInfo user, BigInteger courseId);
 }
