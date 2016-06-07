@@ -25,9 +25,7 @@ import java.util.Date;
 import java.util.List;
 import pik.dto.UserInfo;
 
-/**
- * Created by Michał on 04.06.2016.
- */
+
 @Service
 @ComponentScan(basePackages = {"repositories"})
 public class QuestionDaoImpl implements QuestionDao {
