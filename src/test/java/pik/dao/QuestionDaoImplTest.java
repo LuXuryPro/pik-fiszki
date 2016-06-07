@@ -32,9 +32,7 @@ import static org.mockito.Matchers.anyObject;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.when;
 
-/**
- * Created by Michał on 07.06.2016.
- */
+
 @RunWith(PowerMockRunner.class)
 public class QuestionDaoImplTest {
 
