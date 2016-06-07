@@ -1,25 +1,22 @@
 package pik.controllers;
 
-import pik.controllers.IndexController;
-import pik.repositories.UserRepository;
-import pik.dto.UserInfo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
+import org.powermock.api.mockito.PowerMockito;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.powermock.modules.junit4.PowerMockRunner;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationDetails;
 import org.springframework.social.facebook.api.User;
 import org.springframework.social.facebook.api.UserOperations;
 import org.springframework.social.facebook.api.impl.FacebookTemplate;
 import org.springframework.ui.Model;
+import pik.dao.UserDao;
 
 import java.security.Principal;
 
-import static org.junit.Assert.*;
-
-import org.powermock.api.mockito.PowerMockito;
-import org.powermock.core.classloader.annotations.PrepareForTest;
-import org.powermock.modules.junit4.PowerMockRunner;
+import static org.junit.Assert.assertEquals;
 
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({FacebookTemplate.class, IndexController.class})
@@ -37,9 +34,8 @@ public class FullMockedFacebookControllerTest {
     public void testFacebookControlerNewUserLogin() throws Exception {
         // Given
         // Empty database with no users
-        UserRepository userRepository = PowerMockito.mock(UserRepository.class);
-        Mockito.when(userRepository.exists(Mockito.any(String.class))).thenReturn(false);
-        IndexController facebookController = new IndexController(userRepository);
+        UserController userController = PowerMockito.mock(UserController.class);
+        IndexController facebookController = new IndexController(userController);
         // When new (mocked) user got logged in
         OAuth2AuthenticationDetails oAuth2AuthenticationDetails = PowerMockito.mock(OAuth2AuthenticationDetails.class);
         PowerMockito.when(oAuth2AuthenticationDetails.getTokenValue()).thenReturn("123456789");
@@ -68,10 +64,8 @@ public class FullMockedFacebookControllerTest {
     public void testFacebookControlerExistingUserLogin() throws Exception {
         // Given
         // Empty database with no users
-        UserRepository userRepository = PowerMockito.mock(UserRepository.class);
-        PowerMockito.when(userRepository.exists(Mockito.any(String.class))).thenReturn(true);
-        PowerMockito.when(userRepository.findByUserId("1")).thenReturn(new UserInfo("1", "Jan", "Testowy", "user@example.com"));
-        IndexController facebookController = new IndexController(userRepository);
+        UserController userController = PowerMockito.mock(UserController.class);
+        IndexController facebookController = new IndexController(userController);
         // When existing (mocked) user got logged in
         OAuth2AuthenticationDetails oAuth2AuthenticationDetails = PowerMockito.mock(OAuth2AuthenticationDetails.class);
         PowerMockito.when(oAuth2AuthenticationDetails.getTokenValue()).thenReturn("123456789");
