@@ -14,47 +14,48 @@
 <body>
 
 <nav th:replace="header :: header"></nav>
-
-<h1>Profil użykownika <span th:text="${user.firstName}"></span></h1>
-<h2>Edytowanie profilu</h2>
-<form name = "edit" id="edit" action="editUser" method = "POST">
-<table class="table">
-    <tbody>
-    <tr id="nameRow">
-        <td>Imię</td>
-        <td th:text="${user.firstName}"></td>
-        <td>
-            <button id="nameButton" type="button" class="btn btn-lg btn-info">Edytuj</button>
-        </td>
-    </tr>
-    <tr id="lastNameRow">
-        <td>Nazwisko</td>
-        <td th:text="${user.lastName}"></td>
-        <td>
-            <button id="lastNameButton" type="button" class="btn btn-lg btn-info">Edytuj</button>
-        </td>
-    </tr>
-    <tr id="emailRow">
-        <td>Email</td>
-        <td th:text="${user.email}"></td>
-        <td>
-            <button id="emailButton" type="button" class="btn btn-lg btn-info">Edytuj</button>
-        </td>
-    </tr>
-    </tbody>
-</table>
-</form>
-<button id="saveUser" type="button" class="btn btn-lg btn-success">Zapisz</button>
-<button id="abort" type="button" class="btn btn-lg btn-danger">Anuluj</button>
-<br></br>
-<div id="success"></div>
-<div id="userBackup" style="display: none;">
-    <div th:text="${user.userId}"></div>
-    <div th:text="${user.firstName}"></div>
-    <div th:text="${user.lastName}"></div>
-    <div th:text="${user.email}"></div>
+<div class="container">
+    <h1>Profil użykownika <span th:text="${user.firstName}"></span></h1>
+    <h2>Edytowanie profilu</h2>
+    <form name="edit" id="edit" action="editUser" method="POST">
+        <table class="table">
+            <tbody>
+            <tr id="nameRow">
+                <td>Imię</td>
+                <td th:text="${user.firstName}"></td>
+                <td>
+                    <button id="nameButton" type="button" class="btn btn-lg btn-info">Edytuj</button>
+                </td>
+            </tr>
+            <tr id="lastNameRow">
+                <td>Nazwisko</td>
+                <td th:text="${user.lastName}"></td>
+                <td>
+                    <button id="lastNameButton" type="button" class="btn btn-lg btn-info">Edytuj</button>
+                </td>
+            </tr>
+            <tr id="emailRow">
+                <td>Email</td>
+                <td th:text="${user.email}"></td>
+                <td>
+                    <button id="emailButton" type="button" class="btn btn-lg btn-info">Edytuj</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+    <button id="saveUser" type="button" class="btn btn-lg btn-success">Zapisz</button>
+    <button id="abort" type="button" class="btn btn-lg btn-danger">Anuluj</button>
+    <br></br>
+    <div id="success"></div>
+    <div id="userBackup" style="display: none;">
+        <div th:text="${user.userId}"></div>
+        <div th:text="${user.firstName}"></div>
+        <div th:text="${user.lastName}"></div>
+        <div th:text="${user.email}"></div>
+    </div>
+    <footer th:replace="footer :: footer"></footer>
 </div>
-<footer th:replace="footer :: footer"></footer>
 
 </body>
 </html>
