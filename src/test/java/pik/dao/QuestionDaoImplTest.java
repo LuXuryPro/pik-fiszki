@@ -148,19 +148,10 @@ public class QuestionDaoImplTest {
     }
 
     @Test
-    public void getCourseQuestions() throws Exception {
-
-    }
-
-    @Test
     public void getQuestionToAnswer() throws Exception {
 
     }
 
-    @Test
-    public void countQuestions() throws Exception {
-
-    }
 
     @Test
     public void countActiveQuestions() throws Exception {
