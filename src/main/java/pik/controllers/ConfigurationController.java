@@ -19,11 +19,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * Klasa odpowiedzialna za skonfigurowanie dostępu do poszczególnych podstron, włączenie obsługi OAuth2,
+ * zapewnienie sesji użytkowników.
+ */
 @EnableOAuth2Sso
 @Controller
 public class ConfigurationController extends WebSecurityConfigurerAdapter {
+    /**
+     * Instantiates a new Configuration controller.
+     */
     ConfigurationController()
     {}
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.antMatcher("/**").authorizeRequests()
