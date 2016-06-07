@@ -154,4 +154,21 @@ public class QuestionDaoImpl implements QuestionDao {
     public Long countQuestions(BigInteger courseId) {
         return questionRepository.countByCourseId(courseId);
     }
+
+    public int countActiveQuestions(UserInfo user, BigInteger courseId) {
+        Date today = new Date();
+
+        List<BigInteger> ids = new ArrayList<BigInteger>();
+
+        for (MarkInfo mark: user.getMarks()){
+
+            if(mark.getCourseId().equals(courseId) && mark.getDate().before(today))
+                ids.add(mark.getQuestionId());
+        }
+        Iterable<QuestionInfo> questIter = questionRepository.findAll(ids);
+
+        List<QuestionInfo> quests = makeCollection(questIter);
+
+        return quests.size();
+    }
 }
