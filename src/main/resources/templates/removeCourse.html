@@ -16,6 +16,13 @@
 
 <div class="container">
     <h1>Usuń kurs</h1>
+
+    <form action="/deleteCourse" method="POST">
+        <label>Nazwa kursu:</label>
+        <input  type="number" name="id"></input>
+        <input type="submit" value="Usuń"></input>
+    </form>
+
 </div><!-- /.container -->
 <footer th:replace="footer :: footer"></footer>
 </body>
