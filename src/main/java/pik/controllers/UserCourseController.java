@@ -61,7 +61,7 @@ public class UserCourseController
     public String doAddCourse(Principal principal, @RequestParam("name") String name, @RequestParam("description") String description)
     {
         FacebookHelper f = new FacebookHelper(principal);
-        //courseController.addCourse(name, description, f.getId());
+        courseController.addCourse(name, description, f.getId());
         return "courses";
     }
 }
