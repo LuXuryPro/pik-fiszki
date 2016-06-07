@@ -2,6 +2,7 @@ package pik.dao;
 
 import com.mongodb.WriteResult;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
@@ -9,6 +10,7 @@ import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
+import org.springframework.stereotype.Service;
 import pik.dto.*;
 import pik.exceptions.SequenceException;
 import pik.repositories.QuestionRepository;
@@ -24,6 +26,8 @@ import pik.dto.UserInfo;
 /**
  * Created by Michał on 04.06.2016.
  */
+@Service
+@ComponentScan(basePackages = {"repositories"})
 public class QuestionDaoImpl implements QuestionDao {
 
     @Autowired
