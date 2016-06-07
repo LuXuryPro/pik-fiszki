@@ -15,8 +15,6 @@ public interface UserDao {
 
     UserInfo getById(String Id);
 
-    UserInfo getByUserName(String username);
-
     UserInfo read(UserInfo user);
 
     List<UserInfo> readAll();
@@ -28,8 +26,6 @@ public interface UserDao {
     Boolean delete(UserInfo user);
 
     Boolean idExists(String userId);
-
-    Boolean UserNameExists(String username);
 
     Boolean subscribe(UserInfo user, BigInteger courseId);
 
