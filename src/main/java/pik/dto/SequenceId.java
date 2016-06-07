@@ -14,7 +14,7 @@ public class SequenceId {
     @Id
     private String id;
 
-    private BigInteger seq;
+    private long seq;
 
     public String getId() {
         return id;
@@ -24,11 +24,11 @@ public class SequenceId {
         this.id = id;
     }
 
-    public BigInteger getSeq() {
+    public long getSeq() {
         return seq;
     }
 
-    public void setSeq(BigInteger seq) {
+    public void setSeq(long seq) {
         this.seq = seq;
     }
 
