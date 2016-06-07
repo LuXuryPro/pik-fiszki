@@ -35,14 +35,14 @@ public class SequenceDaoImpl implements SequenceDao {
             throw new SequenceException("Unable to get sequence id for key : " + key);
         }
 
-        return seqId.getSeq();
+        return BigInteger.valueOf(seqId.getSeq());
 
     }
 
     public void insert(String key){
         SequenceId seq =new SequenceId();
         seq.setId(key);
-        seq.setSeq(BigInteger.ONE);
+        seq.setSeq(1);
         mongoOperation.insert(seq,"sequence");
 
     }
