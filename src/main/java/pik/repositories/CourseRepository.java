@@ -1,5 +1,6 @@
 package pik.repositories;
 
+import org.springframework.data.mongodb.repository.Query;
 import pik.dto.CourseInfo;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
@@ -15,4 +16,7 @@ public interface CourseRepository extends MongoRepository<CourseInfo,BigInteger>
     CourseInfo findByName(String name);
     List<CourseInfo> findByOwnerId(String ownerId);
     CourseInfo findByOwnerIdAndName(String ownerId, String name);
+
+    @Query("{ 'id' :  {$nin: ?0} }")
+    List<CourseInfo> findByIdNotIn(Iterable<BigInteger> ids);
 }
