@@ -49,7 +49,7 @@ public class QuestionsControllerTest {
         MockitoAnnotations.initMocks(this);
         questionsController = new QuestionsController(userDao, courseDao, questionDao);
 
-        userInfoMock = new UserInfo("123", "", "", "", "");
+        userInfoMock = new UserInfo("123", "", "", "");
         userInfoMock.setSubscribedCourses(Arrays.asList(BigInteger.ONE, BigInteger.TEN));
 
         questionInfoMock = new QuestionInfo();

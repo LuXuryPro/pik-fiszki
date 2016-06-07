@@ -31,9 +31,9 @@ public interface UserDao {
 
     Boolean UserNameExists(String username);
 
-    Boolean subscribe(UserInfo user, BigInteger course);
+    Boolean subscribe(UserInfo user, BigInteger courseId);
 
-    Boolean unsubscribe(UserInfo user, BigInteger course);
+    Boolean unsubscribe(UserInfo user, BigInteger courseId);
 
 
 }
