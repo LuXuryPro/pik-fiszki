@@ -151,12 +151,9 @@ public class CourseDaoImplTest {
 
         when(mockCourseRep.findAll(Matchers.anyListOf(BigInteger.class))).thenAnswer(invocation -> {
             List<CourseInfo> list = new ArrayList<CourseInfo>();
-            for(BigInteger id: (List<BigInteger>)invocation.getArguments()[0]){
-                CourseInfo info = new CourseInfo();
-                info.setId(id);
-                list.add(info);
-            }
-            list.remove(((List<BigInteger>)invocation.getArguments()[0]).get(0));
+            CourseInfo info = new CourseInfo();
+            info.setId(BigInteger.ONE);
+            list.add(info);
 
             return list;
         });
@@ -176,7 +173,7 @@ public class CourseDaoImplTest {
         List<CourseInfo> courses = dao.getSubscribedCourses(user);
 
         assertNotNull(courses);
-        assertEquals(9,courses.size());
+        assertEquals(1,courses.size());
     }
 
 }
