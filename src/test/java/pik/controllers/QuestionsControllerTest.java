@@ -25,6 +25,9 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+import static org.mockito.AdditionalAnswers.returnsFirstArg;
+import static org.mockito.Matchers.any;
+
 
 public class QuestionsControllerTest {
     @Mock
@@ -212,6 +215,29 @@ public class QuestionsControllerTest {
         Mockito.when(questionDao.getCourseQuestions(BigInteger.ZERO)).thenReturn(Arrays.asList(questionInfoMock));
 
         List<QuestionInfo> questionInfos = questionsController.getAllQuestions("123", BigInteger.ZERO);
+
+    }
+
+    @Test
+    public void addQuestion() throws Exception {
+        Mockito.when(courseDao.get(BigInteger.ONE)).thenReturn(courseInfoMock);
+        Mockito.when(questionDao.add(any(QuestionInfo.class))).then(returnsFirstArg());
+
+        Assert.assertTrue(questionsController.addQuestion("Co ma Ala?", "Ala ma kota", BigInteger.ONE, "123"));
+    }
+
+    @Test
+    public void editQuestion() throws Exception {
+
+    }
+
+    @Test
+    public void deleteQuestion() throws Exception {
+
+    }
+
+    @Test
+    public void markQuestion() throws Exception {
 
     }
 
