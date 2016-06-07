@@ -74,7 +74,7 @@ public class QuestionDaoImpl implements QuestionDao {
             mark.setQuestionId(questionInfo.getId());
             mark.setDate(new Date());
             mark.setEf(2.5f);
-            mark.setInterval(0);
+            mark.setInterval(0L);
             if(user.getMarks() == null)
                 user.setMarks(new ArrayList<MarkInfo>());
             user.getMarks().add(mark);
