@@ -16,7 +16,21 @@
 
 <div class="container">
     <h1>Moje kursy</h1>
-    <!-- <td th:text = "${courseController.getSubscribedCourses}"></td> -->
+
+   <!-- <div th:if="${greeting.list != null}">
+        <h1>Result</h1>
+        <ul>
+            <th:block th:object="${greeting}">
+                <li th:each="item : *{list}" th:text="${item}">Item description here...</li>
+            </th:block>
+        </ul>
+    </div> -->
+
+    <h1>Result</h1>
+    <ul>
+        <li th:each="item : ${courses}" th:text="${item.getName}">Item description here...</li>
+    </ul>
+
 </div><!-- /.container -->
 <footer th:replace="footer :: footer"></footer>
 </body>
