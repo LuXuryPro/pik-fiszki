@@ -1,5 +1,7 @@
 package pik.JSONDao;
 
+import java.math.BigInteger;
+
 public class DoCourseControlerClientAnswer {
     public DoCourseControlerClientAnswer(int mark) {
         this.mark = mark;
@@ -15,6 +17,30 @@ public class DoCourseControlerClientAnswer {
     }
 
     int mark;
-    int courseId;
-    int questionId;
+    BigInteger courseId;
+
+    public DoCourseControlerClientAnswer(BigInteger courseId, BigInteger questionId, int mark) {
+        this.courseId = courseId;
+        this.questionId = questionId;
+        this.mark = mark;
+    }
+
+    public BigInteger getQuestionId() {
+
+        return questionId;
+    }
+
+    public void setQuestionId(BigInteger questionId) {
+        this.questionId = questionId;
+    }
+
+    public BigInteger getCourseId() {
+        return courseId;
+    }
+
+    public void setCourseId(BigInteger courseId) {
+        this.courseId = courseId;
+    }
+
+    BigInteger questionId;
 }
