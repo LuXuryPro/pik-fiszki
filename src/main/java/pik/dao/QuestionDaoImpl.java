@@ -2,6 +2,7 @@ package pik.dao;
 
 import com.mongodb.WriteResult;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
@@ -9,8 +10,10 @@ import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
+import org.springframework.stereotype.Service;
 import pik.dto.*;
 import pik.exceptions.SequenceException;
+import pik.repositories.CourseRepository;
 import pik.repositories.QuestionRepository;
 import pik.repositories.UserRepository;
 
@@ -24,19 +27,26 @@ import pik.dto.UserInfo;
 /**
  * Created by Michał on 04.06.2016.
  */
+@Service
+@ComponentScan(basePackages = {"repositories"})
 public class QuestionDaoImpl implements QuestionDao {
 
-    @Autowired
-    QuestionRepository questionRepository;
+    private QuestionRepository questionRepository;
+
+    private UserRepository userRepository;
+
+    private SequenceDao seqDao;
+
+    private MongoOperations mongoOperations;
 
     @Autowired
-    UserRepository userRepository;
-
-    @Autowired
-    SequenceDao seqDao;
-
-    @Autowired
-    MongoOperations mongoOperations;
+    public QuestionDaoImpl(QuestionRepository questionRepository, UserRepository userRepository,
+                           SequenceDao sequenceDao, MongoOperations mongoOperations) {
+        this.questionRepository = questionRepository;
+        this.userRepository = userRepository;
+        this.seqDao = sequenceDao;
+        this.mongoOperations = mongoOperations;
+    }
 
     private static final String QUEST_SEQ_KEY = "question";
 
@@ -139,5 +149,26 @@ public class QuestionDaoImpl implements QuestionDao {
             list.add(item);
         }
         return list;
+    }
+
+    public Long countQuestions(BigInteger courseId) {
+        return questionRepository.countByCourseId(courseId);
+    }
+
+    public int countActiveQuestions(UserInfo user, BigInteger courseId) {
+        Date today = new Date();
+
+        List<BigInteger> ids = new ArrayList<BigInteger>();
+
+        for (MarkInfo mark: user.getMarks()){
+
+            if(mark.getCourseId().equals(courseId) && mark.getDate().before(today))
+                ids.add(mark.getQuestionId());
+        }
+        Iterable<QuestionInfo> questIter = questionRepository.findAll(ids);
+
+        List<QuestionInfo> quests = makeCollection(questIter);
+
+        return quests.size();
     }
 }
