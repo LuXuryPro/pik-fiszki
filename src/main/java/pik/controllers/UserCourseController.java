@@ -19,28 +19,24 @@ import java.util.List;
 @Controller
 public class UserCourseController
 {
-    private UserDao userDao;
-    private CourseDao courseDao;
-    private CourseRepository courseRepository;
+    private CourseController courseController;
 
 
     @Autowired
-    public UserCourseController(UserDao userDao, CourseDao courseDao)
+    public UserCourseController(CourseController courseController)
     {
-        this.userDao = userDao;
-        this.courseDao = courseDao;
-        this.courseRepository = courseRepository;
+        this.courseController = courseController;
     }
 
 
     @RequestMapping("/show-course")
     public String showCourses(Principal principal, Model model)
     {
-        CourseController courseController = new CourseController(userDao, courseDao, courseRepository);
+       /* CourseController courseController = new CourseController(userDao, courseDao, courseRepository);
         FacebookHelper f = new FacebookHelper(principal);
         UserInfo user = this.userDao.getById(f.getId());
         List<CourseInfo> courses = courseController.getSubscribedCourses(user.getUserId());
-        model.addAttribute("courses", courses);
+        model.addAttribute("courses", courses); */
         return "courses";
     }
 
@@ -49,7 +45,6 @@ public class UserCourseController
     @RequestMapping("/add-course")
     public String addCourse(Model model)
     {
-        CourseController courseController = new CourseController(userDao, courseDao, courseRepository);
         model.addAttribute("courseController", courseController);
         return "addCourse";
     }
@@ -58,7 +53,6 @@ public class UserCourseController
     @RequestMapping("/remove-course")
     public String removeCourse(Model model)
     {
-        CourseController courseController = new CourseController(userDao, courseDao, courseRepository);
         model.addAttribute("courseController", courseController);
         return "removeCourse";
     }
@@ -67,11 +61,7 @@ public class UserCourseController
     public String doAddCourse(Principal principal, @RequestParam("name") String name, @RequestParam("description") String description)
     {
         FacebookHelper f = new FacebookHelper(principal);
-        UserInfo user = this.userDao.getById(f.getId());
-        CourseController courseController = new CourseController(userDao, courseDao, courseRepository);
-        //courseController.addCourse(name, description, user.getUserId());
+        //courseController.addCourse(name, description, f.getId());
         return "courses";
     }
-
-
 }
