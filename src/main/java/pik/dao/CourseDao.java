@@ -25,5 +25,4 @@ public interface CourseDao {
     Boolean exists(BigInteger id);
 
     Boolean exists(String username, String name);
-
 }

@@ -36,7 +36,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.security.Principal;
 
-@EnableOAuth2Sso
 @Controller
 public class IndexController {
     private UserRepository userRepository;
