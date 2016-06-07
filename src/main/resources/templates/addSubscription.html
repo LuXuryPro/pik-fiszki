@@ -17,6 +17,12 @@
 <div class="container">
     <h1>Dodaj subskrypcję</h1>
 
+    <form action="/doAddSubstriction" method="POST">
+        <label>Id kursu:</label>
+        <input  type="number" name="id"></input>
+        <input type="submit" value="Zasubskrybuj"></input>
+    </form>
+
 </div><!-- /.container -->
 <footer th:replace="footer :: footer"></footer>
 </body>
