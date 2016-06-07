@@ -12,7 +12,6 @@ public interface UserRepository extends MongoRepository <UserInfo,String> {
     List<UserInfo> findByLastName (String lastName);
     UserInfo findByEmail(String eMail);
     UserInfo findByUserId(String id);
-    UserInfo findByUserName(String id);
 
     /*@Query(value = "{ 'subscribedcourses' : {$all : [?0] }}")
     List<UserInfo> findBySubsbribedCourse(BigInteger[] course);*/
