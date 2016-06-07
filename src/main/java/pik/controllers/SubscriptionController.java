@@ -36,7 +36,7 @@ public class SubscriptionController
     }
 
     @RequestMapping("/remove-sub")
-    public String removeCourse()
+    public String removeSubscription()
     {
         return "removeSubscription";
     }
@@ -47,6 +47,14 @@ public class SubscriptionController
     {
         FacebookHelper f = new FacebookHelper(principal);
         userController.addSubscription(id, f.getId());
+        return "courses";
+    }
+
+    @RequestMapping(value = "/deleteSubscription")
+    public String deleteSubscription(Principal principal, @RequestParam("id") BigInteger id)
+    {
+        FacebookHelper f = new FacebookHelper(principal);
+        userController.removeSubscription(id, f.getId());
         return "courses";
     }
 
