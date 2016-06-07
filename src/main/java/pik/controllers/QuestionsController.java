@@ -9,6 +9,7 @@ import pik.dao.CourseDao;
 import pik.dao.QuestionDao;
 import pik.dao.UserDao;
 import pik.dto.CourseInfo;
+import pik.dto.MarkInfo;
 import pik.dto.QuestionInfo;
 import pik.dto.UserInfo;
 import pik.exceptions.CourseAccessException;
@@ -16,7 +17,9 @@ import pik.exceptions.CourseAccessException;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
+import java.lang.Math.*;
 
 @Controller
 public class QuestionsController {
@@ -73,7 +76,6 @@ public class QuestionsController {
         if (!courseInfo.getOwnerId().equals(userId))
             throw new CourseAccessException("You are not owner of this course", courseId, userId);
 
-
         QuestionInfo questionInfo = new QuestionInfo();
         questionInfo.setCourseId(courseId);
         questionInfo.setAnswer(answer);
@@ -82,4 +84,40 @@ public class QuestionsController {
         return questionDao.add(questionInfo) != null;
     }
 
+    public Boolean editQuestion(QuestionInfo questionInfo, String userId)
+            throws CourseAccessException {
+        BigInteger courseId = questionInfo.getCourseId();
+        CourseInfo courseInfo = courseDao.get(courseId);
+        if (!courseInfo.getOwnerId().equals(userId))
+            throw new CourseAccessException("You are not owner of this course", courseId, userId);
+
+        return questionDao.update(questionInfo) != null;
+    }
+
+    public Boolean deleteQuesion(QuestionInfo questionInfo, String userId) throws CourseAccessException {
+        BigInteger courseId = questionInfo.getCourseId();
+        CourseInfo courseInfo = courseDao.get(courseId);
+        if (!courseInfo.getOwnerId().equals(userId))
+            throw new CourseAccessException("You are not owner of this course", courseId, userId);
+
+        return questionDao.remove(questionInfo);
+    }
+
+    public Boolean markQuestion() {
+        return false;
+    }
+
+    private MarkInfo markAlgorithm(MarkInfo markInfoOld, int score) {
+        markInfoOld.setCounter(markInfoOld.getCounter() + 1);
+        int counter = markInfoOld.getCounter();
+        float newEf = Math.max(1.3f, markInfoOld.getEf() - 0.8 + 0.28*score - 0.02*score*score;
+        markInfoOld.setEf(newEf);
+        int add_to_date = 1000 * 60 * 60 * 24;
+        if (counter == 2)
+            add_to_date *= 6;
+        else if (counter > 2)
+            add_to_date += markInfoOld.getInterval();
+        Date date = new Date(markInfoOld.getDate().getTime() + add_to_date);
+        return markInfoOld;
+    }
 }

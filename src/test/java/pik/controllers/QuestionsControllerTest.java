@@ -226,4 +226,19 @@ public class QuestionsControllerTest {
         Assert.assertTrue(questionsController.addQuestion("Co ma Ala?", "Ala ma kota", BigInteger.ONE, "123"));
     }
 
+    @Test
+    public void editQuestion() throws Exception {
+
+    }
+
+    @Test
+    public void deleteQuestion() throws Exception {
+
+    }
+
+    @Test
+    public void markQuestion() throws Exception {
+
+    }
+
 }
