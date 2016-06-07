@@ -22,7 +22,7 @@ spring:
       enabled: true
   data:
     mongodb:
-      uri: mongodb://mongodb:27017
+      uri: mongodb://192.168.99.100:32768
       database: test
 
 server:

@@ -26,7 +26,7 @@ public class MarkInfo {
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     private Date date;
 
-    private Integer interval;
+    private Long interval;
 
     public BigInteger getQuestionId() {
         return questionId;
@@ -68,11 +68,11 @@ public class MarkInfo {
         this.date = date;
     }
 
-    public Integer getInterval() {
+    public Long getInterval() {
         return interval;
     }
 
-    public void setInterval(Integer interval) {
+    public void setInterval(Long interval) {
         this.interval = interval;
     }
 }

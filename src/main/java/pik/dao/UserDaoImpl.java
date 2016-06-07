@@ -137,7 +137,7 @@ public class UserDaoImpl implements UserDao{
 				mark.setEf(2.5f);
 				mark.setCourseId(courseId);
 				mark.setDate(new Date());
-				mark.setInterval(0);
+				mark.setInterval(0L);
 				mark.setCounter(0);
 				marks.add(mark);
 			}
