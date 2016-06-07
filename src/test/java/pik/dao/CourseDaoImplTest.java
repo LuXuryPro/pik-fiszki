@@ -41,8 +41,6 @@ public class CourseDaoImplTest {
     @Mock
     private QuestionRepository mockQuestionRep;
 
-    @Mock
-    private MarkRepository mockMarkRep;
 
     @Mock
     private UserRepository mockUserRep;
@@ -71,8 +69,7 @@ public class CourseDaoImplTest {
         when(mockSeqDao.getNext(anyString())).thenReturn(BigInteger.ONE);
         when(mockCourseRep.save(any(CourseInfo.class))).then(returnsFirstArg());
 
-        CourseDaoImpl dao = new CourseDaoImpl(mockSeqDao,mockCourseRep,mockQuestionRep,
-                mockMarkRep,mockUserRep,mockMongoOp);
+        CourseDaoImpl dao = new CourseDaoImpl(mockSeqDao,mockCourseRep,mockQuestionRep,mockUserRep,mockMongoOp);
 
         CourseInfo course = new CourseInfo();
         course.setName("test");
@@ -90,8 +87,7 @@ public class CourseDaoImplTest {
     public void createWithNoSeq() throws Exception {
         when(mockSeqDao.getNext(anyString())).thenThrow(SequenceException.class).thenReturn(BigInteger.ONE);
 
-        CourseDaoImpl dao = new CourseDaoImpl(mockSeqDao,mockCourseRep,mockQuestionRep,
-                mockMarkRep,mockUserRep,mockMongoOp);
+        CourseDaoImpl dao = new CourseDaoImpl(mockSeqDao,mockCourseRep,mockQuestionRep,mockUserRep,mockMongoOp);
 
         CourseInfo course = new CourseInfo();
         course.setName("test");
@@ -110,8 +106,7 @@ public class CourseDaoImplTest {
     @Test
     public void update() throws Exception {
 
-        CourseDaoImpl dao = new CourseDaoImpl(mockSeqDao,mockCourseRep,mockQuestionRep,
-                mockMarkRep,mockUserRep,mockMongoOp);
+        CourseDaoImpl dao = new CourseDaoImpl(mockSeqDao,mockCourseRep,mockQuestionRep,mockUserRep,mockMongoOp);
 
         CourseInfo course = new CourseInfo();
         course.setId(BigInteger.ONE);
@@ -139,8 +134,8 @@ public class CourseDaoImplTest {
             return list;
         });
 
-        CourseDaoImpl dao = new CourseDaoImpl(mockSeqDao,mockCourseRep,mockQuestionRep,
-                mockMarkRep,mockUserRep,mockMongoOp);
+        CourseDaoImpl dao = new CourseDaoImpl(mockSeqDao,mockCourseRep,mockQuestionRep,mockUserRep,mockMongoOp);
+
         CourseInfo course = new CourseInfo();
         course.setId(BigInteger.ONE);
         course.setName("test");
@@ -176,8 +171,7 @@ public class CourseDaoImplTest {
 
         user.setSubscribedCourses(list);
 
-        CourseDaoImpl dao = new CourseDaoImpl(mockSeqDao,mockCourseRep,mockQuestionRep,
-                mockMarkRep,mockUserRep,mockMongoOp);
+        CourseDaoImpl dao = new CourseDaoImpl(mockSeqDao,mockCourseRep,mockQuestionRep,mockUserRep,mockMongoOp);
 
         List<CourseInfo> courses = dao.getSubscribedCourses(user);
 
