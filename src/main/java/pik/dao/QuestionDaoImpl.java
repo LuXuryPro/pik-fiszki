@@ -31,13 +31,13 @@ import pik.dto.UserInfo;
 @ComponentScan(basePackages = {"repositories"})
 public class QuestionDaoImpl implements QuestionDao {
 
-    QuestionRepository questionRepository;
+    private QuestionRepository questionRepository;
 
-    UserRepository userRepository;
+    private UserRepository userRepository;
 
-    SequenceDao seqDao;
+    private SequenceDao seqDao;
 
-    MongoOperations mongoOperations;
+    private MongoOperations mongoOperations;
 
     @Autowired
     public QuestionDaoImpl(QuestionRepository questionRepository, UserRepository userRepository,
