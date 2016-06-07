@@ -25,9 +25,7 @@ import java.util.List;
 import static org.mockito.Mockito.when;
 import static org.junit.Assert.*;
 
-/**
- * Created by Michał on 06.06.2016.
- */
+
 @RunWith(PowerMockRunner.class)
 public class CourseDaoImplTest {
 
