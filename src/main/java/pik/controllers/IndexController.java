@@ -78,5 +78,11 @@ public class IndexController {
         }
         return "redirect:/";
     }
+
+    @RequestMapping("/about")
+    public String about()
+    {
+        return "about";
+    }
 }
 
