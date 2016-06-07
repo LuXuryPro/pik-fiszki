@@ -1,5 +1,6 @@
 package pik.controllers;
 
+import org.codehaus.jackson.annotate.JsonTypeInfo;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -228,7 +229,10 @@ public class QuestionsControllerTest {
 
     @Test
     public void editQuestion() throws Exception {
+        Mockito.when(courseDao.get(BigInteger.ONE)).thenReturn(courseInfoMock);
+        Mockito.when(questionDao.update(any(QuestionInfo.class))).then(returnsFirstArg());
 
+        Assert.assertTrue(questionsController.editQuestion(questionInfoMock, "123"));
     }
 
     @Test
