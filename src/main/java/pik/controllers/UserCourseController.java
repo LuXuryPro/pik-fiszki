@@ -10,6 +10,7 @@ import pik.dao.CourseDao;
 import pik.dao.UserDao;
 import pik.dto.CourseInfo;
 import pik.dto.UserInfo;
+import pik.repositories.CourseRepository;
 
 import java.security.Principal;
 import java.util.ArrayList;
@@ -20,6 +21,7 @@ public class UserCourseController
 {
     private UserDao userDao;
     private CourseDao courseDao;
+    private CourseRepository courseRepository;
 
 
     @Autowired
@@ -27,13 +29,14 @@ public class UserCourseController
     {
         this.userDao = userDao;
         this.courseDao = courseDao;
+        this.courseRepository = courseRepository;
     }
 
 
     @RequestMapping("/show-course")
     public String showCourses(Principal principal, Model model)
     {
-        CourseController courseController = new CourseController(userDao, courseDao);
+        CourseController courseController = new CourseController(userDao, courseDao, courseRepository);
         FacebookHelper f = new FacebookHelper(principal);
         UserInfo user = this.userDao.getById(f.getId());
         List<CourseInfo> courses = courseController.getSubscribedCourses(user.getUserId());
@@ -46,7 +49,7 @@ public class UserCourseController
     @RequestMapping("/add-course")
     public String addCourse(Model model)
     {
-        CourseController courseController = new CourseController(userDao, courseDao);
+        CourseController courseController = new CourseController(userDao, courseDao, courseRepository);
         model.addAttribute("courseController", courseController);
         return "addCourse";
     }
@@ -55,7 +58,7 @@ public class UserCourseController
     @RequestMapping("/remove-course")
     public String removeCourse(Model model)
     {
-        CourseController courseController = new CourseController(userDao, courseDao);
+        CourseController courseController = new CourseController(userDao, courseDao, courseRepository);
         model.addAttribute("courseController", courseController);
         return "removeCourse";
     }
@@ -65,8 +68,8 @@ public class UserCourseController
     {
         FacebookHelper f = new FacebookHelper(principal);
         UserInfo user = this.userDao.getById(f.getId());
-        CourseController courseController = new CourseController(userDao, courseDao);
-        courseController.addCourse(name, description, user.getUserId());
+        CourseController courseController = new CourseController(userDao, courseDao, courseRepository);
+        //courseController.addCourse(name, description, user.getUserId());
         return "courses";
     }
 
