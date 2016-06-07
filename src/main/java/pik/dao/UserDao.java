@@ -15,8 +15,6 @@ public interface UserDao {
 
     UserInfo getById(String Id);
 
-    UserInfo read(UserInfo user);
-
     List<UserInfo> readAll();
 
     Page<UserInfo> readAll(Pageable pageable);
