@@ -29,7 +29,6 @@ import static org.junit.Assert.*;
  * Created by Michał on 06.06.2016.
  */
 @RunWith(PowerMockRunner.class)
-//@PrepareForTest({FacebookTemplate.class, IndexController.class})
 public class CourseDaoImplTest {
 
     @Mock
@@ -40,7 +39,6 @@ public class CourseDaoImplTest {
 
     @Mock
     private QuestionRepository mockQuestionRep;
-
 
     @Mock
     private UserRepository mockUserRep;
@@ -159,7 +157,7 @@ public class CourseDaoImplTest {
         });
 
 
-        UserInfo user = new UserInfo("id","fname","lname","mail","user");
+        UserInfo user = new UserInfo("id","fname","lname","mail");
 
         List<BigInteger> list = new ArrayList<BigInteger>();
         for(BigInteger i = BigInteger.ONE; i.compareTo(BigInteger.TEN) == -1; i = i.add(BigInteger.ONE)){

@@ -67,6 +67,7 @@ public class QuestionDaoImpl implements QuestionDao {
         List<UserInfo> users = mongoOperations.find(query, UserInfo.class);
 
         for(UserInfo user: users){
+
             MarkInfo mark = new MarkInfo();
             mark.setCounter(0);
             mark.setCourseId(courseId);
@@ -74,7 +75,8 @@ public class QuestionDaoImpl implements QuestionDao {
             mark.setDate(new Date());
             mark.setEf(2.5f);
             mark.setInterval(0);
-
+            if(user.getMarks() == null)
+                user.setMarks(new ArrayList<MarkInfo>());
             user.getMarks().add(mark);
         }
 

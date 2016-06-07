@@ -24,8 +24,6 @@ public class UserInfo {
 
     private String lastName;
 
-    @Indexed(unique = true)
-    private String userName;
 
     private  List<BigInteger> subscribedcourses = new ArrayList<>();
 
@@ -35,12 +33,11 @@ public class UserInfo {
 
     public UserInfo() {}
 
-    public UserInfo(String id,String firstName, String lastName, String email, String userName) {
+    public UserInfo(String id,String firstName, String lastName, String email) {
         this.userId = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.userName = userName;
     }
 
 
@@ -74,14 +71,6 @@ public class UserInfo {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
     }
 
     public List<BigInteger> getSubscribedCourses() {
