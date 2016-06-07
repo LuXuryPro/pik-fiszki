@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="pl" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8"></meta>
     <title>Fiszki - kursy użytkownika</title>
@@ -16,7 +16,7 @@
 
 <div class="container">
     <h1>Moje kursy</h1>
-    <h2><h2>
+    <!-- <td th:text = "${courseController.getSubscribedCourses}"></td> -->
 </div><!-- /.container -->
 <footer th:replace="footer :: footer"></footer>
 </body>
