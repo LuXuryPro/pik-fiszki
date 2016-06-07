@@ -32,23 +32,26 @@ public class CourseDaoImpl implements CourseDao{
 
     private static final String COURSE_SEQ_KEY = "course";
 
-    @Autowired
     private SequenceDao sequenceDao;
 
-    @Autowired
     private CourseRepository courseRepository;
 
-    @Autowired
     private QuestionRepository questionRepository;
 
-    @Autowired
-    private MarkRepository markRepository;
-
-    @Autowired
     private UserRepository userRepository;
 
-    @Autowired
     private MongoOperations mongoOperation;
+
+    @Autowired
+    public CourseDaoImpl(SequenceDao sequenceDao, CourseRepository courseRepository,
+                         QuestionRepository questionRepository,
+                         UserRepository userRepository, MongoOperations mongoOperation) {
+        this.sequenceDao = sequenceDao;
+        this.courseRepository = courseRepository;
+        this.questionRepository = questionRepository;
+        this.userRepository = userRepository;
+        this.mongoOperation = mongoOperation;
+    }
 
 
     public CourseInfo create(CourseInfo course){
