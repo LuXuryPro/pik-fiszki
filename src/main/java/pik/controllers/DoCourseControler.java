@@ -8,10 +8,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import pik.JSONDao.DoCourseControlerClientAnswer;
 import pik.JSONDao.DoCourseControlerFishe;
 import pik.JSONDao.DoCourseControllerClientFicheRequest;
+import pik.Util.FacebookHelper;
 import pik.dto.QuestionInfo;
 import pik.exceptions.CourseAccessException;
 
 import java.math.BigInteger;
+import java.security.Principal;
 
 @Controller
 public class DoCourseControler {
@@ -23,9 +25,17 @@ public class DoCourseControler {
     }
 
     @RequestMapping("answer")
-    public void processAnswer(@RequestBody DoCourseControlerClientAnswer doCourseControlerClientAnswer) {
-        return new DoCourseControlerClientAnswer();
+    public void processAnswer(@RequestBody DoCourseControlerClientAnswer doCourseControlerClientAnswer, Principal principal) {
+        FacebookHelper facebookHelper = new FacebookHelper(principal);
+        int mark = doCourseControlerClientAnswer.getMark();
+        BigInteger questionId = doCourseControlerClientAnswer.getQuestionId();
+        BigInteger courseId = doCourseControlerClientAnswer.getCourseId();
+        QuestionInfo questionInfo = new QuestionInfo();
+        questionInfo.setId(questionId);
+        questionInfo.setCourseId(courseId);
+        this.questionsController.markQuestion(questionInfo, facebookHelper.getId(), mark);
     }
+
     @RequestMapping("get-fiche")
     @ResponseBody
     public DoCourseControlerFishe processRequest(@RequestBody DoCourseControllerClientFicheRequest doCourseControllerClientFicheRequest) {
