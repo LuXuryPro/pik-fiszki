@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import pik.JSONDao.EditProfileJsonRequest;
 import pik.JSONDao.EditProfileJsonResponse;
 import pik.Util.FacebookHelper;
+import pik.dao.UserDao;
 import pik.dto.UserInfo;
 import pik.repositories.UserRepository;
 
@@ -18,17 +19,17 @@ import java.security.Principal;
 
 @Controller
 public class ProfileController {
-    private UserRepository userRepository;
+    private UserDao userDao;
 
     @Autowired
-    ProfileController(UserRepository userRepository) {
-        this.userRepository = userRepository;
+    ProfileController(UserDao userDao) {
+        this.userDao = userDao;
     }
 
     @RequestMapping("/me")
     public String showProfile(Principal principal, Model model) {
         FacebookHelper f = new FacebookHelper(principal);
-        UserInfo user = this.userRepository.findByuserId(f.getId());
+        UserInfo user = this.userDao.getById(f.getId());
         model.addAttribute("user", user);
         return "me";
     }
@@ -36,7 +37,7 @@ public class ProfileController {
     @RequestMapping("/preferences")
     public String editProfile(Principal principal, Model model) {
         FacebookHelper f = new FacebookHelper(principal);
-        UserInfo user = this.userRepository.findByuserId(f.getId());
+        UserInfo user = this.userDao.getById(f.getId());
         model.addAttribute("user", user);
         return "preferences";
     }
@@ -47,11 +48,11 @@ public class ProfileController {
         String surname = editProfileJsonRequest.getSecondName();
         String email = editProfileJsonRequest.getEmail();
         String id = editProfileJsonRequest.getId();
-        UserInfo userInfo = this.userRepository.findByuserId(id);
+        UserInfo userInfo = this.userDao.getById(id);
         userInfo.setFirstName(name);
         userInfo.setLastName(surname);
         userInfo.setEmail(email);
-        this.userRepository.save(userInfo);
+        this.userDao.update(userInfo);
         return new EditProfileJsonResponse("OK");
     }
 }
