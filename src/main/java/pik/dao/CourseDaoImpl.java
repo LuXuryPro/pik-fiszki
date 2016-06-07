@@ -82,24 +82,13 @@ public class CourseDaoImpl implements CourseDao{
             return false;
         }
         BigInteger courseId = existingCourse.getId();
-        //List<MarkInfo> marks = markRepository.findByCourseId(courseId);
         List<QuestionInfo> quest = questionRepository.findByCourseId(courseId);
-
-        List<BigInteger> ids = Arrays.asList(courseId);
-
-        //Query removeQuery = Query.query(Criteria.where("marks.name").in(ids));
-
-        /*mongoOperation.upsert(
-                new Query(),
-                new Update().pull("marks.courseId", courseId),
-                UserInfo.class);*/
 
         mongoOperation.updateMulti(new Query(),
             new Update().pull("marks", Query.query(Criteria.where("courseId").is(courseId))), "user");
 
 
         questionRepository.delete(quest);
-        //markRepository.delete(marks);
         courseRepository.delete(existingCourse);
         return true;
     }
