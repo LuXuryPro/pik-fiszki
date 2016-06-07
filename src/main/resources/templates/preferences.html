@@ -27,28 +27,33 @@
             <button id="nameButton" type="button" class="btn btn-lg btn-info">Edytuj</button>
         </td>
     </tr>
-    <tr id="secondNameRow">
+    <tr id="lastNameRow">
         <td>Nazwisko</td>
         <td th:text="${user.lastName}"></td>
         <td>
-            <button type="button" class="btn btn-lg btn-info">Edytuj</button>
+            <button id="lastNameButton" type="button" class="btn btn-lg btn-info">Edytuj</button>
         </td>
     </tr>
-    <tr id="emainRow">
+    <tr id="emailRow">
         <td>Email</td>
         <td th:text="${user.email}"></td>
         <td>
-            <button type="button" class="btn btn-lg btn-info">Edytuj</button>
+            <button id="emailButton" type="button" class="btn btn-lg btn-info">Edytuj</button>
         </td>
     </tr>
     </tbody>
 </table>
 </form>
 <button id="saveUser" type="button" class="btn btn-lg btn-success">Zapisz</button>
-<button type="button" class="btn btn-lg btn-danger">Anuluj</button>
+<button id="abort" type="button" class="btn btn-lg btn-danger">Anuluj</button>
 <br></br>
 <div id="success"></div>
-<div id="userID" style="display: none;" th:text="${user.userId}"></div>
+<div id="userBackup" style="display: none;">
+    <div th:text="${user.userId}"></div>
+    <div th:text="${user.firstName}"></div>
+    <div th:text="${user.lastName}"></div>
+    <div th:text="${user.email}"></div>
+</div>
 <footer th:replace="footer :: footer"></footer>
 
 </body>
