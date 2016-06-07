@@ -6,6 +6,8 @@ import org.springframework.stereotype.Controller;
 import pik.dao.UserDao;
 import pik.dto.UserInfo;
 
+import java.math.BigInteger;
+
 /**
  * Created by adrian on 07.06.16.
  */
@@ -34,5 +36,14 @@ public class UserController {
     public Boolean editUser(UserInfo userInfo) {
         // Tu mozna dodac walidacje
         return userDao.update(userInfo) != null;
+    }
+    public Boolean addSubscription(BigInteger courseId, String userId) {
+        UserInfo userInfo = userDao.getById(userId);
+        return userDao.subscribe(userInfo, courseId);
+    }
+
+    public Boolean removeSubscription(BigInteger courseId, String userId) {
+        UserInfo userInfo = userDao.getById(userId);
+        return userDao.unsubscribe(userInfo, courseId);
     }
 }
