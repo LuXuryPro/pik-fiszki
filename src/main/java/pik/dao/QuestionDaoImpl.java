@@ -3,6 +3,7 @@ package pik.dao;
 import com.mongodb.WriteResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.core.env.SystemEnvironmentPropertySource;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
@@ -127,22 +128,20 @@ public class QuestionDaoImpl implements QuestionDao {
 
         for (MarkInfo mark: marks){
 
-            if(mark.getCourseId() ==courseId && mark.getDate().before(today))
+            if(mark.getCourseId().equals(courseId) && mark.getDate().before(today))
                 ids.add(mark.getQuestionId());
         }
+
         Iterable<QuestionInfo> questIter = questionRepository.findAll(ids);
 
         List<QuestionInfo> quests = makeCollection(questIter);
-
         int pageNo = page.getPageNumber();
         int pageSize = page.getPageSize();
-
         int startIdx = pageNo * pageSize;
         int endIdx = startIdx + pageSize;
 
         List<QuestionInfo> sub = quests.subList(startIdx,endIdx);
-
-        return new PageImpl<QuestionInfo>(sub);
+        return new PageImpl<>(sub);
     }
 
     private static List<QuestionInfo> makeCollection(Iterable<QuestionInfo> iter) {

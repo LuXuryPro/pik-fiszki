@@ -8,7 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import pik.dao.CourseDao;
 import pik.dao.UserDao;
 import pik.dto.CourseInfo;
+import pik.exceptions.CourseAccessException;
+import pik.repositories.CourseRepository;
 
+import java.math.BigInteger;
 import java.util.List;
 
 /**
@@ -17,12 +20,11 @@ import java.util.List;
 
 @Component
 public class CourseController {
-    // dodaj, edytowac, usunac, pobrac rozne wersje
     private UserDao userDao;
     private CourseDao courseDao;
 
     @Autowired
-    public CourseController(UserDao userDao, CourseDao courseDao) {
+    public CourseController(UserDao userDao, CourseDao courseDao, CourseRepository courseRepository) {
         this.userDao = userDao;
         this.courseDao = courseDao;
     }
@@ -35,10 +37,22 @@ public class CourseController {
         return courseDao.create(courseInfo) != null;
     }
 
+    public Boolean editCourse(CourseInfo courseInfo, String userId) throws CourseAccessException{
+        if (courseDao.exists(courseInfo.getId()))
+            return false;
+        if (!courseInfo.getOwnerId().equals(userId))
+            throw new CourseAccessException("Access denided", courseInfo.getId(), userId);
+        return courseDao.update(courseInfo) != null;
+    }
+
+    public Boolean deleteCourse(BigInteger courseId, String userId) throws CourseAccessException {
+        CourseInfo courseInfo = courseDao.get(courseId);
+        if (!courseInfo.getOwnerId().equals(userId))
+            throw new CourseAccessException("Access denided", courseId, userId);
+        return courseDao.delete(courseInfo) != null;
+    }
 
     public List<CourseInfo> getSubscribedCourses(String userId) {
         return courseDao.getSubscribedCourses(userDao.getById(userId));
     }
-
-    //public List<CourseInfo> getAllCourses() {}
 }

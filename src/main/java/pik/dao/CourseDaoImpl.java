@@ -109,7 +109,6 @@ public class CourseDaoImpl implements CourseDao{
         List<BigInteger> courseIDs = user.getSubscribedCourses();
 
         Iterable<CourseInfo> courseIt = courseRepository.findAll(courseIDs);
-
         List<CourseInfo> courses = new ArrayList<CourseInfo>();
         for (CourseInfo item : courseIt) {
             courses.add(item);
@@ -160,5 +159,18 @@ public class CourseDaoImpl implements CourseDao{
             list.add(item);
         }
         return list;
+    }
+
+    public List<CourseInfo> getAll(){
+        return courseRepository.findAll();
+    }
+
+    public List<CourseInfo> getUnsubscribed(UserInfo user){
+        List<BigInteger> ids = user.getSubscribedCourses();
+
+        if(ids == null)
+            return null;
+
+        return courseRepository.findByIdNotIn(ids);
     }
 }
