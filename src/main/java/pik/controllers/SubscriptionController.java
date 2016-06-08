@@ -19,7 +19,7 @@ public class SubscriptionController
     private CourseController courseController;
 
     @Autowired
-    SubscriptionController(UserController userController)
+    SubscriptionController(UserController userController, CourseController courseController)
     {
         this.userController = userController;
         this.courseController = courseController;
