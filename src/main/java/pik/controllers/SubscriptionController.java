@@ -16,11 +16,13 @@ import java.util.List;
 public class SubscriptionController
 {
     private UserController userController;
+    private CourseController courseController;
 
     @Autowired
     SubscriptionController(UserController userController)
     {
         this.userController = userController;
+        this.courseController = courseController;
     }
 
     @RequestMapping("/add-sub")
@@ -30,8 +32,11 @@ public class SubscriptionController
     }
 
     @RequestMapping("/find-all-courses")
-    public String showAllCourses()
+    public String showAllCourses(Model model, Principal principal)
     {
+        FacebookHelper f = new FacebookHelper(principal);
+        List<CourseInfo> allCourses = courseController.getUnsubscribedCourses(f.getId());
+        model.addAttribute("allCourses", allCourses);
         return "allCourses";
     }
 

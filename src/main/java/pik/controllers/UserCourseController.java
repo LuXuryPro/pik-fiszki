@@ -37,9 +37,7 @@ public class UserCourseController
         FacebookHelper f = new FacebookHelper(principal);
         List<CourseInfo> courseList = courseController.getSubscribedCourses(f.getId());
         model.addAttribute("courseList", courseList);
-=======
-        model.addAttribute("courseList", courseList);
->>>>>>> master
+
         return "courses";
     }
 
