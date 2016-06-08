@@ -77,7 +77,7 @@ public class CourseController {
         CourseInfo courseInfo = courseDao.get(courseId);
         if (!courseInfo.getOwnerId().equals(userId))
             throw new CourseAccessException("Access denided", courseId, userId);
-        return courseDao.delete(courseInfo) != null;
+        return courseDao.delete(courseInfo);
     }
 
     /**
