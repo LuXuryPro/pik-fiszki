@@ -7,11 +7,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.math.BigInteger;
 
-
-/**
- * Created by Michał on 01.06.2016
- */
-
 @Document(collection="question")
 @Data
 public class QuestionInfo {
