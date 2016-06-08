@@ -22,12 +22,14 @@ import java.util.List;
 public class UserCourseController
 {
     private CourseController courseController;
+    private QuestionsController questionsController;
 
 
     @Autowired
-    public UserCourseController(CourseController courseController)
+    public UserCourseController(CourseController courseController, QuestionsController questionsController)
     {
         this.courseController = courseController;
+        this.questionsController = questionsController;
     }
 
 
@@ -57,11 +59,10 @@ public class UserCourseController
         return "removeCourse";
     }
 
-    @RequestMapping("/course-info")
-    public String courseInfo(Model model)
+    @RequestMapping("/go-to-curse-page")
+    public String courseInfo()
     {
-        model.addAttribute("courseController", courseController);
-        return "removeCourse";
+        return "coursePage";
     }
 
     @RequestMapping(value = "/saveAddCourse")
@@ -80,6 +81,18 @@ public class UserCourseController
             courseController.deleteCourse(id, f.getId());
         }catch (Exception e){}
 
+        return "courses";
+    }
+
+
+    @RequestMapping(value = "/add-question")
+    public String doQuestion(Principal principal, @RequestParam("id") BigInteger id ,
+                             @RequestParam("question") String question, @RequestParam("answer") String answer)
+    {
+        FacebookHelper f = new FacebookHelper(principal);
+        try {
+            questionsController.addQuestion(answer, question, id, f.getId());
+        }catch(Exception e){}
         return "courses";
     }
 }
