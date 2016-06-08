@@ -63,6 +63,18 @@ public class CourseDaoImpl implements CourseDao{
             course.setId(sequenceDao.getNext(COURSE_SEQ_KEY));
         }
 
+        UserInfo user = userRepository.findByUserId(course.getOwnerId());
+
+        if(user == null)
+            return null;
+
+        List<BigInteger> courses = user.getSubscribedCourses();
+        courses.add(course.getId());
+
+        user.setSubscribedCourses(courses);
+
+        userRepository.save(user);
+
         return courseRepository.save(course);
     }
 

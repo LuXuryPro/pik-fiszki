@@ -8,6 +8,7 @@ import org.mockito.Matchers;
 import org.powermock.modules.junit4.PowerMockRunner;
 import org.springframework.data.mongodb.core.MongoOperations;
 import pik.dto.CourseInfo;
+import pik.dto.MarkInfo;
 import pik.dto.QuestionInfo;
 import pik.dto.UserInfo;
 import pik.exceptions.SequenceException;
@@ -56,6 +57,12 @@ public class CourseDaoImplTest {
             info.setDescription("course");
             info.setName("name");
             return info;
+        });
+
+        when(mockUserRep.findByUserId(anyString())).thenAnswer(invocation -> {
+            UserInfo user = new UserInfo();
+            user.setUserId((String) invocation.getArguments()[0]);
+            return user;
         });
 
     }
