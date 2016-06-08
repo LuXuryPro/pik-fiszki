@@ -19,7 +19,7 @@
 
     <ul>
         <th:block>
-           <li th:each="item : ${courseList}" th:text="${item.name}">Item description here...</li>
+           <li th:each="item : ${courseList}"> Nazwa: <span th:text="${item.name}"></span>  ID: <span th:text="${item.id}"></span> </li>
         </th:block>
     </ul>
 
