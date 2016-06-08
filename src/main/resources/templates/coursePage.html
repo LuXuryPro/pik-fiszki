@@ -2,7 +2,7 @@
 <html lang="pl" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8"></meta>
-    <title>Fiszki - strona główna</title>
+    <title>Fiszki - pole kursu</title>
     <script src="/webjars/jquery/2.0.3/jquery.js"></script>
     <script src="/webjars/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <link href="/css/common.css" rel="stylesheet" media="screen"/>
@@ -14,13 +14,22 @@
 
 <nav th:replace="header :: header"></nav>
 
-<div class="jumbotron">
-    <div class="wid">
-        <h1>Witaj <span th:text="${user.firstName}"></span></h1>
-        <h2>Witamy na stronie do nauki z użyciem fiszek. Aby rozpocząć dodaj nowy kurs do swojej biblioteki.</h2>
-    </div>
-    <footer th:replace="footer :: footer"></footer>
-</div>
+<div class="container">
+    <h1>Dodaj pytanie do kursu</h1>
 
+    <form action="/add-question" method="POST">
+        <label>Id kursu:</label>
+        <input  type="number" name="id"></input>
+        <label>Pytanie:</label>
+        <input  type="text" name="question"></input>
+        <label>Odpowiedź:</label>
+        <input  type="text" name="answer"></input>
+        <input type="submit" value="Dodaj"></input>
+    </form>
+
+
+
+</div><!-- /.container -->
+<footer th:replace="footer :: footer"></footer>
 </body>
 </html>
