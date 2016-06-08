@@ -138,6 +138,17 @@ public class QuestionDaoImpl implements QuestionDao {
         int startIdx = pageNo * pageSize;
         int endIdx = startIdx + pageSize;
 
+        if(quests.size() == 0) {
+            QuestionInfo q = new QuestionInfo();
+            q.setCourseId(courseId);
+            q.setAnswer("Koniec Pytan");
+            q.setQuestion("Koniec Pytan");
+            quests.add(q);
+        }
+
+        if(endIdx > quests.size())
+            endIdx = quests.size();
+
         List<QuestionInfo> sub = quests.subList(startIdx,endIdx);
         return new PageImpl<>(sub);
     }
