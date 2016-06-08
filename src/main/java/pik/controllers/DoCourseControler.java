@@ -3,10 +3,7 @@ package pik.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import pik.JSONDao.DoCourseControlerClientAnswer;
 import pik.JSONDao.DoCourseControlerFishe;
 import pik.JSONDao.DoCourseControllerClientFicheRequest;
@@ -27,7 +24,7 @@ public class DoCourseControler {
     }
 
     @RequestMapping("/do-course/{courseID}")
-    public String doCourse(@PathVariable(value="courseID") String courseId, Principal principal, Model model) {
+    public String doCourse(@PathVariable(value = "courseID") String courseId, Principal principal, Model model) {
         FacebookHelper facebookHelper = new FacebookHelper(principal);
         model.addAttribute("userId", facebookHelper.getId());
         model.addAttribute("courseId", courseId);
@@ -46,7 +43,7 @@ public class DoCourseControler {
         this.questionsController.markQuestion(questionInfo, facebookHelper.getId(), mark);
     }
 
-    @RequestMapping("get-fiche")
+    @RequestMapping(value = "getfishe", method = RequestMethod.POST)
     @ResponseBody
     public DoCourseControlerFishe processRequest(@RequestBody DoCourseControllerClientFicheRequest doCourseControllerClientFicheRequest) {
         String userId = doCourseControllerClientFicheRequest.getUserId();
@@ -57,10 +54,9 @@ public class DoCourseControler {
         } catch (CourseAccessException e) {
             e.printStackTrace();
         }
-        return new DoCourseControlerFishe(questionInfo.getQuestion(),
-                questionInfo.getAnswer(),
-                questionInfo.getCourseId(),
-                questionInfo.getId());
+        return new DoCourseControlerFishe("Are you hungry ?",
+                "Yes",
+                courseId,
+                new BigInteger(String.valueOf(1)));
     }
-
 }
