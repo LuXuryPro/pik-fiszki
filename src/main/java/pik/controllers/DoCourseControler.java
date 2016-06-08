@@ -31,7 +31,7 @@ public class DoCourseControler {
         return "do-course";
     }
 
-    @RequestMapping(value = "answer", method = RequestMethod.POST)
+    @RequestMapping(value = "/answer", method = RequestMethod.POST)
     public void processAnswer(@RequestBody DoCourseControlerClientAnswer doCourseControlerClientAnswer, Principal principal) {
         FacebookHelper facebookHelper = new FacebookHelper(principal);
         int mark = doCourseControlerClientAnswer.getMark();
@@ -43,7 +43,7 @@ public class DoCourseControler {
         this.questionsController.markQuestion(questionInfo, facebookHelper.getId(), mark);
     }
 
-    @RequestMapping(value = "getfishe", method = RequestMethod.POST)
+    @RequestMapping(value = "/getfishe", method = RequestMethod.POST)
     @ResponseBody
     public DoCourseControlerFishe processRequest(@RequestBody DoCourseControllerClientFicheRequest doCourseControllerClientFicheRequest) {
         String userId = doCourseControllerClientFicheRequest.getUserId();
