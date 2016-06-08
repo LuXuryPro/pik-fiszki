@@ -66,6 +66,8 @@ function addMarks() {
 
 function getNextFishe() {
     $("#confirm-fishe")[0].innerHTML = "";
+    $("#ans")[0].innerHTML = "";
+    $("#savedmark")[0].innerHTML = "";
     var userId = $("#userId")[0].innerHTML;
     var courseId = $("#courseId")[0].innerHTML;
     var data = {'userId': userId, "courseId": courseId}
@@ -80,8 +82,13 @@ function getNextFishe() {
         success: function (resposeJsonObject) {
             $("#marks")[0].innerHTML = "";
             $("#ans")[0].innerHTML = "";
+            $("#fishe")[0].innerHTML = "";
             var data = resposeJsonObject;
             var question = data["face"];
+            if (question == "Koniec Pytan")
+            {
+                return;
+            }
             var answer = data["back"];
             var courseId = data["courseId"];
             var questionId = data["questionId"];
