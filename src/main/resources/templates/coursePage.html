@@ -15,7 +15,17 @@
 <nav th:replace="header :: header"></nav>
 
 <div class="container">
-    <h1>Kurs <span th:text="${course.name}"></span>"</h1>
+    <h1>Dodaj pytanie do kursu</h1>
+
+    <form action="/add-question" method="POST">
+        <label>Id kursu:</label>
+        <input  type="number" name="id"></input>
+        <label>Pytanie:</label>
+        <input  type="text" name="question"></input>
+        <label>Odpowiedź:</label>
+        <input  type="text" name="answer"></input>
+        <input type="submit" value="Dodaj"></input>
+    </form>
 
 
 
