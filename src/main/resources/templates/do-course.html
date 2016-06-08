@@ -9,18 +9,24 @@
     <link href="/css/singing.css" rel="stylesheet" media="screen"/>
     <link href="/webjars/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
     <link href="/webjars/bootstrap/3.3.1/css/bootstrap-theme.min.css" rel="stylesheet" media="screen"/>
+    <script src="/js/course.js"></script>
 </head>
 <body>
 
 <nav th:replace="header :: header"></nav>
 
 <div class="jumbotron">
-    <div class="wid">
-        <h1>Witaj <span th:text="${userId}"></span></h1>
-        <h1>Witaj <span th:text="${courseId}"></span></h1>
+    <div id="wid" class="wid">
+        <button id="next-fishe" type="button" class="btn btn-lg btn-primary center">Poproszę następną fiszkę</button>
+    </div>
+    <div id="fishe" class="alert alert-info">
     </div>
     <footer th:replace="footer :: footer"></footer>
 </div>
-
+<div id="userId" style="display: none;" th:text="${userId}"></div>
+<div id="courseId" style="display: none;" th:text="${courseId}"></div>
+<div id="cid" style="display: none;"></div>
+<div id="qid" style="display: none;"></div>
+<div id="answer" style="display: none;"></div>
 </body>
 </html>

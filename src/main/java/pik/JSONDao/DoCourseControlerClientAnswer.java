@@ -7,6 +7,9 @@ public class DoCourseControlerClientAnswer {
         this.mark = mark;
     }
 
+    public DoCourseControlerClientAnswer() {
+    }
+
     public int getMark() {
 
         return mark;

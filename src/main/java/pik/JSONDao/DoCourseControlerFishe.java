@@ -10,6 +10,9 @@ public class DoCourseControlerFishe {
         this.questionId = questionId;
     }
 
+    public DoCourseControlerFishe() {
+    }
+
     public String getFace() {
 
         return face;

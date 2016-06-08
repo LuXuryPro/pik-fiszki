@@ -10,6 +10,9 @@ public class DoCourseControllerClientFicheRequest {
         this.userId = userId;
     }
 
+    public DoCourseControllerClientFicheRequest() {
+    }
+
     public String getUserId() {
         return userId;
     }
