@@ -40,7 +40,7 @@ public class SequenceDaoImpl implements SequenceDao {
     }
 
     public void insert(String key){
-        SequenceId seq =new SequenceId();
+        SequenceId seq = new SequenceId();
         seq.setId(key);
         seq.setSeq(1);
         mongoOperation.insert(seq,"sequence");

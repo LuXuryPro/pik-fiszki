@@ -143,9 +143,6 @@ public class UserDaoImpl implements UserDao{
 	{
 		CourseInfo course = courseRepository.findById(courseId);
 
-		if(course == null)
-			return false;
-
 		List<BigInteger> ids = user.getSubscribedCourses();
 		int index = 0;
 
