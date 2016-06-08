@@ -31,7 +31,7 @@ public class DoCourseControler {
         return "do-course";
     }
 
-    @RequestMapping("answer")
+    @RequestMapping(value = "answer", method = RequestMethod.POST)
     public void processAnswer(@RequestBody DoCourseControlerClientAnswer doCourseControlerClientAnswer, Principal principal) {
         FacebookHelper facebookHelper = new FacebookHelper(principal);
         int mark = doCourseControlerClientAnswer.getMark();
