@@ -54,9 +54,9 @@ public class DoCourseControler {
         } catch (CourseAccessException e) {
             e.printStackTrace();
         }
-        return new DoCourseControlerFishe("Are you hungry ?",
-                "Yes",
+        return new DoCourseControlerFishe(questionInfo.getQuestion(),
+                questionInfo.getAnswer(),
                 courseId,
-                new BigInteger(String.valueOf(1)));
+                questionInfo.getId());
     }
 }
