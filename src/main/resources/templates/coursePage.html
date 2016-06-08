@@ -2,7 +2,7 @@
 <html lang="pl" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8"></meta>
-    <title>Fiszki - kursy użytkownika</title>
+    <title>Fiszki - pole kursu</title>
     <script src="/webjars/jquery/2.0.3/jquery.js"></script>
     <script src="/webjars/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <link href="/css/common.css" rel="stylesheet" media="screen"/>
@@ -15,20 +15,7 @@
 <nav th:replace="header :: header"></nav>
 
 <div class="container">
-    <h1>Moje kursy</h1>
-
-   <!-- <p th:each="item : ${courseList}"
-       th:text="${item.name}"></p> -->
-
-    <ul>
-        <th:block>
-           <li th:each="item : ${courseList}" th:text="${item.name}">Item description here...</li>
-        </th:block>
-    </ul>
-
-    <form action="/course-info" method="post">
-        <input type="text" name="id"></input><input type="submit" value="Wybierz numer kursu"></input>
-    </form>
+    <h1>Kurs <span th:text="${course.name}"></span>"</h1>
 
 
 
