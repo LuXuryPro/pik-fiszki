@@ -2,7 +2,7 @@
 <html lang="pl" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8"></meta>
-    <title>Fiszki - strona główna</title>
+    <title>Fiszki - kursy użytkownika</title>
     <script src="/webjars/jquery/2.0.3/jquery.js"></script>
     <script src="/webjars/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <link href="/css/common.css" rel="stylesheet" media="screen"/>
@@ -14,13 +14,17 @@
 
 <nav th:replace="header :: header"></nav>
 
-<div class="jumbotron">
-    <div class="wid">
-        <h1>Witaj <span th:text="${user.firstName}"></span></h1>
-        <h2>Witamy na stronie do nauki z użyciem fiszek. Aby rozpocząć dodaj nowy kurs do swojej biblioteki.</h2>
-    </div>
-    <footer th:replace="footer :: footer"></footer>
-</div>
+<div class="container">
+    <h1>Moje kursy</h1>
 
+    <ul>
+        <th:block>
+           <li th:each="item : ${courseList}" th:text="${item.name}">Item description here...</li>
+        </th:block>
+    </ul>
+
+
+</div><!-- /.container -->
+<footer th:replace="footer :: footer"></footer>
 </body>
 </html>

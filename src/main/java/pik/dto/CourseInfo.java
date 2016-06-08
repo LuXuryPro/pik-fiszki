@@ -12,10 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-/**
- * Created by Michał on 01.06.2016
-*/
-
 @Document(collection="course")
 @Data
 public class CourseInfo {

@@ -1,5 +1,6 @@
 package pik.controllers;
 
+import org.codehaus.jackson.annotate.JsonTypeInfo;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -11,23 +12,21 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.yaml.snakeyaml.error.Mark;
 import pik.dao.CourseDao;
 import pik.dao.QuestionDao;
 import pik.dao.UserDao;
 import pik.dto.CourseInfo;
+import pik.dto.MarkInfo;
 import pik.dto.QuestionInfo;
 import pik.dto.UserInfo;
 import pik.exceptions.CourseAccessException;
 
 import java.math.BigInteger;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 import static org.mockito.AdditionalAnswers.returnsFirstArg;
 import static org.mockito.Matchers.any;
-
 
 public class QuestionsControllerTest {
     @Mock
@@ -228,17 +227,17 @@ public class QuestionsControllerTest {
 
     @Test
     public void editQuestion() throws Exception {
+        Mockito.when(courseDao.get(BigInteger.ONE)).thenReturn(courseInfoMock);
+        Mockito.when(questionDao.update(any(QuestionInfo.class))).then(returnsFirstArg());
 
+        Assert.assertTrue(questionsController.editQuestion(questionInfoMock, "123"));
     }
 
     @Test
     public void deleteQuestion() throws Exception {
+        Mockito.when(courseDao.get(BigInteger.ONE)).thenReturn(courseInfoMock);
+        Mockito.when(questionDao.remove(any(QuestionInfo.class))).thenReturn(true);
 
+        Assert.assertTrue(questionsController.deleteQuestion(questionInfoMock, "123"));
     }
-
-    @Test
-    public void markQuestion() throws Exception {
-
-    }
-
 }
