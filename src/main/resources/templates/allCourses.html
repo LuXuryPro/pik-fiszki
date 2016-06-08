@@ -15,7 +15,14 @@
 <nav th:replace="header :: header"></nav>
 
 <div class="container">
-    <h1>Wyświetl wszystkie kursy</h1>
+    <h1>Wszystkie kursy</h1>
+    <ul>
+        <th:block>
+            <li th:each="item : ${allCourses}" th:text="${item.name}">Item description here...</li>
+        </th:block>
+    </ul>
+
+
 </div><!-- /.container -->
 <footer th:replace="footer :: footer"></footer>
 </body>

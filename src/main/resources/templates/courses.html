@@ -17,9 +17,6 @@
 <div class="container">
     <h1>Moje kursy</h1>
 
-   <!-- <p th:each="item : ${courseList}"
-       th:text="${item.name}"></p> -->
-
     <ul>
         <th:block>
            <li th:each="item : ${courseList}" th:text="${item.name}">Item description here...</li>
