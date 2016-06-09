@@ -56,7 +56,7 @@ function addMarks() {
             cache: false,    //This will force requested pages not to be cached by the browser  
             processData: false, //To avoid making query String instead of JSON
             success: function (resposeJsonObject) {
-                getNextFishe()
+                getNextFishe();
             }
         });
     })
