@@ -23,6 +23,7 @@
         <tr th:each="item : ${courseList}">
             <td th:text="${item.name}"></td>
             <td><a th:href="@{'/show-course/' + ${item.id}}" class="btn btn-info" role="button">Zobacz kurs</a></td>
+            <td><a th:href="@{'/do-course/' + ${item.id}}" class="btn btn-info" role="button">Wykonaj kurs</a></td>
         </tr>
         </tbody>
     </table>
