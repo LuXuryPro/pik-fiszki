@@ -15,12 +15,16 @@
 <nav th:replace="header :: header"></nav>
 
 <div class="container">
-    <h1>Wszystkie kursy</h1>
-    <ul>
-        <th:block>
-            <li th:each="item : ${allCourses}"> Nazwa: <span th:text="${item.name}"></span>  ID: <span th:text="${item.id}"></span> </li>
-        </th:block>
-    </ul>
+    <h1>Kursy innych użytkowników</h1>
+
+    <table class="table">
+        <tbody>
+        <tr th:each="item : ${allCourses}">
+            <td th:text="${item.name}"></td>
+            <td><a th:href="@{'/doAddSubstriction/' + ${item.id}}" class="btn btn-info" role="button">Zasubskrybuj kurs</a></td>
+        </tr>
+        </tbody>
+    </table>
 
 
 </div><!-- /.container -->

@@ -3,10 +3,12 @@ package pik.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import pik.Util.FacebookHelper;
 import pik.dto.CourseInfo;
+import pik.dto.QuestionInfo;
 
 import java.math.BigInteger;
 import java.security.Principal;
@@ -40,19 +42,21 @@ public class SubscriptionController
         return "allCourses";
     }
 
-    @RequestMapping("/remove-sub")
-    public String removeSubscription()
+    @RequestMapping(value = "/remove-sub/{courseID}")
+    public String removeSubscription(@PathVariable(value = "courseID") BigInteger courseId, Principal principal)
     {
-        return "removeSubscription";
+        FacebookHelper f = new FacebookHelper(principal);
+        userController.removeSubscription(courseId, f.getId());
+        return "redirect:/show-subscribed-course";
     }
 
 
-    @RequestMapping(value = "/doAddSubstriction")
-    public String doAddCourse(Principal principal, @RequestParam("id") BigInteger id)
+    @RequestMapping(value = "/doAddSubstriction/{courseID}")
+    public String doAddCourse(@PathVariable(value = "courseID") BigInteger courseId, Principal principal)
     {
         FacebookHelper f = new FacebookHelper(principal);
-        userController.addSubscription(id, f.getId());
-        return "courses";
+        userController.addSubscription(courseId, f.getId());
+        return "redirect:/find-all-courses";
     }
 
     @RequestMapping(value = "/deleteSubscription")
