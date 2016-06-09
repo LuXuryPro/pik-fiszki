@@ -3,7 +3,7 @@ function saveMark(e) {
 function addMarks() {
     $("#marks")[0].innerHTML = "";
     var m = $("#marks");
-    var info = $('<div>Proszę podać ocenę:</div>');
+    var info = $('<div>Proszę ocenić łatwość pytania:</div>');
     info.appendTo(m);
     var zero = $('<button>0</button>').attr("type", "button").addClass("btn btn-lg btn-success");
     zero.appendTo(m);
@@ -56,7 +56,7 @@ function addMarks() {
             cache: false,    //This will force requested pages not to be cached by the browser  
             processData: false, //To avoid making query String instead of JSON
             success: function (resposeJsonObject) {
-                getNextFishe()
+                getNextFishe();
             }
         });
     })
@@ -65,8 +65,8 @@ function addMarks() {
 }
 
 function getNextFishe() {
+    $("#answer-container").hide();
     $("#confirm-fishe")[0].innerHTML = "";
-    $("#ans")[0].innerHTML = "";
     $("#savedmark")[0].innerHTML = "";
     var userId = $("#userId")[0].innerHTML;
     var courseId = $("#courseId")[0].innerHTML;
@@ -80,13 +80,15 @@ function getNextFishe() {
         cache: false,    //This will force requested pages not to be cached by the browser  
         processData: false, //To avoid making query String instead of JSON
         success: function (resposeJsonObject) {
-            $("#marks")[0].innerHTML = "";
-            $("#ans")[0].innerHTML = "";
-            $("#fishe")[0].innerHTML = "";
             var data = resposeJsonObject;
             var question = data["face"];
-            if (question == "Koniec Pytan")
-            {
+            if (question == "Koniec Pytan") {
+                var f = $("#fishe")[0];
+                f.innerHTML = "W tym momencie nie ma więcej fiszek które trzeba powtórzyć";
+                $("#answer-container").hide();
+                $('#next-fishe').hide()
+                $("#question-container").show();
+                $("#show-answer-button").hide();
                 return;
             }
             var answer = data["back"];
@@ -100,18 +102,17 @@ function getNextFishe() {
             f.innerHTML = courseId;
             var f = $("#qid")[0];
             f.innerHTML = questionId;
-            var b = $("#ans")[0];
-            b.innerHTML = "";
-            var bOk = $('<button>Pokaż odpowiedź</button>').attr("type", "button").addClass("btn btn-lg btn-success");
-            bOk.click(function () {
-                var f = $("#fishe")[0];
-                f.innerHTML = answer;
-                addMarks();
-            })
-            bOk.appendTo(b);
+            $("#question-container").show();
         }
     });
 }
 $(function () {
     $('#next-fishe').on('click', getNextFishe);
+    $("#answer-container").hide();
+    $("#question-container").hide();
+    $("#show-answer-button").on('click', function () {
+        $("#answer-field")[0].innerHTML = $("#answer")[0].innerHTML;
+        addMarks();
+        $("#answer-container").show();
+    });
 })
