@@ -40,10 +40,16 @@
         <input  type="hidden" name="id" th:value="${courseId}"></input>
         <label>Pytanie:</label>
         <input  type="text" name="question"></input>
+        <br></br>
         <label>Odpowiedź:</label>
         <input  type="text" name="answer"></input>
         <br></br><br></br>
         <input type="submit" value="Dodaj pytanie"></input>
+    </form>
+    <br></br>
+    <form action="/deleteCourse" method="POST">
+        <input  type="hidden" name="courseId" th:value="${courseId}"></input>
+        <input type="submit" value="Usuń kurs"></input>
     </form>
 
 

@@ -69,13 +69,13 @@ public class UserCourseController
     }
 
     @RequestMapping(value = "/deleteCourse")
-    public String deleteCourse(Principal principal, @RequestParam("id") BigInteger id)
+    public String deleteCourse(Principal principal, @RequestParam("courseId") BigInteger id)
     {
         FacebookHelper f = new FacebookHelper(principal);
         try {
             courseController.deleteCourse(id, f.getId());
         }catch (Exception e){}
 
-        return "/courses";
+        return "redirect:/show-course";
     }
 }
