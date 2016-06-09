@@ -1,6 +1,8 @@
 package pik.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -32,7 +34,7 @@ public class DoCourseControler {
     }
 
     @RequestMapping(value = "/answer", method = RequestMethod.POST)
-    public void processAnswer(@RequestBody DoCourseControlerClientAnswer doCourseControlerClientAnswer, Principal principal) {
+    public ResponseEntity processAnswer(@RequestBody DoCourseControlerClientAnswer doCourseControlerClientAnswer, Principal principal) {
         FacebookHelper facebookHelper = new FacebookHelper(principal);
         int mark = doCourseControlerClientAnswer.getMark();
         BigInteger questionId = doCourseControlerClientAnswer.getQuestionId();
@@ -41,6 +43,7 @@ public class DoCourseControler {
         questionInfo.setId(questionId);
         questionInfo.setCourseId(courseId);
         this.questionsController.markQuestion(questionInfo, facebookHelper.getId(), mark);
+        return new ResponseEntity(HttpStatus.OK);
     }
 
     @RequestMapping(value = "/getfishe", method = RequestMethod.POST)
