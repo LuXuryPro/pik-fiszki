@@ -40,7 +40,7 @@ public class UserCourseController
         List<CourseInfo> courseList = courseController.getSubscribedCourses(f.getId());
         model.addAttribute("courseList", courseList);
 
-        return "courses";
+        return "/courses";
     }
 
 
@@ -48,7 +48,7 @@ public class UserCourseController
     public String addCourse(Model model)
     {
         model.addAttribute("courseController", courseController);
-        return "addCourse";
+        return "/addCourse";
     }
 
 
@@ -65,7 +65,7 @@ public class UserCourseController
     {
         FacebookHelper f = new FacebookHelper(principal);
         courseController.addCourse(name, description, f.getId());
-        return "courses";
+        return "redirect:/show-course";
     }
 
     @RequestMapping(value = "/deleteCourse")

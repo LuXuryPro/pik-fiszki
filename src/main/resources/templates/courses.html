@@ -17,22 +17,15 @@
 <div class="container">
     <h1>Moje kursy</h1>
 
-  <!--  <ul>
-        <th:block>
-           <li th:each="item : ${courseList}"> Nazwa: <span th:text="${item.name}"></span><a th:href="@{'/show-course/' + ${item.id}}">Idź do kursu</a> </li>
-        </th:block>
-    </ul> -->
 
-    <form name="edit" id="edit" action="editUser" method="POST">
-        <table class="table">
-            <tbody>
-            <tr th:each="item : ${courseList}">
-                <td th:text="${item.name}"></td>
-                <td><a th:href="@{'/show-course/' + ${item.id}}" class="btn btn-info" role="button">Zobacz kurs</a></td>
-            </tr>
-            </tbody>
-        </table>
-    </form>
+    <table class="table">
+        <tbody>
+        <tr th:each="item : ${courseList}">
+            <td th:text="${item.name}"></td>
+            <td><a th:href="@{'/show-course/' + ${item.id}}" class="btn btn-info" role="button">Zobacz kurs</a></td>
+        </tr>
+        </tbody>
+    </table>
 
 
 </div><!-- /.container -->
