@@ -87,6 +87,7 @@ function getNextFishe() {
             var question = data["face"];
             if (question == "Koniec Pytan")
             {
+                $("#answer-container").hide();
                 return;
             }
             var answer = data["back"];
@@ -109,9 +110,11 @@ function getNextFishe() {
                 addMarks();
             })
             bOk.appendTo(b);
+            $("#answer-container").show();
         }
     });
 }
 $(function () {
     $('#next-fishe').on('click', getNextFishe);
+    $("#answer-container").hide();
 })
