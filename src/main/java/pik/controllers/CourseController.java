@@ -101,4 +101,9 @@ public class CourseController {
     public List<CourseInfo> getUnsubscribedCourses(String userId) {
         return courseDao.getUnsubscribed(userDao.getById(userId));
     }
+
+    public String getCourseNameById(BigInteger courseId)
+    {
+        return courseDao.get(courseId).getName();
+    }
 }
