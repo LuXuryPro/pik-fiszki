@@ -16,20 +16,25 @@
 <nav th:replace="header :: header"></nav>
 
 <div class="jumbotron center">
-    <div id="wid" class="wid">
-        <button id="next-fishe" type="button" class="btn btn-lg btn-primary center">Poproszę następną fiszkę</button>
+    <div class="wid">
+        <div id="wid" class="wid">
+            <button id="next-fishe" type="button" class="btn btn-lg btn-primary center">Poproszę następną fiszkę
+            </button>
+            <div id="answer-container">
+                <div id="ans" class="wid">
+                </div>
+                <div id="fishe" class="alert alert-info bigtext">
+                </div>
+                <div id="marks" class="alert alert-success">
+                </div>
+                <div id="savedmark" class="alert alert-success bigtext">
+                </div>
+                <div id="confirm-fishe" class="alert alert-success">
+                </div>
+            </div>
+        </div>
+        <footer th:replace="footer :: footer"></footer>
     </div>
-    <div id="ans" class="wid">
-    </div>
-    <div id="fishe" class="alert alert-info">
-    </div>
-    <div id="marks" class="alert alert-success">
-    </div>
-    <div id="savedmark" class="alert alert-success">
-    </div>
-    <div id="confirm-fishe" class="alert alert-success">
-    </div>
-    <footer th:replace="footer :: footer"></footer>
 </div>
 <div id="userId" style="display: none;" th:text="${userId}"></div>
 <div id="courseId" style="display: none;" th:text="${courseId}"></div>
