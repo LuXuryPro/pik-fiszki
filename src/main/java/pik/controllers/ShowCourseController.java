@@ -19,10 +19,12 @@ import java.util.List;
 public class ShowCourseController
 {
     private QuestionsController questionsController;
+    private CourseController courseController;
 
     @Autowired
-    public ShowCourseController(QuestionsController questionsController) {
+    public ShowCourseController(QuestionsController questionsController, CourseController courseController) {
         this.questionsController = questionsController;
+        this.courseController = courseController;
     }
 
     @RequestMapping("/show-course/{courseID}")
@@ -33,9 +35,10 @@ public class ShowCourseController
             model.addAttribute("questions", questions);
         } catch (Exception e) {
         }
-
+        String courseName = courseController.getCourseNameById(courseId);
         model.addAttribute("userId", facebookHelper.getId());
         model.addAttribute("courseId", courseId);
+        model.addAttribute("courseName", courseName);
         return "/coursePage";
     }
 

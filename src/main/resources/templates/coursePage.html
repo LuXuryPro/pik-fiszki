@@ -15,15 +15,26 @@
 <nav th:replace="header :: header"></nav>
 
 <div class="container">
-    <h1>Dodaj pytanie do kursu</h1>
-    <h2>Hello, <span th:text="${userId}"></span>, twoj kurs <span th:text="${courseId}"></span></h2>
+    <h1>Pytania z kursu <span th:text="${courseName}"></span></h1>
+    <br></br>
+    <br></br>
 
-
-    <ul>
-        <th:block>
-            <li th:each="item : ${questions}"> Pytanie: <span th:text="${item.question}"></span><span th:text="${item.answer}"></span> </li>
-        </th:block>
-    </ul>
+    <table class="table">
+        <thead>
+        <tr>
+        <th>
+        <td>Pytanie</td>
+        <td>Odpowiedź</td>
+        </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="item : ${questions}">
+            <td th:text="${item.question}"></td>
+            <td th:text="${item.answer}"></td>
+        </tr>
+        </tbody>
+    </table>
 
     <br></br>
     <br></br>
@@ -33,13 +44,13 @@
         <input  type="text" name="question"></input>
         <label>Odpowiedź:</label>
         <input  type="text" name="answer"></input>
-        <br></br>
+        <br></br><br></br>
         <input type="submit" value="Dodaj pytanie"></input>
     </form>
 
 
 
-</div><!-- /.container -->
+</div>
 <footer th:replace="footer :: footer"></footer>
 </body>
 </html>

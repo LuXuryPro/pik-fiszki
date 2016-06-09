@@ -56,7 +56,7 @@ public class UserCourseController
     public String removeCourse(Model model)
     {
         model.addAttribute("courseController", courseController);
-        return "removeCourse";
+        return "/removeCourse";
     }
 
 
@@ -76,6 +76,6 @@ public class UserCourseController
             courseController.deleteCourse(id, f.getId());
         }catch (Exception e){}
 
-        return "courses";
+        return "/courses";
     }
 }
