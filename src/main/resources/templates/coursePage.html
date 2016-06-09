@@ -16,15 +16,25 @@
 
 <div class="container">
     <h1>Dodaj pytanie do kursu</h1>
+    <h2>Hello, <span th:text="${userId}"></span>, twoj kurs <span th:text="${courseId}"></span></h2>
 
+
+    <ul>
+        <th:block>
+            <li th:each="item : ${questions}"> Pytanie: <span th:text="${item.question}"></span><span th:text="${item.answer}"></span> </li>
+        </th:block>
+    </ul>
+
+    <br></br>
+    <br></br>
     <form action="/add-question" method="POST">
-        <label>Id kursu:</label>
-        <input  type="number" name="id"></input>
+        <input  type="hidden" name="id" th:value="${courseId}"></input>
         <label>Pytanie:</label>
         <input  type="text" name="question"></input>
         <label>Odpowiedź:</label>
         <input  type="text" name="answer"></input>
-        <input type="submit" value="Dodaj"></input>
+        <br></br>
+        <input type="submit" value="Dodaj pytanie"></input>
     </form>
 
 

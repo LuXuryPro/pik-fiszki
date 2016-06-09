@@ -19,7 +19,7 @@
 
     <ul>
         <th:block>
-           <li th:each="item : ${courseList}"> Nazwa: <span th:text="${item.name}"></span>  ID: <span th:text="${item.id}"></span> </li>
+           <li th:each="item : ${courseList}"> Nazwa: <span th:text="${item.name}"></span><a th:href="@{'/show-course/' + ${item.id}}">Idź do kursu</a> </li>
         </th:block>
     </ul>
 
