@@ -37,10 +37,20 @@ public class UserCourseController
     public String showCourses(Principal principal, Model model)
     {
         FacebookHelper f = new FacebookHelper(principal);
-        List<CourseInfo> courseList = courseController.getSubscribedCourses(f.getId());
+        List<CourseInfo> courseList = courseController.getUserCourses(f.getId());
         model.addAttribute("courseList", courseList);
 
         return "/courses";
+    }
+
+    @RequestMapping("/show-subscribed-course")
+    public String showSubscribedCourses(Principal principal, Model model)
+    {
+        FacebookHelper f = new FacebookHelper(principal);
+        List<CourseInfo> courseList = courseController.getSubscribedCourses(f.getId());
+        model.addAttribute("courseList", courseList);
+
+        return "/subscribedCourses";
     }
 
 
