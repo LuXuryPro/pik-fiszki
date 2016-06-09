@@ -37,10 +37,20 @@ public class UserCourseController
     public String showCourses(Principal principal, Model model)
     {
         FacebookHelper f = new FacebookHelper(principal);
-        List<CourseInfo> courseList = courseController.getSubscribedCourses(f.getId());
+        List<CourseInfo> courseList = courseController.getUserCourses(f.getId());
         model.addAttribute("courseList", courseList);
 
         return "courses";
+    }
+
+    @RequestMapping("/show-subscribed-course")
+    public String showSubscribedCourses(Principal principal, Model model)
+    {
+        FacebookHelper f = new FacebookHelper(principal);
+        List<CourseInfo> courseList = courseController.getSubscribedCourses(f.getId());
+        model.addAttribute("courseList", courseList);
+
+        return "subscribedCourses";
     }
 
 
@@ -59,40 +69,23 @@ public class UserCourseController
         return "removeCourse";
     }
 
-    @RequestMapping("/go-to-curse-page")
-    public String courseInfo()
-    {
-        return "coursePage";
-    }
 
     @RequestMapping(value = "/saveAddCourse")
     public String doAddCourse(Principal principal, @RequestParam("name") String name, @RequestParam("description") String description)
     {
         FacebookHelper f = new FacebookHelper(principal);
         courseController.addCourse(name, description, f.getId());
-        return "courses";
+        return "redirect:/show-course";
     }
 
     @RequestMapping(value = "/deleteCourse")
-    public String deleteCourse(Principal principal, @RequestParam("id") BigInteger id)
+    public String deleteCourse(Principal principal, @RequestParam("courseId") BigInteger id)
     {
         FacebookHelper f = new FacebookHelper(principal);
         try {
             courseController.deleteCourse(id, f.getId());
         }catch (Exception e){}
 
-        return "courses";
-    }
-
-
-    @RequestMapping(value = "/add-question")
-    public String doQuestion(Principal principal, @RequestParam("id") BigInteger id ,
-                             @RequestParam("question") String question, @RequestParam("answer") String answer)
-    {
-        FacebookHelper f = new FacebookHelper(principal);
-        try {
-            questionsController.addQuestion(answer, question, id, f.getId());
-        }catch(Exception e){}
-        return "courses";
+        return "redirect:/show-course";
     }
 }
