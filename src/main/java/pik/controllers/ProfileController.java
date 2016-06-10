@@ -39,7 +39,7 @@ public class ProfileController {
         model.addAttribute("user", user);
         model.addAttribute("userCourses", courseList.size());
         model.addAttribute("userSubs", subList.size());
-        return "me";
+        return "my-profile";
     }
 
     @RequestMapping("/preferences")
@@ -47,7 +47,7 @@ public class ProfileController {
         FacebookHelper f = new FacebookHelper(principal);
         UserInfo user = this.userDao.getById(f.getId());
         model.addAttribute("user", user);
-        return "preferences";
+        return "preferences-template";
     }
     @RequestMapping(value = "/saveUserForm")
     @ResponseBody
