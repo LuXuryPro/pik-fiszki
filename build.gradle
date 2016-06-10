@@ -31,6 +31,10 @@ findbugs {
     ignoreFailures = true
 }
 
+javadoc {
+    options.charSet = 'UTF-8'
+}
+
 tasks.withType(FindBugs) {
     reports {
         xml.enabled = true
@@ -72,4 +76,66 @@ dependencies {
     testCompile('com.google.code.gson:gson:1.7.2')
     compile('com.google.code.gson:gson:1.7.2')
 }
+
+task descr(type:Exec) {
+    workingDir 'doc'
+
+    commandLine 'pandoc', "-s", "-o", "podzial.html", "podzial.md"
+
+    standardOutput = new ByteArrayOutputStream()
+
+    ext.output = {
+        return standardOutput.toString()
+    }
+}
+
+task gitStats(type:Exec) {
+  workingDir '.'
+
+  commandLine 'gitstats', ".", "doc/stats"
+
+  standardOutput = new ByteArrayOutputStream()
+
+  ext.output = {
+    return standardOutput.toString()
+  }
+}
+
+task javaDocWrapper(type: Exec, dependsOn: javadoc) {
+  workingDir '.'
+
+  commandLine "cp", "-rf", "build/docs/javadoc", "doc"
+
+  standardOutput = new ByteArrayOutputStream()
+
+  ext.output = {
+    return standardOutput.toString()
+  }
+}
+
+task coberturaWrapper(type: Exec, dependsOn: test) {
+  workingDir '.'
+
+  commandLine "cp", "-rf", "build/reports/cobertura", "doc"
+
+  standardOutput = new ByteArrayOutputStream()
+
+  ext.output = {
+    return standardOutput.toString()
+  }
+}
+
+task docIndex(type:Exec, dependsOn: [gitStats, javaDocWrapper, coberturaWrapper, descr]) {
+    workingDir 'doc'
+
+    commandLine 'pandoc', "-s", "-o", "dokumentacja-koncowa.html", "dokumentacja-koncowa.md"
+
+    standardOutput = new ByteArrayOutputStream()
+
+    ext.output = {
+        return standardOutput.toString()
+    }
+}
+
+task docs(dependsOn: [docIndex])
 
