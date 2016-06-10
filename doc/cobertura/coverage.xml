@@ -1,0 +1,3316 @@
+<?xml version="1.0"?>
+<!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
+
+<coverage line-rate="0.6304654442877292" branch-rate="0.2623456790123457" lines-covered="447" lines-valid="709" branches-covered="85" branches-valid="324" complexity="1.3858921161825726" version="2.1.1" timestamp="1465568313993">
+	<sources>
+		<source>/home/radek/src/pik-fiszki/src/main/java</source>
+	</sources>
+	<packages>
+		<package name="pik" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+			<classes>
+				<class name="pik.Application" filename="pik/Application.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="14" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="containerCustomizer" signature="()Lorg/springframework/boot/context/embedded/EmbeddedServletContainerCustomizer;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="18" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="main" signature="([Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="33" hits="0" branch="false"/>
+								<line number="34" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="14" hits="0" branch="false"/>
+						<line number="18" hits="0" branch="false"/>
+						<line number="33" hits="0" branch="false"/>
+						<line number="34" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="pik.Application$1" filename="pik/Application.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lpik/Application;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="18" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="customize" signature="(Lorg/springframework/boot/context/embedded/ConfigurableEmbeddedServletContainer;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="23" hits="0" branch="false"/>
+								<line number="24" hits="0" branch="false"/>
+								<line number="25" hits="0" branch="false"/>
+								<line number="27" hits="0" branch="false"/>
+								<line number="28" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="18" hits="0" branch="false"/>
+						<line number="23" hits="0" branch="false"/>
+						<line number="24" hits="0" branch="false"/>
+						<line number="25" hits="0" branch="false"/>
+						<line number="27" hits="0" branch="false"/>
+						<line number="28" hits="0" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+		<package name="pik.JSONDao" line-rate="0.6363636363636364" branch-rate="1.0" complexity="1.0">
+			<classes>
+				<class name="pik.JSONDao.DoCourseControlerClientAnswer" filename="pik/JSONDao/DoCourseControlerClientAnswer.java" line-rate="0.5789473684210527" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="10" hits="2" branch="false"/>
+								<line number="11" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(I)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="6" hits="0" branch="false"/>
+								<line number="7" hits="0" branch="false"/>
+								<line number="8" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/math/BigInteger;Ljava/math/BigInteger;I)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="25" hits="0" branch="false"/>
+								<line number="26" hits="0" branch="false"/>
+								<line number="27" hits="0" branch="false"/>
+								<line number="28" hits="0" branch="false"/>
+								<line number="29" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCourseId" signature="()Ljava/math/BigInteger;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="41" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="getMark" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="15" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="getQuestionId" signature="()Ljava/math/BigInteger;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="33" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="setCourseId" signature="(Ljava/math/BigInteger;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="45" hits="2" branch="false"/>
+								<line number="46" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="setMark" signature="(I)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="19" hits="2" branch="false"/>
+								<line number="20" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="setQuestionId" signature="(Ljava/math/BigInteger;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="37" hits="2" branch="false"/>
+								<line number="38" hits="2" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="6" hits="0" branch="false"/>
+						<line number="7" hits="0" branch="false"/>
+						<line number="8" hits="0" branch="false"/>
+						<line number="10" hits="2" branch="false"/>
+						<line number="11" hits="2" branch="false"/>
+						<line number="15" hits="1" branch="false"/>
+						<line number="19" hits="2" branch="false"/>
+						<line number="20" hits="2" branch="false"/>
+						<line number="25" hits="0" branch="false"/>
+						<line number="26" hits="0" branch="false"/>
+						<line number="27" hits="0" branch="false"/>
+						<line number="28" hits="0" branch="false"/>
+						<line number="29" hits="0" branch="false"/>
+						<line number="33" hits="1" branch="false"/>
+						<line number="37" hits="2" branch="false"/>
+						<line number="38" hits="2" branch="false"/>
+						<line number="41" hits="1" branch="false"/>
+						<line number="45" hits="2" branch="false"/>
+						<line number="46" hits="2" branch="false"/>
+					</lines>
+				</class>
+				<class name="pik.JSONDao.DoCourseControlerFishe" filename="pik/JSONDao/DoCourseControlerFishe.java" line-rate="0.6" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="13" hits="1" branch="false"/>
+								<line number="14" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/math/BigInteger;Ljava/math/BigInteger;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="6" hits="1" branch="false"/>
+								<line number="7" hits="1" branch="false"/>
+								<line number="8" hits="1" branch="false"/>
+								<line number="9" hits="1" branch="false"/>
+								<line number="10" hits="1" branch="false"/>
+								<line number="11" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="getBack" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="26" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCourseId" signature="()Ljava/math/BigInteger;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="37" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="getFace" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="18" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="getQuestionId" signature="()Ljava/math/BigInteger;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="45" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="setBack" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="30" hits="0" branch="false"/>
+								<line number="31" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setCourseId" signature="(Ljava/math/BigInteger;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="41" hits="0" branch="false"/>
+								<line number="42" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setFace" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="22" hits="0" branch="false"/>
+								<line number="23" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setQuestionId" signature="(Ljava/math/BigInteger;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="49" hits="0" branch="false"/>
+								<line number="50" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="6" hits="1" branch="false"/>
+						<line number="7" hits="1" branch="false"/>
+						<line number="8" hits="1" branch="false"/>
+						<line number="9" hits="1" branch="false"/>
+						<line number="10" hits="1" branch="false"/>
+						<line number="11" hits="1" branch="false"/>
+						<line number="13" hits="1" branch="false"/>
+						<line number="14" hits="1" branch="false"/>
+						<line number="18" hits="2" branch="false"/>
+						<line number="22" hits="0" branch="false"/>
+						<line number="23" hits="0" branch="false"/>
+						<line number="26" hits="2" branch="false"/>
+						<line number="30" hits="0" branch="false"/>
+						<line number="31" hits="0" branch="false"/>
+						<line number="37" hits="2" branch="false"/>
+						<line number="41" hits="0" branch="false"/>
+						<line number="42" hits="0" branch="false"/>
+						<line number="45" hits="2" branch="false"/>
+						<line number="49" hits="0" branch="false"/>
+						<line number="50" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="pik.JSONDao.DoCourseControlerQuestionFromServer" filename="pik/JSONDao/DoCourseControlerQuestionFromServer.java" line-rate="0.0" branch-rate="1.0" complexity="0.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="3" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="3" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="pik.JSONDao.DoCourseControllerClientFicheRequest" filename="pik/JSONDao/DoCourseControllerClientFicheRequest.java" line-rate="0.6666666666666666" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="13" hits="2" branch="false"/>
+								<line number="14" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/math/BigInteger;Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="8" hits="0" branch="false"/>
+								<line number="9" hits="0" branch="false"/>
+								<line number="10" hits="0" branch="false"/>
+								<line number="11" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCourseId" signature="()Ljava/math/BigInteger;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="25" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="getUserId" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="17" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="setCourseId" signature="(Ljava/math/BigInteger;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="29" hits="2" branch="false"/>
+								<line number="30" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="setUserId" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="21" hits="2" branch="false"/>
+								<line number="22" hits="2" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="8" hits="0" branch="false"/>
+						<line number="9" hits="0" branch="false"/>
+						<line number="10" hits="0" branch="false"/>
+						<line number="11" hits="0" branch="false"/>
+						<line number="13" hits="2" branch="false"/>
+						<line number="14" hits="2" branch="false"/>
+						<line number="17" hits="1" branch="false"/>
+						<line number="21" hits="2" branch="false"/>
+						<line number="22" hits="2" branch="false"/>
+						<line number="25" hits="1" branch="false"/>
+						<line number="29" hits="2" branch="false"/>
+						<line number="30" hits="2" branch="false"/>
+					</lines>
+				</class>
+				<class name="pik.JSONDao.EditProfileJsonRequest" filename="pik/JSONDao/EditProfileJsonRequest.java" line-rate="0.7368421052631579" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="6" hits="2" branch="false"/>
+								<line number="7" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="9" hits="0" branch="false"/>
+								<line number="10" hits="0" branch="false"/>
+								<line number="11" hits="0" branch="false"/>
+								<line number="12" hits="0" branch="false"/>
+								<line number="13" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getEmail" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="34" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="getFirstName" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="18" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="getId" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="44" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="getSecondName" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="26" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="setEmail" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="38" hits="2" branch="false"/>
+								<line number="39" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="setFirstName" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="22" hits="2" branch="false"/>
+								<line number="23" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="setId" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="48" hits="1" branch="false"/>
+								<line number="49" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="setSecondName" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="30" hits="2" branch="false"/>
+								<line number="31" hits="2" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="6" hits="2" branch="false"/>
+						<line number="7" hits="2" branch="false"/>
+						<line number="9" hits="0" branch="false"/>
+						<line number="10" hits="0" branch="false"/>
+						<line number="11" hits="0" branch="false"/>
+						<line number="12" hits="0" branch="false"/>
+						<line number="13" hits="0" branch="false"/>
+						<line number="18" hits="1" branch="false"/>
+						<line number="22" hits="2" branch="false"/>
+						<line number="23" hits="2" branch="false"/>
+						<line number="26" hits="1" branch="false"/>
+						<line number="30" hits="2" branch="false"/>
+						<line number="31" hits="2" branch="false"/>
+						<line number="34" hits="1" branch="false"/>
+						<line number="38" hits="2" branch="false"/>
+						<line number="39" hits="2" branch="false"/>
+						<line number="44" hits="1" branch="false"/>
+						<line number="48" hits="1" branch="false"/>
+						<line number="49" hits="1" branch="false"/>
+					</lines>
+				</class>
+				<class name="pik.JSONDao.EditProfileJsonResponse" filename="pik/JSONDao/EditProfileJsonResponse.java" line-rate="0.6666666666666666" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="14" hits="1" branch="false"/>
+								<line number="15" hits="1" branch="false"/>
+								<line number="16" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="getStatus" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="7" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="setStatus" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="11" hits="0" branch="false"/>
+								<line number="12" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="7" hits="2" branch="false"/>
+						<line number="11" hits="0" branch="false"/>
+						<line number="12" hits="0" branch="false"/>
+						<line number="14" hits="1" branch="false"/>
+						<line number="15" hits="1" branch="false"/>
+						<line number="16" hits="1" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+		<package name="pik.Util" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+			<classes>
+				<class name="pik.Util.FacebookHelper" filename="pik/Util/FacebookHelper.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Ljava/security/Principal;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="21" hits="4" branch="false"/>
+								<line number="22" hits="4" branch="false"/>
+								<line number="23" hits="4" branch="false"/>
+							</lines>
+						</method>
+						<method name="getFacebookUser" signature="()Lorg/springframework/social/facebook/api/User;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="31" hits="6" branch="false"/>
+								<line number="32" hits="6" branch="false"/>
+								<line number="33" hits="6" branch="false"/>
+								<line number="34" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getId" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="43" hits="6" branch="false"/>
+								<line number="44" hits="6" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="21" hits="4" branch="false"/>
+						<line number="22" hits="4" branch="false"/>
+						<line number="23" hits="4" branch="false"/>
+						<line number="31" hits="6" branch="false"/>
+						<line number="32" hits="6" branch="false"/>
+						<line number="33" hits="6" branch="false"/>
+						<line number="34" hits="6" branch="false"/>
+						<line number="43" hits="6" branch="false"/>
+						<line number="44" hits="6" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+		<package name="pik.controllers" line-rate="0.5145228215767634" branch-rate="0.4791666666666667" complexity="1.6140350877192982">
+			<classes>
+				<class name="pik.controllers.ConfigurationController" filename="pik/controllers/ConfigurationController.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="33" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="configure" signature="(Lorg/springframework/security/config/annotation/web/builders/HttpSecurity;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="37" hits="0" branch="false"/>
+								<line number="38" hits="0" branch="false"/>
+								<line number="39" hits="0" branch="false"/>
+								<line number="40" hits="0" branch="false"/>
+								<line number="41" hits="0" branch="false"/>
+								<line number="43" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="33" hits="0" branch="false"/>
+						<line number="37" hits="0" branch="false"/>
+						<line number="38" hits="0" branch="false"/>
+						<line number="39" hits="0" branch="false"/>
+						<line number="40" hits="0" branch="false"/>
+						<line number="41" hits="0" branch="false"/>
+						<line number="43" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="pik.controllers.CourseController" filename="pik/controllers/CourseController.java" line-rate="0.782608695652174" branch-rate="0.6" complexity="1.6666666666666667">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lpik/dao/UserDao;Lpik/dao/CourseDao;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="33" hits="4" branch="false"/>
+								<line number="34" hits="4" branch="false"/>
+								<line number="35" hits="4" branch="false"/>
+								<line number="36" hits="4" branch="false"/>
+							</lines>
+						</method>
+						<method name="addCourse" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Boolean;" line-rate="1.0" branch-rate="0.5" complexity="0">
+							<lines>
+								<line number="47" hits="1" branch="false"/>
+								<line number="48" hits="1" branch="false"/>
+								<line number="49" hits="1" branch="false"/>
+								<line number="50" hits="1" branch="false"/>
+								<line number="51" hits="1" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+							</lines>
+						</method>
+						<method name="deleteCourse" signature="(Ljava/math/BigInteger;Ljava/lang/String;)Ljava/lang/Boolean;" line-rate="0.75" branch-rate="0.5" complexity="0">
+							<lines>
+								<line number="79" hits="1" branch="false"/>
+								<line number="80" hits="1" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="81" hits="0" branch="false"/>
+								<line number="82" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="editCourse" signature="(Lpik/dto/CourseInfo;Ljava/lang/String;)Ljava/lang/Boolean;" line-rate="0.8" branch-rate="0.6666666666666666" complexity="0">
+							<lines>
+								<line number="63" hits="2" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="64" hits="1" branch="false"/>
+								<line number="65" hits="1" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="66" hits="0" branch="false"/>
+								<line number="67" hits="1" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+							</lines>
+						</method>
+						<method name="getCourseDescriptionById" signature="(Ljava/math/BigInteger;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="112" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCourseNameById" signature="(Ljava/math/BigInteger;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="107" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getSubscribedCourses" signature="(Ljava/lang/String;)Ljava/util/List;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="92" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="getUnsubscribedCourses" signature="(Ljava/lang/String;)Ljava/util/List;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="102" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="getUserCourses" signature="(Ljava/lang/String;)Ljava/util/List;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="116" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="33" hits="4" branch="false"/>
+						<line number="34" hits="4" branch="false"/>
+						<line number="35" hits="4" branch="false"/>
+						<line number="36" hits="4" branch="false"/>
+						<line number="47" hits="1" branch="false"/>
+						<line number="48" hits="1" branch="false"/>
+						<line number="49" hits="1" branch="false"/>
+						<line number="50" hits="1" branch="false"/>
+						<line number="51" hits="1" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="63" hits="2" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="64" hits="1" branch="false"/>
+						<line number="65" hits="1" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="66" hits="0" branch="false"/>
+						<line number="67" hits="1" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="79" hits="1" branch="false"/>
+						<line number="80" hits="1" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="81" hits="0" branch="false"/>
+						<line number="82" hits="1" branch="false"/>
+						<line number="92" hits="1" branch="false"/>
+						<line number="102" hits="1" branch="false"/>
+						<line number="107" hits="0" branch="false"/>
+						<line number="112" hits="0" branch="false"/>
+						<line number="116" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="pik.controllers.DoCourseControler" filename="pik/controllers/DoCourseControler.java" line-rate="0.9230769230769231" branch-rate="1.0" complexity="1.25">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lpik/controllers/QuestionsController;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="31" hits="3" branch="false"/>
+								<line number="32" hits="3" branch="false"/>
+								<line number="33" hits="3" branch="false"/>
+							</lines>
+						</method>
+						<method name="doCourse" signature="(Ljava/lang/String;Ljava/security/Principal;Lorg/springframework/ui/Model;)Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="44" hits="1" branch="false"/>
+								<line number="45" hits="1" branch="false"/>
+								<line number="46" hits="1" branch="false"/>
+								<line number="47" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="processAnswer" signature="(Lpik/JSONDao/DoCourseControlerClientAnswer;Ljava/security/Principal;)Lorg/springframework/http/ResponseEntity;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="52" hits="1" branch="false"/>
+								<line number="53" hits="1" branch="false"/>
+								<line number="54" hits="1" branch="false"/>
+								<line number="55" hits="1" branch="false"/>
+								<line number="56" hits="1" branch="false"/>
+								<line number="57" hits="1" branch="false"/>
+								<line number="58" hits="1" branch="false"/>
+								<line number="59" hits="1" branch="false"/>
+								<line number="60" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="processRequest" signature="(Lpik/JSONDao/DoCourseControllerClientFicheRequest;)Lpik/JSONDao/DoCourseControlerFishe;" line-rate="0.8" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="66" hits="1" branch="false"/>
+								<line number="67" hits="1" branch="false"/>
+								<line number="68" hits="1" branch="false"/>
+								<line number="70" hits="1" branch="false"/>
+								<line number="71" hits="0" branch="false"/>
+								<line number="72" hits="0" branch="false"/>
+								<line number="73" hits="1" branch="false"/>
+								<line number="74" hits="2" branch="false"/>
+								<line number="75" hits="1" branch="false"/>
+								<line number="77" hits="1" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="31" hits="3" branch="false"/>
+						<line number="32" hits="3" branch="false"/>
+						<line number="33" hits="3" branch="false"/>
+						<line number="44" hits="1" branch="false"/>
+						<line number="45" hits="1" branch="false"/>
+						<line number="46" hits="1" branch="false"/>
+						<line number="47" hits="1" branch="false"/>
+						<line number="52" hits="1" branch="false"/>
+						<line number="53" hits="1" branch="false"/>
+						<line number="54" hits="1" branch="false"/>
+						<line number="55" hits="1" branch="false"/>
+						<line number="56" hits="1" branch="false"/>
+						<line number="57" hits="1" branch="false"/>
+						<line number="58" hits="1" branch="false"/>
+						<line number="59" hits="1" branch="false"/>
+						<line number="60" hits="1" branch="false"/>
+						<line number="66" hits="1" branch="false"/>
+						<line number="67" hits="1" branch="false"/>
+						<line number="68" hits="1" branch="false"/>
+						<line number="70" hits="1" branch="false"/>
+						<line number="71" hits="0" branch="false"/>
+						<line number="72" hits="0" branch="false"/>
+						<line number="73" hits="1" branch="false"/>
+						<line number="74" hits="2" branch="false"/>
+						<line number="75" hits="1" branch="false"/>
+						<line number="77" hits="1" branch="false"/>
+					</lines>
+				</class>
+				<class name="pik.controllers.IndexController" filename="pik/controllers/IndexController.java" line-rate="0.36363636363636365" branch-rate="0.5" complexity="1.5">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="24" hits="1" branch="false"/>
+								<line number="25" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Lpik/controllers/UserController;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="28" hits="2" branch="false"/>
+								<line number="29" hits="2" branch="false"/>
+								<line number="30" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="about" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="66" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="index" signature="(Ljava/security/Principal;Lorg/springframework/ui/Model;)Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="47" hits="3" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="48" hits="1" branch="false"/>
+								<line number="50" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="logoutPage" signature="(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)Ljava/lang/String;" line-rate="0.0" branch-rate="0.0" complexity="0">
+							<lines>
+								<line number="56" hits="0" branch="false"/>
+								<line number="57" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="58" hits="0" branch="false"/>
+								<line number="60" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="user" signature="(Ljava/security/Principal;Lorg/springframework/ui/Model;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="34" hits="0" branch="false"/>
+								<line number="35" hits="0" branch="false"/>
+								<line number="36" hits="0" branch="false"/>
+								<line number="37" hits="0" branch="false"/>
+								<line number="38" hits="0" branch="false"/>
+								<line number="39" hits="0" branch="false"/>
+								<line number="40" hits="0" branch="false"/>
+								<line number="41" hits="0" branch="false"/>
+								<line number="42" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="24" hits="1" branch="false"/>
+						<line number="25" hits="1" branch="false"/>
+						<line number="28" hits="2" branch="false"/>
+						<line number="29" hits="2" branch="false"/>
+						<line number="30" hits="2" branch="false"/>
+						<line number="34" hits="0" branch="false"/>
+						<line number="35" hits="0" branch="false"/>
+						<line number="36" hits="0" branch="false"/>
+						<line number="37" hits="0" branch="false"/>
+						<line number="38" hits="0" branch="false"/>
+						<line number="39" hits="0" branch="false"/>
+						<line number="40" hits="0" branch="false"/>
+						<line number="41" hits="0" branch="false"/>
+						<line number="42" hits="0" branch="false"/>
+						<line number="47" hits="3" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="48" hits="1" branch="false"/>
+						<line number="50" hits="2" branch="false"/>
+						<line number="56" hits="0" branch="false"/>
+						<line number="57" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="58" hits="0" branch="false"/>
+						<line number="60" hits="0" branch="false"/>
+						<line number="66" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="pik.controllers.ProfileController" filename="pik/controllers/ProfileController.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lpik/dao/UserDao;Lpik/controllers/CourseController;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="28" hits="3" branch="false"/>
+								<line number="29" hits="3" branch="false"/>
+								<line number="30" hits="3" branch="false"/>
+								<line number="31" hits="3" branch="false"/>
+							</lines>
+						</method>
+						<method name="addPerson" signature="(Lpik/JSONDao/EditProfileJsonRequest;)Lpik/JSONDao/EditProfileJsonResponse;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="55" hits="1" branch="false"/>
+								<line number="56" hits="1" branch="false"/>
+								<line number="57" hits="1" branch="false"/>
+								<line number="58" hits="1" branch="false"/>
+								<line number="59" hits="1" branch="false"/>
+								<line number="60" hits="1" branch="false"/>
+								<line number="61" hits="1" branch="false"/>
+								<line number="62" hits="1" branch="false"/>
+								<line number="63" hits="1" branch="false"/>
+								<line number="64" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="editProfile" signature="(Ljava/security/Principal;Lorg/springframework/ui/Model;)Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="47" hits="1" branch="false"/>
+								<line number="48" hits="1" branch="false"/>
+								<line number="49" hits="1" branch="false"/>
+								<line number="50" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="showProfile" signature="(Ljava/security/Principal;Lorg/springframework/ui/Model;)Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="35" hits="1" branch="false"/>
+								<line number="36" hits="1" branch="false"/>
+								<line number="37" hits="1" branch="false"/>
+								<line number="38" hits="1" branch="false"/>
+								<line number="39" hits="1" branch="false"/>
+								<line number="40" hits="1" branch="false"/>
+								<line number="41" hits="1" branch="false"/>
+								<line number="42" hits="1" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="28" hits="3" branch="false"/>
+						<line number="29" hits="3" branch="false"/>
+						<line number="30" hits="3" branch="false"/>
+						<line number="31" hits="3" branch="false"/>
+						<line number="35" hits="1" branch="false"/>
+						<line number="36" hits="1" branch="false"/>
+						<line number="37" hits="1" branch="false"/>
+						<line number="38" hits="1" branch="false"/>
+						<line number="39" hits="1" branch="false"/>
+						<line number="40" hits="1" branch="false"/>
+						<line number="41" hits="1" branch="false"/>
+						<line number="42" hits="1" branch="false"/>
+						<line number="47" hits="1" branch="false"/>
+						<line number="48" hits="1" branch="false"/>
+						<line number="49" hits="1" branch="false"/>
+						<line number="50" hits="1" branch="false"/>
+						<line number="55" hits="1" branch="false"/>
+						<line number="56" hits="1" branch="false"/>
+						<line number="57" hits="1" branch="false"/>
+						<line number="58" hits="1" branch="false"/>
+						<line number="59" hits="1" branch="false"/>
+						<line number="60" hits="1" branch="false"/>
+						<line number="61" hits="1" branch="false"/>
+						<line number="62" hits="1" branch="false"/>
+						<line number="63" hits="1" branch="false"/>
+						<line number="64" hits="1" branch="false"/>
+					</lines>
+				</class>
+				<class name="pik.controllers.QuestionsController" filename="pik/controllers/QuestionsController.java" line-rate="0.5737704918032787" branch-rate="0.39285714285714285" complexity="3.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lpik/dao/UserDao;Lpik/dao/CourseDao;Lpik/dao/QuestionDao;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="38" hits="10" branch="false"/>
+								<line number="39" hits="10" branch="false"/>
+								<line number="40" hits="10" branch="false"/>
+								<line number="41" hits="10" branch="false"/>
+								<line number="42" hits="10" branch="false"/>
+							</lines>
+						</method>
+						<method name="addQuestion" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/math/BigInteger;Ljava/lang/String;)Ljava/lang/Boolean;" line-rate="0.875" branch-rate="0.5" complexity="0">
+							<lines>
+								<line number="122" hits="1" branch="false"/>
+								<line number="123" hits="1" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="124" hits="0" branch="false"/>
+								<line number="126" hits="1" branch="false"/>
+								<line number="127" hits="1" branch="false"/>
+								<line number="128" hits="1" branch="false"/>
+								<line number="129" hits="1" branch="false"/>
+								<line number="131" hits="1" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+							</lines>
+						</method>
+						<method name="countActiveQuestions" signature="(Ljava/lang/String;Ljava/math/BigInteger;)Ljava/lang/Integer;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="63" hits="2" branch="false"/>
+								<line number="64" hits="2" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="65" hits="1" branch="false"/>
+								<line number="68" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="countAllQuestions" signature="(Ljava/math/BigInteger;)Ljava/lang/Long;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="51" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="deleteQuestion" signature="(Lpik/dto/QuestionInfo;Ljava/lang/String;)Ljava/lang/Boolean;" line-rate="0.8" branch-rate="0.5" complexity="0">
+							<lines>
+								<line number="161" hits="1" branch="false"/>
+								<line number="162" hits="1" branch="false"/>
+								<line number="163" hits="1" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="164" hits="0" branch="false"/>
+								<line number="166" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="editQuestion" signature="(Lpik/dto/QuestionInfo;Ljava/lang/String;)Ljava/lang/Boolean;" line-rate="0.8" branch-rate="0.5" complexity="0">
+							<lines>
+								<line number="144" hits="1" branch="false"/>
+								<line number="145" hits="1" branch="false"/>
+								<line number="146" hits="1" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="147" hits="0" branch="false"/>
+								<line number="149" hits="1" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+							</lines>
+						</method>
+						<method name="getAllQuestions" signature="(Ljava/lang/String;Ljava/math/BigInteger;)Ljava/util/List;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="101" hits="2" branch="false"/>
+								<line number="102" hits="2" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="103" hits="1" branch="false"/>
+								<line number="106" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="getFirstQuestion" signature="(Ljava/lang/String;Ljava/math/BigInteger;)Lpik/dto/QuestionInfo;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="81" hits="2" branch="false"/>
+								<line number="82" hits="2" branch="false"/>
+								<line number="83" hits="2" branch="false"/>
+								<line number="84" hits="2" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="85" hits="1" branch="false"/>
+								<line number="88" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="markAlgorithm" signature="(Lpik/dto/MarkInfo;I)V" line-rate="0.0" branch-rate="0.0" complexity="0">
+							<lines>
+								<line number="198" hits="0" branch="false"/>
+								<line number="199" hits="0" branch="false"/>
+								<line number="200" hits="0" branch="false"/>
+								<line number="201" hits="0" branch="false"/>
+								<line number="202" hits="0" branch="false"/>
+								<line number="203" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="204" hits="0" branch="false"/>
+								<line number="205" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="206" hits="0" branch="false"/>
+								<line number="207" hits="0" branch="false"/>
+								<line number="208" hits="0" branch="false"/>
+								<line number="209" hits="0" branch="false"/>
+								<line number="210" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="markQuestion" signature="(Lpik/dto/QuestionInfo;Ljava/lang/String;I)Ljava/lang/Boolean;" line-rate="0.0" branch-rate="0.0" complexity="0">
+							<lines>
+								<line number="178" hits="0" branch="false"/>
+								<line number="179" hits="0" branch="false"/>
+								<line number="180" hits="0" branch="false"/>
+								<line number="181" hits="0" branch="false"/>
+								<line number="182" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="183" hits="0" branch="true" condition-coverage="0% (0/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+										<condition number="1" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="184" hits="0" branch="false"/>
+								<line number="185" hits="0" branch="false"/>
+								<line number="187" hits="0" branch="false"/>
+								<line number="188" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="38" hits="10" branch="false"/>
+						<line number="39" hits="10" branch="false"/>
+						<line number="40" hits="10" branch="false"/>
+						<line number="41" hits="10" branch="false"/>
+						<line number="42" hits="10" branch="false"/>
+						<line number="51" hits="1" branch="false"/>
+						<line number="63" hits="2" branch="false"/>
+						<line number="64" hits="2" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="65" hits="1" branch="false"/>
+						<line number="68" hits="1" branch="false"/>
+						<line number="81" hits="2" branch="false"/>
+						<line number="82" hits="2" branch="false"/>
+						<line number="83" hits="2" branch="false"/>
+						<line number="84" hits="2" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="85" hits="1" branch="false"/>
+						<line number="88" hits="1" branch="false"/>
+						<line number="101" hits="2" branch="false"/>
+						<line number="102" hits="2" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="103" hits="1" branch="false"/>
+						<line number="106" hits="1" branch="false"/>
+						<line number="122" hits="1" branch="false"/>
+						<line number="123" hits="1" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="124" hits="0" branch="false"/>
+						<line number="126" hits="1" branch="false"/>
+						<line number="127" hits="1" branch="false"/>
+						<line number="128" hits="1" branch="false"/>
+						<line number="129" hits="1" branch="false"/>
+						<line number="131" hits="1" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="144" hits="1" branch="false"/>
+						<line number="145" hits="1" branch="false"/>
+						<line number="146" hits="1" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="147" hits="0" branch="false"/>
+						<line number="149" hits="1" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="161" hits="1" branch="false"/>
+						<line number="162" hits="1" branch="false"/>
+						<line number="163" hits="1" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="164" hits="0" branch="false"/>
+						<line number="166" hits="1" branch="false"/>
+						<line number="178" hits="0" branch="false"/>
+						<line number="179" hits="0" branch="false"/>
+						<line number="180" hits="0" branch="false"/>
+						<line number="181" hits="0" branch="false"/>
+						<line number="182" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="183" hits="0" branch="true" condition-coverage="0% (0/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+								<condition number="1" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="184" hits="0" branch="false"/>
+						<line number="185" hits="0" branch="false"/>
+						<line number="187" hits="0" branch="false"/>
+						<line number="188" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="198" hits="0" branch="false"/>
+						<line number="199" hits="0" branch="false"/>
+						<line number="200" hits="0" branch="false"/>
+						<line number="201" hits="0" branch="false"/>
+						<line number="202" hits="0" branch="false"/>
+						<line number="203" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="204" hits="0" branch="false"/>
+						<line number="205" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="206" hits="0" branch="false"/>
+						<line number="207" hits="0" branch="false"/>
+						<line number="208" hits="0" branch="false"/>
+						<line number="209" hits="0" branch="false"/>
+						<line number="210" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="pik.controllers.ShowCourseController" filename="pik/controllers/ShowCourseController.java" line-rate="0.0" branch-rate="1.0" complexity="1.6666666666666667">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lpik/controllers/QuestionsController;Lpik/controllers/CourseController;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="25" hits="0" branch="false"/>
+								<line number="26" hits="0" branch="false"/>
+								<line number="27" hits="0" branch="false"/>
+								<line number="28" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="doQuestion" signature="(Lorg/springframework/ui/Model;Ljava/security/Principal;Ljava/math/BigInteger;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="52" hits="0" branch="false"/>
+								<line number="54" hits="0" branch="false"/>
+								<line number="55" hits="0" branch="false"/>
+								<line number="57" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="showCourseInfo" signature="(Ljava/math/BigInteger;Ljava/security/Principal;Lorg/springframework/ui/Model;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="32" hits="0" branch="false"/>
+								<line number="34" hits="0" branch="false"/>
+								<line number="35" hits="0" branch="false"/>
+								<line number="36" hits="0" branch="false"/>
+								<line number="37" hits="0" branch="false"/>
+								<line number="38" hits="0" branch="false"/>
+								<line number="39" hits="0" branch="false"/>
+								<line number="40" hits="0" branch="false"/>
+								<line number="41" hits="0" branch="false"/>
+								<line number="42" hits="0" branch="false"/>
+								<line number="43" hits="0" branch="false"/>
+								<line number="44" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="25" hits="0" branch="false"/>
+						<line number="26" hits="0" branch="false"/>
+						<line number="27" hits="0" branch="false"/>
+						<line number="28" hits="0" branch="false"/>
+						<line number="32" hits="0" branch="false"/>
+						<line number="34" hits="0" branch="false"/>
+						<line number="35" hits="0" branch="false"/>
+						<line number="36" hits="0" branch="false"/>
+						<line number="37" hits="0" branch="false"/>
+						<line number="38" hits="0" branch="false"/>
+						<line number="39" hits="0" branch="false"/>
+						<line number="40" hits="0" branch="false"/>
+						<line number="41" hits="0" branch="false"/>
+						<line number="42" hits="0" branch="false"/>
+						<line number="43" hits="0" branch="false"/>
+						<line number="44" hits="0" branch="false"/>
+						<line number="52" hits="0" branch="false"/>
+						<line number="54" hits="0" branch="false"/>
+						<line number="55" hits="0" branch="false"/>
+						<line number="57" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="pik.controllers.SubscriptionController" filename="pik/controllers/SubscriptionController.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lpik/controllers/UserController;Lpik/controllers/CourseController;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="25" hits="0" branch="false"/>
+								<line number="26" hits="0" branch="false"/>
+								<line number="27" hits="0" branch="false"/>
+								<line number="28" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="addSubscription" signature="(Ljava/security/Principal;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="33" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="deleteSubscription" signature="(Ljava/security/Principal;Ljava/math/BigInteger;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="65" hits="0" branch="false"/>
+								<line number="66" hits="0" branch="false"/>
+								<line number="67" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="doAddCourse" signature="(Ljava/math/BigInteger;Ljava/security/Principal;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="57" hits="0" branch="false"/>
+								<line number="58" hits="0" branch="false"/>
+								<line number="59" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="removeSubscription" signature="(Ljava/math/BigInteger;Ljava/security/Principal;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="48" hits="0" branch="false"/>
+								<line number="49" hits="0" branch="false"/>
+								<line number="50" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="showAllCourses" signature="(Lorg/springframework/ui/Model;Ljava/security/Principal;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="39" hits="0" branch="false"/>
+								<line number="40" hits="0" branch="false"/>
+								<line number="41" hits="0" branch="false"/>
+								<line number="42" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="25" hits="0" branch="false"/>
+						<line number="26" hits="0" branch="false"/>
+						<line number="27" hits="0" branch="false"/>
+						<line number="28" hits="0" branch="false"/>
+						<line number="33" hits="0" branch="false"/>
+						<line number="39" hits="0" branch="false"/>
+						<line number="40" hits="0" branch="false"/>
+						<line number="41" hits="0" branch="false"/>
+						<line number="42" hits="0" branch="false"/>
+						<line number="48" hits="0" branch="false"/>
+						<line number="49" hits="0" branch="false"/>
+						<line number="50" hits="0" branch="false"/>
+						<line number="57" hits="0" branch="false"/>
+						<line number="58" hits="0" branch="false"/>
+						<line number="59" hits="0" branch="false"/>
+						<line number="65" hits="0" branch="false"/>
+						<line number="66" hits="0" branch="false"/>
+						<line number="67" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="pik.controllers.UserController" filename="pik/controllers/UserController.java" line-rate="1.0" branch-rate="0.6666666666666666" complexity="1.3333333333333333">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lpik/dao/UserDao;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="21" hits="6" branch="false"/>
+								<line number="22" hits="6" branch="false"/>
+								<line number="23" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="addSubscription" signature="(Ljava/math/BigInteger;Ljava/lang/String;)Ljava/lang/Boolean;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="70" hits="1" branch="false"/>
+								<line number="71" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="addUser" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Boolean;" line-rate="1.0" branch-rate="0.75" complexity="0">
+							<lines>
+								<line number="35" hits="2" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="36" hits="1" branch="false"/>
+								<line number="38" hits="1" branch="false"/>
+								<line number="39" hits="1" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+							</lines>
+						</method>
+						<method name="editUser" signature="(Lpik/dto/UserInfo;)Ljava/lang/Boolean;" line-rate="1.0" branch-rate="0.5" complexity="0">
+							<lines>
+								<line number="59" hits="1" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+							</lines>
+						</method>
+						<method name="getUser" signature="(Ljava/lang/String;)Lpik/dto/UserInfo;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="49" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="removeSubscription" signature="(Ljava/math/BigInteger;Ljava/lang/String;)Ljava/lang/Boolean;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="82" hits="1" branch="false"/>
+								<line number="83" hits="1" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="21" hits="6" branch="false"/>
+						<line number="22" hits="6" branch="false"/>
+						<line number="23" hits="6" branch="false"/>
+						<line number="35" hits="2" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="36" hits="1" branch="false"/>
+						<line number="38" hits="1" branch="false"/>
+						<line number="39" hits="1" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="49" hits="1" branch="false"/>
+						<line number="59" hits="1" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="70" hits="1" branch="false"/>
+						<line number="71" hits="1" branch="false"/>
+						<line number="82" hits="1" branch="false"/>
+						<line number="83" hits="1" branch="false"/>
+					</lines>
+				</class>
+				<class name="pik.controllers.UserCourseController" filename="pik/controllers/UserCourseController.java" line-rate="0.0" branch-rate="1.0" complexity="1.1428571428571428">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lpik/controllers/CourseController;Lpik/controllers/QuestionsController;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="30" hits="0" branch="false"/>
+								<line number="31" hits="0" branch="false"/>
+								<line number="32" hits="0" branch="false"/>
+								<line number="33" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="addCourse" signature="(Lorg/springframework/ui/Model;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="62" hits="0" branch="false"/>
+								<line number="63" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="deleteCourse" signature="(Ljava/security/Principal;Ljava/math/BigInteger;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="86" hits="0" branch="false"/>
+								<line number="88" hits="0" branch="false"/>
+								<line number="89" hits="0" branch="false"/>
+								<line number="91" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="doAddCourse" signature="(Ljava/security/Principal;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="78" hits="0" branch="false"/>
+								<line number="79" hits="0" branch="false"/>
+								<line number="80" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="removeCourse" signature="(Lorg/springframework/ui/Model;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="70" hits="0" branch="false"/>
+								<line number="71" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="showCourses" signature="(Ljava/security/Principal;Lorg/springframework/ui/Model;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="39" hits="0" branch="false"/>
+								<line number="40" hits="0" branch="false"/>
+								<line number="41" hits="0" branch="false"/>
+								<line number="42" hits="0" branch="false"/>
+								<line number="44" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="showSubscribedCourses" signature="(Ljava/security/Principal;Lorg/springframework/ui/Model;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="50" hits="0" branch="false"/>
+								<line number="51" hits="0" branch="false"/>
+								<line number="52" hits="0" branch="false"/>
+								<line number="53" hits="0" branch="false"/>
+								<line number="55" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="30" hits="0" branch="false"/>
+						<line number="31" hits="0" branch="false"/>
+						<line number="32" hits="0" branch="false"/>
+						<line number="33" hits="0" branch="false"/>
+						<line number="39" hits="0" branch="false"/>
+						<line number="40" hits="0" branch="false"/>
+						<line number="41" hits="0" branch="false"/>
+						<line number="42" hits="0" branch="false"/>
+						<line number="44" hits="0" branch="false"/>
+						<line number="50" hits="0" branch="false"/>
+						<line number="51" hits="0" branch="false"/>
+						<line number="52" hits="0" branch="false"/>
+						<line number="53" hits="0" branch="false"/>
+						<line number="55" hits="0" branch="false"/>
+						<line number="62" hits="0" branch="false"/>
+						<line number="63" hits="0" branch="false"/>
+						<line number="70" hits="0" branch="false"/>
+						<line number="71" hits="0" branch="false"/>
+						<line number="78" hits="0" branch="false"/>
+						<line number="79" hits="0" branch="false"/>
+						<line number="80" hits="0" branch="false"/>
+						<line number="86" hits="0" branch="false"/>
+						<line number="88" hits="0" branch="false"/>
+						<line number="89" hits="0" branch="false"/>
+						<line number="91" hits="0" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+		<package name="pik.dao" line-rate="0.7286821705426356" branch-rate="0.5543478260869565" complexity="1.9206349206349207">
+			<classes>
+				<class name="pik.dao.CourseDao" filename="pik/dao/CourseDao.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+					</methods>
+					<lines>
+					</lines>
+				</class>
+				<class name="pik.dao.CourseDaoImpl" filename="pik/dao/CourseDaoImpl.java" line-rate="0.7638888888888888" branch-rate="0.5769230769230769" complexity="2.1538461538461537">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lpik/dao/SequenceDao;Lpik/repositories/CourseRepository;Lpik/repositories/QuestionRepository;Lpik/repositories/UserRepository;Lorg/springframework/data/mongodb/core/MongoOperations;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="48" hits="5" branch="false"/>
+								<line number="49" hits="5" branch="false"/>
+								<line number="50" hits="5" branch="false"/>
+								<line number="51" hits="5" branch="false"/>
+								<line number="52" hits="5" branch="false"/>
+								<line number="53" hits="5" branch="false"/>
+								<line number="54" hits="5" branch="false"/>
+							</lines>
+						</method>
+						<method name="create" signature="(Lpik/dto/CourseInfo;)Lpik/dto/CourseInfo;" line-rate="0.9230769230769231" branch-rate="0.5" complexity="0">
+							<lines>
+								<line number="59" hits="2" branch="false"/>
+								<line number="61" hits="1" branch="false"/>
+								<line number="62" hits="1" branch="false"/>
+								<line number="63" hits="1" branch="false"/>
+								<line number="64" hits="1" branch="false"/>
+								<line number="66" hits="2" branch="false"/>
+								<line number="68" hits="2" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="69" hits="0" branch="false"/>
+								<line number="71" hits="2" branch="false"/>
+								<line number="72" hits="2" branch="false"/>
+								<line number="74" hits="2" branch="false"/>
+								<line number="76" hits="2" branch="false"/>
+								<line number="78" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="delete" signature="(Lpik/dto/CourseInfo;)Ljava/lang/Boolean;" line-rate="0.9" branch-rate="0.5" complexity="0">
+							<lines>
+								<line number="91" hits="1" branch="false"/>
+								<line number="93" hits="1" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="94" hits="0" branch="false"/>
+								<line number="96" hits="1" branch="false"/>
+								<line number="97" hits="1" branch="false"/>
+								<line number="99" hits="2" branch="false"/>
+								<line number="100" hits="1" branch="false"/>
+								<line number="103" hits="1" branch="false"/>
+								<line number="104" hits="1" branch="false"/>
+								<line number="105" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="exists" signature="(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Boolean;" line-rate="0.0" branch-rate="0.0" complexity="0">
+							<lines>
+								<line number="165" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+							</lines>
+						</method>
+						<method name="exists" signature="(Ljava/math/BigInteger;)Ljava/lang/Boolean;" line-rate="0.0" branch-rate="0.0" complexity="0">
+							<lines>
+								<line number="161" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+							</lines>
+						</method>
+						<method name="get" signature="(Ljava/lang/String;Ljava/lang/String;)Lpik/dto/CourseInfo;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="113" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="get" signature="(Ljava/math/BigInteger;)Lpik/dto/CourseInfo;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="109" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getAll" signature="()Ljava/util/List;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="177" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getOwnedCourses" signature="(Ljava/lang/String;)Ljava/util/List;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="117" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getSubscribedCourses" signature="(Lpik/dto/UserInfo;)Ljava/util/List;" line-rate="1.0" branch-rate="0.9285714285714286" complexity="0">
+							<lines>
+								<line number="121" hits="1" branch="false"/>
+								<line number="123" hits="1" branch="false"/>
+								<line number="124" hits="1" branch="false"/>
+								<line number="125" hits="1" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="126" hits="1" branch="false"/>
+								<line number="127" hits="1" branch="false"/>
+								<line number="130" hits="1" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="131" hits="1" branch="false"/>
+								<line number="133" hits="1" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="134" hits="9" branch="false"/>
+								<line number="135" hits="9" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="136" hits="9" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="137" hits="1" branch="false"/>
+								<line number="138" hits="1" branch="false"/>
+								<line number="140" hits="8" branch="false"/>
+								<line number="142" hits="9" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="143" hits="8" branch="false"/>
+								<line number="146" hits="9" branch="false"/>
+								<line number="148" hits="1" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="149" hits="8" branch="false"/>
+								<line number="151" hits="1" branch="false"/>
+								<line number="153" hits="1" branch="false"/>
+								<line number="156" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="getUnsubscribed" signature="(Lpik/dto/UserInfo;)Ljava/util/List;" line-rate="0.0" branch-rate="0.0" complexity="0">
+							<lines>
+								<line number="181" hits="0" branch="false"/>
+								<line number="183" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="184" hits="0" branch="false"/>
+								<line number="186" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="makeCollection" signature="(Ljava/lang/Iterable;)Ljava/util/List;" line-rate="0.0" branch-rate="0.0" complexity="0">
+							<lines>
+								<line number="169" hits="0" branch="false"/>
+								<line number="170" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="171" hits="0" branch="false"/>
+								<line number="172" hits="0" branch="false"/>
+								<line number="173" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="update" signature="(Lpik/dto/CourseInfo;)Lpik/dto/CourseInfo;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="82" hits="1" branch="false"/>
+								<line number="84" hits="1" branch="false"/>
+								<line number="85" hits="1" branch="false"/>
+								<line number="87" hits="1" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="48" hits="5" branch="false"/>
+						<line number="49" hits="5" branch="false"/>
+						<line number="50" hits="5" branch="false"/>
+						<line number="51" hits="5" branch="false"/>
+						<line number="52" hits="5" branch="false"/>
+						<line number="53" hits="5" branch="false"/>
+						<line number="54" hits="5" branch="false"/>
+						<line number="59" hits="2" branch="false"/>
+						<line number="61" hits="1" branch="false"/>
+						<line number="62" hits="1" branch="false"/>
+						<line number="63" hits="1" branch="false"/>
+						<line number="64" hits="1" branch="false"/>
+						<line number="66" hits="2" branch="false"/>
+						<line number="68" hits="2" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="69" hits="0" branch="false"/>
+						<line number="71" hits="2" branch="false"/>
+						<line number="72" hits="2" branch="false"/>
+						<line number="74" hits="2" branch="false"/>
+						<line number="76" hits="2" branch="false"/>
+						<line number="78" hits="2" branch="false"/>
+						<line number="82" hits="1" branch="false"/>
+						<line number="84" hits="1" branch="false"/>
+						<line number="85" hits="1" branch="false"/>
+						<line number="87" hits="1" branch="false"/>
+						<line number="91" hits="1" branch="false"/>
+						<line number="93" hits="1" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="94" hits="0" branch="false"/>
+						<line number="96" hits="1" branch="false"/>
+						<line number="97" hits="1" branch="false"/>
+						<line number="99" hits="2" branch="false"/>
+						<line number="100" hits="1" branch="false"/>
+						<line number="103" hits="1" branch="false"/>
+						<line number="104" hits="1" branch="false"/>
+						<line number="105" hits="1" branch="false"/>
+						<line number="109" hits="0" branch="false"/>
+						<line number="113" hits="0" branch="false"/>
+						<line number="117" hits="0" branch="false"/>
+						<line number="121" hits="1" branch="false"/>
+						<line number="123" hits="1" branch="false"/>
+						<line number="124" hits="1" branch="false"/>
+						<line number="125" hits="1" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="126" hits="1" branch="false"/>
+						<line number="127" hits="1" branch="false"/>
+						<line number="130" hits="1" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="131" hits="1" branch="false"/>
+						<line number="133" hits="1" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="134" hits="9" branch="false"/>
+						<line number="135" hits="9" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="136" hits="9" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="137" hits="1" branch="false"/>
+						<line number="138" hits="1" branch="false"/>
+						<line number="140" hits="8" branch="false"/>
+						<line number="142" hits="9" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="143" hits="8" branch="false"/>
+						<line number="146" hits="9" branch="false"/>
+						<line number="148" hits="1" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="149" hits="8" branch="false"/>
+						<line number="151" hits="1" branch="false"/>
+						<line number="153" hits="1" branch="false"/>
+						<line number="156" hits="1" branch="false"/>
+						<line number="161" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="165" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="169" hits="0" branch="false"/>
+						<line number="170" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="171" hits="0" branch="false"/>
+						<line number="172" hits="0" branch="false"/>
+						<line number="173" hits="0" branch="false"/>
+						<line number="177" hits="0" branch="false"/>
+						<line number="181" hits="0" branch="false"/>
+						<line number="183" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="184" hits="0" branch="false"/>
+						<line number="186" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="pik.dao.QuestionDao" filename="pik/dao/QuestionDao.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+					</methods>
+					<lines>
+					</lines>
+				</class>
+				<class name="pik.dao.QuestionDaoImpl" filename="pik/dao/QuestionDaoImpl.java" line-rate="0.8823529411764706" branch-rate="0.6666666666666666" complexity="2.5555555555555554">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lpik/repositories/QuestionRepository;Lpik/repositories/UserRepository;Lpik/dao/SequenceDao;Lorg/springframework/data/mongodb/core/MongoOperations;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="43" hits="6" branch="false"/>
+								<line number="44" hits="6" branch="false"/>
+								<line number="45" hits="6" branch="false"/>
+								<line number="46" hits="6" branch="false"/>
+								<line number="47" hits="6" branch="false"/>
+								<line number="48" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="add" signature="(Lpik/dto/QuestionInfo;)Lpik/dto/QuestionInfo;" line-rate="0.9565217391304348" branch-rate="0.75" complexity="0">
+							<lines>
+								<line number="54" hits="2" branch="false"/>
+								<line number="57" hits="2" branch="false"/>
+								<line number="59" hits="1" branch="false"/>
+								<line number="60" hits="1" branch="false"/>
+								<line number="61" hits="1" branch="false"/>
+								<line number="62" hits="1" branch="false"/>
+								<line number="64" hits="2" branch="false"/>
+								<line number="65" hits="2" branch="false"/>
+								<line number="66" hits="2" branch="false"/>
+								<line number="68" hits="2" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="70" hits="10" branch="false"/>
+								<line number="71" hits="10" branch="false"/>
+								<line number="72" hits="10" branch="false"/>
+								<line number="73" hits="10" branch="false"/>
+								<line number="74" hits="10" branch="false"/>
+								<line number="75" hits="10" branch="false"/>
+								<line number="76" hits="10" branch="false"/>
+								<line number="77" hits="10" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="78" hits="0" branch="false"/>
+								<line number="79" hits="10" branch="false"/>
+								<line number="80" hits="10" branch="false"/>
+								<line number="82" hits="2" branch="false"/>
+								<line number="83" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="countActiveQuestions" signature="(Lpik/dto/UserInfo;Ljava/math/BigInteger;)I" line-rate="1.0" branch-rate="0.6666666666666666" complexity="0">
+							<lines>
+								<line number="169" hits="1" branch="false"/>
+								<line number="171" hits="1" branch="false"/>
+								<line number="173" hits="1" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="175" hits="10" branch="true" condition-coverage="50% (2/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+										<condition number="1" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="176" hits="10" branch="false"/>
+								<line number="177" hits="10" branch="false"/>
+								<line number="178" hits="1" branch="false"/>
+								<line number="180" hits="1" branch="false"/>
+								<line number="182" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="countQuestions" signature="(Ljava/math/BigInteger;)Ljava/lang/Long;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="165" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCourseQuestions" signature="(Ljava/math/BigInteger;)Ljava/util/List;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="117" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getQuestionToAnswer" signature="(Lpik/dto/UserInfo;Lpik/dto/CourseInfo;Lorg/springframework/data/domain/Pageable;)Lorg/springframework/data/domain/Page;" line-rate="0.75" branch-rate="0.6" complexity="0">
+							<lines>
+								<line number="121" hits="1" branch="false"/>
+								<line number="122" hits="1" branch="false"/>
+								<line number="123" hits="1" branch="false"/>
+								<line number="125" hits="1" branch="false"/>
+								<line number="127" hits="1" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="129" hits="10" branch="true" condition-coverage="50% (2/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+										<condition number="1" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="130" hits="10" branch="false"/>
+								<line number="131" hits="10" branch="false"/>
+								<line number="133" hits="1" branch="false"/>
+								<line number="135" hits="1" branch="false"/>
+								<line number="136" hits="1" branch="false"/>
+								<line number="137" hits="1" branch="false"/>
+								<line number="138" hits="1" branch="false"/>
+								<line number="139" hits="1" branch="false"/>
+								<line number="141" hits="1" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="142" hits="0" branch="false"/>
+								<line number="143" hits="0" branch="false"/>
+								<line number="144" hits="0" branch="false"/>
+								<line number="145" hits="0" branch="false"/>
+								<line number="146" hits="0" branch="false"/>
+								<line number="149" hits="1" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="150" hits="0" branch="false"/>
+								<line number="152" hits="1" branch="false"/>
+								<line number="153" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="makeCollection" signature="(Ljava/lang/Iterable;)Ljava/util/List;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="157" hits="2" branch="false"/>
+								<line number="158" hits="2" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="159" hits="20" branch="false"/>
+								<line number="160" hits="20" branch="false"/>
+								<line number="161" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="remove" signature="(Lpik/dto/QuestionInfo;)Ljava/lang/Boolean;" line-rate="0.875" branch-rate="0.5" complexity="0">
+							<lines>
+								<line number="101" hits="1" branch="false"/>
+								<line number="103" hits="1" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="104" hits="0" branch="false"/>
+								<line number="106" hits="1" branch="false"/>
+								<line number="108" hits="2" branch="false"/>
+								<line number="109" hits="1" branch="false"/>
+								<line number="112" hits="1" branch="false"/>
+								<line number="113" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="update" signature="(Lpik/dto/QuestionInfo;)Lpik/dto/QuestionInfo;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="88" hits="1" branch="false"/>
+								<line number="89" hits="1" branch="false"/>
+								<line number="90" hits="2" branch="false"/>
+								<line number="91" hits="1" branch="false"/>
+								<line number="92" hits="1" branch="false"/>
+								<line number="94" hits="1" branch="false"/>
+								<line number="95" hits="1" branch="false"/>
+								<line number="97" hits="1" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="43" hits="6" branch="false"/>
+						<line number="44" hits="6" branch="false"/>
+						<line number="45" hits="6" branch="false"/>
+						<line number="46" hits="6" branch="false"/>
+						<line number="47" hits="6" branch="false"/>
+						<line number="48" hits="6" branch="false"/>
+						<line number="54" hits="2" branch="false"/>
+						<line number="57" hits="2" branch="false"/>
+						<line number="59" hits="1" branch="false"/>
+						<line number="60" hits="1" branch="false"/>
+						<line number="61" hits="1" branch="false"/>
+						<line number="62" hits="1" branch="false"/>
+						<line number="64" hits="2" branch="false"/>
+						<line number="65" hits="2" branch="false"/>
+						<line number="66" hits="2" branch="false"/>
+						<line number="68" hits="2" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="70" hits="10" branch="false"/>
+						<line number="71" hits="10" branch="false"/>
+						<line number="72" hits="10" branch="false"/>
+						<line number="73" hits="10" branch="false"/>
+						<line number="74" hits="10" branch="false"/>
+						<line number="75" hits="10" branch="false"/>
+						<line number="76" hits="10" branch="false"/>
+						<line number="77" hits="10" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="78" hits="0" branch="false"/>
+						<line number="79" hits="10" branch="false"/>
+						<line number="80" hits="10" branch="false"/>
+						<line number="82" hits="2" branch="false"/>
+						<line number="83" hits="2" branch="false"/>
+						<line number="88" hits="1" branch="false"/>
+						<line number="89" hits="1" branch="false"/>
+						<line number="90" hits="2" branch="false"/>
+						<line number="91" hits="1" branch="false"/>
+						<line number="92" hits="1" branch="false"/>
+						<line number="94" hits="1" branch="false"/>
+						<line number="95" hits="1" branch="false"/>
+						<line number="97" hits="1" branch="false"/>
+						<line number="101" hits="1" branch="false"/>
+						<line number="103" hits="1" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="104" hits="0" branch="false"/>
+						<line number="106" hits="1" branch="false"/>
+						<line number="108" hits="2" branch="false"/>
+						<line number="109" hits="1" branch="false"/>
+						<line number="112" hits="1" branch="false"/>
+						<line number="113" hits="1" branch="false"/>
+						<line number="117" hits="0" branch="false"/>
+						<line number="121" hits="1" branch="false"/>
+						<line number="122" hits="1" branch="false"/>
+						<line number="123" hits="1" branch="false"/>
+						<line number="125" hits="1" branch="false"/>
+						<line number="127" hits="1" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="129" hits="10" branch="true" condition-coverage="50% (2/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+								<condition number="1" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="130" hits="10" branch="false"/>
+						<line number="131" hits="10" branch="false"/>
+						<line number="133" hits="1" branch="false"/>
+						<line number="135" hits="1" branch="false"/>
+						<line number="136" hits="1" branch="false"/>
+						<line number="137" hits="1" branch="false"/>
+						<line number="138" hits="1" branch="false"/>
+						<line number="139" hits="1" branch="false"/>
+						<line number="141" hits="1" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="142" hits="0" branch="false"/>
+						<line number="143" hits="0" branch="false"/>
+						<line number="144" hits="0" branch="false"/>
+						<line number="145" hits="0" branch="false"/>
+						<line number="146" hits="0" branch="false"/>
+						<line number="149" hits="1" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="150" hits="0" branch="false"/>
+						<line number="152" hits="1" branch="false"/>
+						<line number="153" hits="1" branch="false"/>
+						<line number="157" hits="2" branch="false"/>
+						<line number="158" hits="2" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="159" hits="20" branch="false"/>
+						<line number="160" hits="20" branch="false"/>
+						<line number="161" hits="2" branch="false"/>
+						<line number="165" hits="0" branch="false"/>
+						<line number="169" hits="1" branch="false"/>
+						<line number="171" hits="1" branch="false"/>
+						<line number="173" hits="1" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="175" hits="10" branch="true" condition-coverage="50% (2/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+								<condition number="1" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="176" hits="10" branch="false"/>
+						<line number="177" hits="10" branch="false"/>
+						<line number="178" hits="1" branch="false"/>
+						<line number="180" hits="1" branch="false"/>
+						<line number="182" hits="1" branch="false"/>
+					</lines>
+				</class>
+				<class name="pik.dao.SequenceDao" filename="pik/dao/SequenceDao.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+					</methods>
+					<lines>
+					</lines>
+				</class>
+				<class name="pik.dao.SequenceDaoImpl" filename="pik/dao/SequenceDaoImpl.java" line-rate="0.0" branch-rate="0.0" complexity="2.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="16" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getNext" signature="(Ljava/lang/String;)Ljava/math/BigInteger;" line-rate="0.0" branch-rate="0.0" complexity="0">
+							<lines>
+								<line number="24" hits="0" branch="false"/>
+								<line number="26" hits="0" branch="false"/>
+								<line number="27" hits="0" branch="false"/>
+								<line number="29" hits="0" branch="false"/>
+								<line number="30" hits="0" branch="false"/>
+								<line number="32" hits="0" branch="false"/>
+								<line number="34" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="35" hits="0" branch="false"/>
+								<line number="38" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="insert" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="43" hits="0" branch="false"/>
+								<line number="44" hits="0" branch="false"/>
+								<line number="45" hits="0" branch="false"/>
+								<line number="46" hits="0" branch="false"/>
+								<line number="48" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="16" hits="0" branch="false"/>
+						<line number="24" hits="0" branch="false"/>
+						<line number="26" hits="0" branch="false"/>
+						<line number="27" hits="0" branch="false"/>
+						<line number="29" hits="0" branch="false"/>
+						<line number="30" hits="0" branch="false"/>
+						<line number="32" hits="0" branch="false"/>
+						<line number="34" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="35" hits="0" branch="false"/>
+						<line number="38" hits="0" branch="false"/>
+						<line number="43" hits="0" branch="false"/>
+						<line number="44" hits="0" branch="false"/>
+						<line number="45" hits="0" branch="false"/>
+						<line number="46" hits="0" branch="false"/>
+						<line number="48" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="pik.dao.UserDao" filename="pik/dao/UserDao.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+					</methods>
+					<lines>
+					</lines>
+				</class>
+				<class name="pik.dao.UserDaoImpl" filename="pik/dao/UserDaoImpl.java" line-rate="0.6744186046511628" branch-rate="0.5" complexity="3.7">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lpik/repositories/UserRepository;Lpik/repositories/MarkRepository;Lpik/repositories/CourseRepository;Lpik/repositories/QuestionRepository;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="36" hits="3" branch="false"/>
+								<line number="37" hits="3" branch="false"/>
+								<line number="38" hits="3" branch="false"/>
+								<line number="39" hits="3" branch="false"/>
+								<line number="40" hits="3" branch="false"/>
+								<line number="41" hits="3" branch="false"/>
+							</lines>
+						</method>
+						<method name="create" signature="(Lpik/dto/UserInfo;)Lpik/dto/UserInfo;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="44" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="delete" signature="(Lpik/dto/UserInfo;)Ljava/lang/Boolean;" line-rate="0.0" branch-rate="0.0" complexity="0">
+							<lines>
+								<line number="76" hits="0" branch="false"/>
+								<line number="78" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="79" hits="0" branch="false"/>
+								<line number="81" hits="0" branch="false"/>
+								<line number="83" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="84" hits="0" branch="false"/>
+								<line number="85" hits="0" branch="false"/>
+								<line number="86" hits="0" branch="false"/>
+								<line number="87" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getById" signature="(Ljava/lang/String;)Lpik/dto/UserInfo;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="48" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="idExists" signature="(Ljava/lang/String;)Ljava/lang/Boolean;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="92" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="readAll" signature="()Ljava/util/List;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="52" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="readAll" signature="(Lorg/springframework/data/domain/Pageable;)Lorg/springframework/data/domain/Page;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="56" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="subscribe" signature="(Lpik/dto/UserInfo;Ljava/math/BigInteger;)Ljava/lang/Boolean;" line-rate="0.896551724137931" branch-rate="0.6875" complexity="0">
+							<lines>
+								<line number="98" hits="2" branch="false"/>
+								<line number="100" hits="2" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="101" hits="0" branch="false"/>
+								<line number="103" hits="2" branch="false"/>
+								<line number="105" hits="2" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="106" hits="3" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="107" hits="1" branch="false"/>
+								<line number="109" hits="1" branch="false"/>
+								<line number="110" hits="1" branch="false"/>
+								<line number="113" hits="1" branch="false"/>
+								<line number="114" hits="1" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="115" hits="0" branch="false"/>
+								<line number="117" hits="1" branch="false"/>
+								<line number="118" hits="1" branch="true" condition-coverage="50% (2/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+										<condition number="1" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="119" hits="1" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="120" hits="10" branch="false"/>
+								<line number="121" hits="10" branch="false"/>
+								<line number="122" hits="10" branch="false"/>
+								<line number="123" hits="10" branch="false"/>
+								<line number="124" hits="10" branch="false"/>
+								<line number="125" hits="10" branch="false"/>
+								<line number="126" hits="10" branch="false"/>
+								<line number="127" hits="10" branch="false"/>
+								<line number="128" hits="10" branch="false"/>
+								<line number="132" hits="1" branch="false"/>
+								<line number="133" hits="1" branch="false"/>
+								<line number="135" hits="1" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="136" hits="0" branch="false"/>
+								<line number="139" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="unsubscribe" signature="(Lpik/dto/UserInfo;Ljava/math/BigInteger;)Ljava/lang/Boolean;" line-rate="0.6296296296296297" branch-rate="0.4444444444444444" complexity="0">
+							<lines>
+								<line number="144" hits="2" branch="false"/>
+								<line number="146" hits="2" branch="false"/>
+								<line number="147" hits="2" branch="false"/>
+								<line number="149" hits="2" branch="false"/>
+								<line number="150" hits="2" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="151" hits="1" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="152" hits="1" branch="false"/>
+								<line number="153" hits="1" branch="false"/>
+								<line number="155" hits="0" branch="false"/>
+								<line number="156" hits="0" branch="false"/>
+								<line number="157" hits="2" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="158" hits="1" branch="false"/>
+								<line number="161" hits="1" branch="false"/>
+								<line number="163" hits="1" branch="false"/>
+								<line number="165" hits="1" branch="true" condition-coverage="50% (2/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+										<condition number="1" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="166" hits="0" branch="false"/>
+								<line number="167" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="168" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="169" hits="0" branch="false"/>
+								<line number="170" hits="0" branch="false"/>
+								<line number="172" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="173" hits="0" branch="false"/>
+								<line number="177" hits="1" branch="false"/>
+								<line number="178" hits="1" branch="false"/>
+								<line number="180" hits="1" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="181" hits="0" branch="false"/>
+								<line number="184" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="update" signature="(Lpik/dto/UserInfo;)Lpik/dto/UserInfo;" line-rate="0.9" branch-rate="0.5" complexity="0">
+							<lines>
+								<line number="60" hits="1" branch="false"/>
+								<line number="62" hits="1" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="63" hits="0" branch="false"/>
+								<line number="66" hits="1" branch="false"/>
+								<line number="67" hits="1" branch="false"/>
+								<line number="68" hits="1" branch="false"/>
+								<line number="69" hits="1" branch="false"/>
+								<line number="70" hits="1" branch="false"/>
+								<line number="71" hits="1" branch="false"/>
+								<line number="72" hits="1" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="36" hits="3" branch="false"/>
+						<line number="37" hits="3" branch="false"/>
+						<line number="38" hits="3" branch="false"/>
+						<line number="39" hits="3" branch="false"/>
+						<line number="40" hits="3" branch="false"/>
+						<line number="41" hits="3" branch="false"/>
+						<line number="44" hits="0" branch="false"/>
+						<line number="48" hits="0" branch="false"/>
+						<line number="52" hits="0" branch="false"/>
+						<line number="56" hits="0" branch="false"/>
+						<line number="60" hits="1" branch="false"/>
+						<line number="62" hits="1" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="63" hits="0" branch="false"/>
+						<line number="66" hits="1" branch="false"/>
+						<line number="67" hits="1" branch="false"/>
+						<line number="68" hits="1" branch="false"/>
+						<line number="69" hits="1" branch="false"/>
+						<line number="70" hits="1" branch="false"/>
+						<line number="71" hits="1" branch="false"/>
+						<line number="72" hits="1" branch="false"/>
+						<line number="76" hits="0" branch="false"/>
+						<line number="78" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="79" hits="0" branch="false"/>
+						<line number="81" hits="0" branch="false"/>
+						<line number="83" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="84" hits="0" branch="false"/>
+						<line number="85" hits="0" branch="false"/>
+						<line number="86" hits="0" branch="false"/>
+						<line number="87" hits="0" branch="false"/>
+						<line number="92" hits="0" branch="false"/>
+						<line number="98" hits="2" branch="false"/>
+						<line number="100" hits="2" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="101" hits="0" branch="false"/>
+						<line number="103" hits="2" branch="false"/>
+						<line number="105" hits="2" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="106" hits="3" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="107" hits="1" branch="false"/>
+						<line number="109" hits="1" branch="false"/>
+						<line number="110" hits="1" branch="false"/>
+						<line number="113" hits="1" branch="false"/>
+						<line number="114" hits="1" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="115" hits="0" branch="false"/>
+						<line number="117" hits="1" branch="false"/>
+						<line number="118" hits="1" branch="true" condition-coverage="50% (2/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+								<condition number="1" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="119" hits="1" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="120" hits="10" branch="false"/>
+						<line number="121" hits="10" branch="false"/>
+						<line number="122" hits="10" branch="false"/>
+						<line number="123" hits="10" branch="false"/>
+						<line number="124" hits="10" branch="false"/>
+						<line number="125" hits="10" branch="false"/>
+						<line number="126" hits="10" branch="false"/>
+						<line number="127" hits="10" branch="false"/>
+						<line number="128" hits="10" branch="false"/>
+						<line number="132" hits="1" branch="false"/>
+						<line number="133" hits="1" branch="false"/>
+						<line number="135" hits="1" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="136" hits="0" branch="false"/>
+						<line number="139" hits="1" branch="false"/>
+						<line number="144" hits="2" branch="false"/>
+						<line number="146" hits="2" branch="false"/>
+						<line number="147" hits="2" branch="false"/>
+						<line number="149" hits="2" branch="false"/>
+						<line number="150" hits="2" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="151" hits="1" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="152" hits="1" branch="false"/>
+						<line number="153" hits="1" branch="false"/>
+						<line number="155" hits="0" branch="false"/>
+						<line number="156" hits="0" branch="false"/>
+						<line number="157" hits="2" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="158" hits="1" branch="false"/>
+						<line number="161" hits="1" branch="false"/>
+						<line number="163" hits="1" branch="false"/>
+						<line number="165" hits="1" branch="true" condition-coverage="50% (2/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+								<condition number="1" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="166" hits="0" branch="false"/>
+						<line number="167" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="168" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="169" hits="0" branch="false"/>
+						<line number="170" hits="0" branch="false"/>
+						<line number="172" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="173" hits="0" branch="false"/>
+						<line number="177" hits="1" branch="false"/>
+						<line number="178" hits="1" branch="false"/>
+						<line number="180" hits="1" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="181" hits="0" branch="false"/>
+						<line number="184" hits="1" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+		<package name="pik.dto" line-rate="0.8313253012048193" branch-rate="0.059782608695652176" complexity="1.0">
+			<classes>
+				<class name="pik.dto.CourseInfo" filename="pik/dto/CourseInfo.java" line-rate="0.9285714285714286" branch-rate="0.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+							</lines>
+						</method>
+						<method name="canEqual" signature="(Ljava/lang/Object;)Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+							</lines>
+						</method>
+						<method name="equals" signature="(Ljava/lang/Object;)Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+							</lines>
+						</method>
+						<method name="getDescription" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="54" hits="4" branch="false"/>
+							</lines>
+						</method>
+						<method name="getId" signature="()Ljava/math/BigInteger;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="30" hits="20" branch="false"/>
+							</lines>
+						</method>
+						<method name="getName" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="46" hits="4" branch="false"/>
+							</lines>
+						</method>
+						<method name="getOwnerId" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="38" hits="7" branch="false"/>
+							</lines>
+						</method>
+						<method name="hashCode" signature="()I" line-rate="1.0" branch-rate="0.0" complexity="0">
+							<lines>
+								<line number="16" hits="28" branch="true" condition-coverage="0% (0/38)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+										<condition number="1" type="jump" coverage="0%"/>
+										<condition number="2" type="jump" coverage="0%"/>
+										<condition number="3" type="jump" coverage="0%"/>
+										<condition number="4" type="jump" coverage="0%"/>
+										<condition number="5" type="jump" coverage="0%"/>
+										<condition number="6" type="jump" coverage="0%"/>
+										<condition number="7" type="jump" coverage="0%"/>
+										<condition number="8" type="jump" coverage="0%"/>
+										<condition number="9" type="jump" coverage="0%"/>
+										<condition number="10" type="jump" coverage="0%"/>
+										<condition number="11" type="jump" coverage="0%"/>
+										<condition number="12" type="jump" coverage="0%"/>
+										<condition number="13" type="jump" coverage="0%"/>
+										<condition number="14" type="jump" coverage="0%"/>
+										<condition number="15" type="jump" coverage="0%"/>
+										<condition number="16" type="jump" coverage="0%"/>
+										<condition number="17" type="jump" coverage="0%"/>
+										<condition number="18" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+							</lines>
+						</method>
+						<method name="setDescription" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="58" hits="18" branch="false"/>
+								<line number="59" hits="18" branch="false"/>
+							</lines>
+						</method>
+						<method name="setId" signature="(Ljava/math/BigInteger;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="34" hits="25" branch="false"/>
+								<line number="35" hits="25" branch="false"/>
+							</lines>
+						</method>
+						<method name="setName" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="50" hits="18" branch="false"/>
+								<line number="51" hits="18" branch="false"/>
+							</lines>
+						</method>
+						<method name="setOwnerId" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="42" hits="15" branch="false"/>
+								<line number="43" hits="15" branch="false"/>
+							</lines>
+						</method>
+						<method name="toString" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="63" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="16" hits="28" branch="true" condition-coverage="0% (0/38)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+								<condition number="1" type="jump" coverage="0%"/>
+								<condition number="2" type="jump" coverage="0%"/>
+								<condition number="3" type="jump" coverage="0%"/>
+								<condition number="4" type="jump" coverage="0%"/>
+								<condition number="5" type="jump" coverage="0%"/>
+								<condition number="6" type="jump" coverage="0%"/>
+								<condition number="7" type="jump" coverage="0%"/>
+								<condition number="8" type="jump" coverage="0%"/>
+								<condition number="9" type="jump" coverage="0%"/>
+								<condition number="10" type="jump" coverage="0%"/>
+								<condition number="11" type="jump" coverage="0%"/>
+								<condition number="12" type="jump" coverage="0%"/>
+								<condition number="13" type="jump" coverage="0%"/>
+								<condition number="14" type="jump" coverage="0%"/>
+								<condition number="15" type="jump" coverage="0%"/>
+								<condition number="16" type="jump" coverage="0%"/>
+								<condition number="17" type="jump" coverage="0%"/>
+								<condition number="18" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="30" hits="20" branch="false"/>
+						<line number="34" hits="25" branch="false"/>
+						<line number="35" hits="25" branch="false"/>
+						<line number="38" hits="7" branch="false"/>
+						<line number="42" hits="15" branch="false"/>
+						<line number="43" hits="15" branch="false"/>
+						<line number="46" hits="4" branch="false"/>
+						<line number="50" hits="18" branch="false"/>
+						<line number="51" hits="18" branch="false"/>
+						<line number="54" hits="4" branch="false"/>
+						<line number="58" hits="18" branch="false"/>
+						<line number="59" hits="18" branch="false"/>
+						<line number="63" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="pik.dto.MarkInfo" filename="pik/dto/MarkInfo.java" line-rate="0.8421052631578947" branch-rate="0.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+							</lines>
+						</method>
+						<method name="canEqual" signature="(Ljava/lang/Object;)Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+							</lines>
+						</method>
+						<method name="equals" signature="(Ljava/lang/Object;)Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+							</lines>
+						</method>
+						<method name="getCounter" signature="()Ljava/lang/Integer;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="56" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCourseId" signature="()Ljava/math/BigInteger;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="40" hits="20" branch="false"/>
+							</lines>
+						</method>
+						<method name="getDate" signature="()Ljava/util/Date;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="64" hits="20" branch="false"/>
+							</lines>
+						</method>
+						<method name="getEf" signature="()Ljava/lang/Float;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="48" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getInterval" signature="()Ljava/lang/Long;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="72" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getQuestionId" signature="()Ljava/math/BigInteger;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="32" hits="20" branch="false"/>
+							</lines>
+						</method>
+						<method name="hashCode" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+							</lines>
+						</method>
+						<method name="setCounter" signature="(Ljava/lang/Integer;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="60" hits="20" branch="false"/>
+								<line number="61" hits="20" branch="false"/>
+							</lines>
+						</method>
+						<method name="setCourseId" signature="(Ljava/math/BigInteger;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="44" hits="41" branch="false"/>
+								<line number="45" hits="41" branch="false"/>
+							</lines>
+						</method>
+						<method name="setDate" signature="(Ljava/util/Date;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="68" hits="40" branch="false"/>
+								<line number="69" hits="40" branch="false"/>
+							</lines>
+						</method>
+						<method name="setEf" signature="(Ljava/lang/Float;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="52" hits="20" branch="false"/>
+								<line number="53" hits="20" branch="false"/>
+							</lines>
+						</method>
+						<method name="setInterval" signature="(Ljava/lang/Long;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="76" hits="20" branch="false"/>
+								<line number="77" hits="20" branch="false"/>
+							</lines>
+						</method>
+						<method name="setQuestionId" signature="(Ljava/math/BigInteger;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="36" hits="41" branch="false"/>
+								<line number="37" hits="41" branch="false"/>
+							</lines>
+						</method>
+						<method name="toString" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="0.0" complexity="0">
+							<lines>
+								<line number="15" hits="41" branch="true" condition-coverage="0% (0/54)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+										<condition number="1" type="jump" coverage="0%"/>
+										<condition number="2" type="jump" coverage="0%"/>
+										<condition number="3" type="jump" coverage="0%"/>
+										<condition number="4" type="jump" coverage="0%"/>
+										<condition number="5" type="jump" coverage="0%"/>
+										<condition number="6" type="jump" coverage="0%"/>
+										<condition number="7" type="jump" coverage="0%"/>
+										<condition number="8" type="jump" coverage="0%"/>
+										<condition number="9" type="jump" coverage="0%"/>
+										<condition number="10" type="jump" coverage="0%"/>
+										<condition number="11" type="jump" coverage="0%"/>
+										<condition number="12" type="jump" coverage="0%"/>
+										<condition number="13" type="jump" coverage="0%"/>
+										<condition number="14" type="jump" coverage="0%"/>
+										<condition number="15" type="jump" coverage="0%"/>
+										<condition number="16" type="jump" coverage="0%"/>
+										<condition number="17" type="jump" coverage="0%"/>
+										<condition number="18" type="jump" coverage="0%"/>
+										<condition number="19" type="jump" coverage="0%"/>
+										<condition number="20" type="jump" coverage="0%"/>
+										<condition number="21" type="jump" coverage="0%"/>
+										<condition number="22" type="jump" coverage="0%"/>
+										<condition number="23" type="jump" coverage="0%"/>
+										<condition number="24" type="jump" coverage="0%"/>
+										<condition number="25" type="jump" coverage="0%"/>
+										<condition number="26" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="15" hits="41" branch="true" condition-coverage="0% (0/54)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+								<condition number="1" type="jump" coverage="0%"/>
+								<condition number="2" type="jump" coverage="0%"/>
+								<condition number="3" type="jump" coverage="0%"/>
+								<condition number="4" type="jump" coverage="0%"/>
+								<condition number="5" type="jump" coverage="0%"/>
+								<condition number="6" type="jump" coverage="0%"/>
+								<condition number="7" type="jump" coverage="0%"/>
+								<condition number="8" type="jump" coverage="0%"/>
+								<condition number="9" type="jump" coverage="0%"/>
+								<condition number="10" type="jump" coverage="0%"/>
+								<condition number="11" type="jump" coverage="0%"/>
+								<condition number="12" type="jump" coverage="0%"/>
+								<condition number="13" type="jump" coverage="0%"/>
+								<condition number="14" type="jump" coverage="0%"/>
+								<condition number="15" type="jump" coverage="0%"/>
+								<condition number="16" type="jump" coverage="0%"/>
+								<condition number="17" type="jump" coverage="0%"/>
+								<condition number="18" type="jump" coverage="0%"/>
+								<condition number="19" type="jump" coverage="0%"/>
+								<condition number="20" type="jump" coverage="0%"/>
+								<condition number="21" type="jump" coverage="0%"/>
+								<condition number="22" type="jump" coverage="0%"/>
+								<condition number="23" type="jump" coverage="0%"/>
+								<condition number="24" type="jump" coverage="0%"/>
+								<condition number="25" type="jump" coverage="0%"/>
+								<condition number="26" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="32" hits="20" branch="false"/>
+						<line number="36" hits="41" branch="false"/>
+						<line number="37" hits="41" branch="false"/>
+						<line number="40" hits="20" branch="false"/>
+						<line number="44" hits="41" branch="false"/>
+						<line number="45" hits="41" branch="false"/>
+						<line number="48" hits="0" branch="false"/>
+						<line number="52" hits="20" branch="false"/>
+						<line number="53" hits="20" branch="false"/>
+						<line number="56" hits="0" branch="false"/>
+						<line number="60" hits="20" branch="false"/>
+						<line number="61" hits="20" branch="false"/>
+						<line number="64" hits="20" branch="false"/>
+						<line number="68" hits="40" branch="false"/>
+						<line number="69" hits="40" branch="false"/>
+						<line number="72" hits="0" branch="false"/>
+						<line number="76" hits="20" branch="false"/>
+						<line number="77" hits="20" branch="false"/>
+					</lines>
+				</class>
+				<class name="pik.dto.QuestionInfo" filename="pik/dto/QuestionInfo.java" line-rate="0.9285714285714286" branch-rate="0.2894736842105263" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+							</lines>
+						</method>
+						<method name="canEqual" signature="(Ljava/lang/Object;)Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+							</lines>
+						</method>
+						<method name="equals" signature="(Ljava/lang/Object;)Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+							</lines>
+						</method>
+						<method name="getAnswer" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="48" hits="11" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCourseId" signature="()Ljava/math/BigInteger;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="32" hits="16" branch="false"/>
+							</lines>
+						</method>
+						<method name="getId" signature="()Ljava/math/BigInteger;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="24" hits="31" branch="false"/>
+							</lines>
+						</method>
+						<method name="getQuestion" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="40" hits="11" branch="false"/>
+							</lines>
+						</method>
+						<method name="hashCode" signature="()I" line-rate="1.0" branch-rate="0.2894736842105263" complexity="0">
+							<lines>
+								<line number="11" hits="53" branch="true" condition-coverage="28% (11/38)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+										<condition number="1" type="jump" coverage="50%"/>
+										<condition number="2" type="jump" coverage="50%"/>
+										<condition number="3" type="jump" coverage="50%"/>
+										<condition number="4" type="jump" coverage="0%"/>
+										<condition number="5" type="jump" coverage="50%"/>
+										<condition number="6" type="jump" coverage="50%"/>
+										<condition number="7" type="jump" coverage="0%"/>
+										<condition number="8" type="jump" coverage="50%"/>
+										<condition number="9" type="jump" coverage="50%"/>
+										<condition number="10" type="jump" coverage="50%"/>
+										<condition number="11" type="jump" coverage="0%"/>
+										<condition number="12" type="jump" coverage="50%"/>
+										<condition number="13" type="jump" coverage="50%"/>
+										<condition number="14" type="jump" coverage="0%"/>
+										<condition number="15" type="jump" coverage="0%"/>
+										<condition number="16" type="jump" coverage="0%"/>
+										<condition number="17" type="jump" coverage="0%"/>
+										<condition number="18" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+							</lines>
+						</method>
+						<method name="setAnswer" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="52" hits="27" branch="false"/>
+								<line number="53" hits="27" branch="false"/>
+							</lines>
+						</method>
+						<method name="setCourseId" signature="(Ljava/math/BigInteger;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="36" hits="29" branch="false"/>
+								<line number="37" hits="29" branch="false"/>
+							</lines>
+						</method>
+						<method name="setId" signature="(Ljava/math/BigInteger;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="28" hits="46" branch="false"/>
+								<line number="29" hits="46" branch="false"/>
+							</lines>
+						</method>
+						<method name="setQuestion" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="44" hits="27" branch="false"/>
+								<line number="45" hits="27" branch="false"/>
+							</lines>
+						</method>
+						<method name="toString" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="57" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="11" hits="53" branch="true" condition-coverage="28% (11/38)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+								<condition number="1" type="jump" coverage="50%"/>
+								<condition number="2" type="jump" coverage="50%"/>
+								<condition number="3" type="jump" coverage="50%"/>
+								<condition number="4" type="jump" coverage="0%"/>
+								<condition number="5" type="jump" coverage="50%"/>
+								<condition number="6" type="jump" coverage="50%"/>
+								<condition number="7" type="jump" coverage="0%"/>
+								<condition number="8" type="jump" coverage="50%"/>
+								<condition number="9" type="jump" coverage="50%"/>
+								<condition number="10" type="jump" coverage="50%"/>
+								<condition number="11" type="jump" coverage="0%"/>
+								<condition number="12" type="jump" coverage="50%"/>
+								<condition number="13" type="jump" coverage="50%"/>
+								<condition number="14" type="jump" coverage="0%"/>
+								<condition number="15" type="jump" coverage="0%"/>
+								<condition number="16" type="jump" coverage="0%"/>
+								<condition number="17" type="jump" coverage="0%"/>
+								<condition number="18" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="24" hits="31" branch="false"/>
+						<line number="28" hits="46" branch="false"/>
+						<line number="29" hits="46" branch="false"/>
+						<line number="32" hits="16" branch="false"/>
+						<line number="36" hits="29" branch="false"/>
+						<line number="37" hits="29" branch="false"/>
+						<line number="40" hits="11" branch="false"/>
+						<line number="44" hits="27" branch="false"/>
+						<line number="45" hits="27" branch="false"/>
+						<line number="48" hits="11" branch="false"/>
+						<line number="52" hits="27" branch="false"/>
+						<line number="53" hits="27" branch="false"/>
+						<line number="57" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="pik.dto.SequenceId" filename="pik/dto/SequenceId.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="12" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getId" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="20" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getSeq" signature="()J" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="28" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setId" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="24" hits="0" branch="false"/>
+								<line number="25" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setSeq" signature="(J)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="32" hits="0" branch="false"/>
+								<line number="33" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="toString" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="37" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="12" hits="0" branch="false"/>
+						<line number="20" hits="0" branch="false"/>
+						<line number="24" hits="0" branch="false"/>
+						<line number="25" hits="0" branch="false"/>
+						<line number="28" hits="0" branch="false"/>
+						<line number="32" hits="0" branch="false"/>
+						<line number="33" hits="0" branch="false"/>
+						<line number="37" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="pik.dto.UserInfo" filename="pik/dto/UserInfo.java" line-rate="0.9642857142857143" branch-rate="0.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="34" hits="38" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="28" hits="35" branch="false"/>
+								<line number="31" hits="35" branch="false"/>
+								<line number="36" hits="16" branch="false"/>
+								<line number="37" hits="16" branch="false"/>
+								<line number="38" hits="16" branch="false"/>
+								<line number="39" hits="16" branch="false"/>
+								<line number="40" hits="16" branch="false"/>
+								<line number="41" hits="16" branch="false"/>
+							</lines>
+						</method>
+						<method name="canEqual" signature="(Ljava/lang/Object;)Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+							</lines>
+						</method>
+						<method name="equals" signature="(Ljava/lang/Object;)Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+							</lines>
+						</method>
+						<method name="getEmail" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="53" hits="3" branch="false"/>
+							</lines>
+						</method>
+						<method name="getFirstName" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="61" hits="3" branch="false"/>
+							</lines>
+						</method>
+						<method name="getLastName" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="69" hits="3" branch="false"/>
+							</lines>
+						</method>
+						<method name="getMarks" signature="()Ljava/util/List;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="85" hits="27" branch="false"/>
+							</lines>
+						</method>
+						<method name="getSubscribedCourses" signature="()Ljava/util/List;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="77" hits="16" branch="false"/>
+							</lines>
+						</method>
+						<method name="getUserId" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="45" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="hashCode" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+							</lines>
+						</method>
+						<method name="setEmail" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="57" hits="1" branch="false"/>
+								<line number="58" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="setFirstName" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="65" hits="1" branch="false"/>
+								<line number="66" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="setLastName" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="73" hits="1" branch="false"/>
+								<line number="74" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="setMarks" signature="(Ljava/util/List;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="89" hits="6" branch="false"/>
+								<line number="90" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="setSubscribedCourses" signature="(Ljava/util/List;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="81" hits="16" branch="false"/>
+								<line number="82" hits="16" branch="false"/>
+							</lines>
+						</method>
+						<method name="setUserId" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="49" hits="4" branch="false"/>
+								<line number="50" hits="4" branch="false"/>
+							</lines>
+						</method>
+						<method name="toString" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="0.0" complexity="0">
+							<lines>
+								<line number="13" hits="0" branch="true" condition-coverage="0% (0/54)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+										<condition number="1" type="jump" coverage="0%"/>
+										<condition number="2" type="jump" coverage="0%"/>
+										<condition number="3" type="jump" coverage="0%"/>
+										<condition number="4" type="jump" coverage="0%"/>
+										<condition number="5" type="jump" coverage="0%"/>
+										<condition number="6" type="jump" coverage="0%"/>
+										<condition number="7" type="jump" coverage="0%"/>
+										<condition number="8" type="jump" coverage="0%"/>
+										<condition number="9" type="jump" coverage="0%"/>
+										<condition number="10" type="jump" coverage="0%"/>
+										<condition number="11" type="jump" coverage="0%"/>
+										<condition number="12" type="jump" coverage="0%"/>
+										<condition number="13" type="jump" coverage="0%"/>
+										<condition number="14" type="jump" coverage="0%"/>
+										<condition number="15" type="jump" coverage="0%"/>
+										<condition number="16" type="jump" coverage="0%"/>
+										<condition number="17" type="jump" coverage="0%"/>
+										<condition number="18" type="jump" coverage="0%"/>
+										<condition number="19" type="jump" coverage="0%"/>
+										<condition number="20" type="jump" coverage="0%"/>
+										<condition number="21" type="jump" coverage="0%"/>
+										<condition number="22" type="jump" coverage="0%"/>
+										<condition number="23" type="jump" coverage="0%"/>
+										<condition number="24" type="jump" coverage="0%"/>
+										<condition number="25" type="jump" coverage="0%"/>
+										<condition number="26" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="13" hits="0" branch="true" condition-coverage="0% (0/54)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+								<condition number="1" type="jump" coverage="0%"/>
+								<condition number="2" type="jump" coverage="0%"/>
+								<condition number="3" type="jump" coverage="0%"/>
+								<condition number="4" type="jump" coverage="0%"/>
+								<condition number="5" type="jump" coverage="0%"/>
+								<condition number="6" type="jump" coverage="0%"/>
+								<condition number="7" type="jump" coverage="0%"/>
+								<condition number="8" type="jump" coverage="0%"/>
+								<condition number="9" type="jump" coverage="0%"/>
+								<condition number="10" type="jump" coverage="0%"/>
+								<condition number="11" type="jump" coverage="0%"/>
+								<condition number="12" type="jump" coverage="0%"/>
+								<condition number="13" type="jump" coverage="0%"/>
+								<condition number="14" type="jump" coverage="0%"/>
+								<condition number="15" type="jump" coverage="0%"/>
+								<condition number="16" type="jump" coverage="0%"/>
+								<condition number="17" type="jump" coverage="0%"/>
+								<condition number="18" type="jump" coverage="0%"/>
+								<condition number="19" type="jump" coverage="0%"/>
+								<condition number="20" type="jump" coverage="0%"/>
+								<condition number="21" type="jump" coverage="0%"/>
+								<condition number="22" type="jump" coverage="0%"/>
+								<condition number="23" type="jump" coverage="0%"/>
+								<condition number="24" type="jump" coverage="0%"/>
+								<condition number="25" type="jump" coverage="0%"/>
+								<condition number="26" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="28" hits="35" branch="false"/>
+						<line number="31" hits="35" branch="false"/>
+						<line number="34" hits="38" branch="false"/>
+						<line number="36" hits="16" branch="false"/>
+						<line number="37" hits="16" branch="false"/>
+						<line number="38" hits="16" branch="false"/>
+						<line number="39" hits="16" branch="false"/>
+						<line number="40" hits="16" branch="false"/>
+						<line number="41" hits="16" branch="false"/>
+						<line number="45" hits="2" branch="false"/>
+						<line number="49" hits="4" branch="false"/>
+						<line number="50" hits="4" branch="false"/>
+						<line number="53" hits="3" branch="false"/>
+						<line number="57" hits="1" branch="false"/>
+						<line number="58" hits="1" branch="false"/>
+						<line number="61" hits="3" branch="false"/>
+						<line number="65" hits="1" branch="false"/>
+						<line number="66" hits="1" branch="false"/>
+						<line number="69" hits="3" branch="false"/>
+						<line number="73" hits="1" branch="false"/>
+						<line number="74" hits="1" branch="false"/>
+						<line number="77" hits="16" branch="false"/>
+						<line number="81" hits="16" branch="false"/>
+						<line number="82" hits="16" branch="false"/>
+						<line number="85" hits="27" branch="false"/>
+						<line number="89" hits="6" branch="false"/>
+						<line number="90" hits="6" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+		<package name="pik.exceptions" line-rate="0.25806451612903225" branch-rate="1.0" complexity="1.0">
+			<classes>
+				<class name="pik.exceptions.AccessException" filename="pik/exceptions/AccessException.java" line-rate="0.42857142857142855" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="7" hits="3" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="9" hits="0" branch="false"/>
+								<line number="10" hits="0" branch="false"/>
+								<line number="11" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getMessage" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="18" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setMessage" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="14" hits="3" branch="false"/>
+								<line number="15" hits="3" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="7" hits="3" branch="false"/>
+						<line number="9" hits="0" branch="false"/>
+						<line number="10" hits="0" branch="false"/>
+						<line number="11" hits="0" branch="false"/>
+						<line number="14" hits="3" branch="false"/>
+						<line number="15" hits="3" branch="false"/>
+						<line number="18" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="pik.exceptions.CourseAccessException" filename="pik/exceptions/CourseAccessException.java" line-rate="0.45454545454545453" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;Ljava/math/BigInteger;Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="12" hits="3" branch="false"/>
+								<line number="13" hits="3" branch="false"/>
+								<line number="14" hits="3" branch="false"/>
+								<line number="15" hits="3" branch="false"/>
+								<line number="16" hits="3" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCourseId" signature="()Ljava/math/BigInteger;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="27" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getUserId" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="31" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setCourseId" signature="(Ljava/math/BigInteger;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="19" hits="0" branch="false"/>
+								<line number="20" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setUserId" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="23" hits="0" branch="false"/>
+								<line number="24" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="12" hits="3" branch="false"/>
+						<line number="13" hits="3" branch="false"/>
+						<line number="14" hits="3" branch="false"/>
+						<line number="15" hits="3" branch="false"/>
+						<line number="16" hits="3" branch="false"/>
+						<line number="19" hits="0" branch="false"/>
+						<line number="20" hits="0" branch="false"/>
+						<line number="23" hits="0" branch="false"/>
+						<line number="24" hits="0" branch="false"/>
+						<line number="27" hits="0" branch="false"/>
+						<line number="31" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="pik.exceptions.SequenceException" filename="pik/exceptions/SequenceException.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="31" hits="0" branch="false"/>
+								<line number="32" hits="0" branch="false"/>
+								<line number="33" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="26" hits="0" branch="false"/>
+								<line number="27" hits="0" branch="false"/>
+								<line number="28" hits="0" branch="false"/>
+								<line number="29" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getErrCode" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="11" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getErrMsg" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="19" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setErrCode" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="15" hits="0" branch="false"/>
+								<line number="16" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setErrMsg" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="23" hits="0" branch="false"/>
+								<line number="24" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="11" hits="0" branch="false"/>
+						<line number="15" hits="0" branch="false"/>
+						<line number="16" hits="0" branch="false"/>
+						<line number="19" hits="0" branch="false"/>
+						<line number="23" hits="0" branch="false"/>
+						<line number="24" hits="0" branch="false"/>
+						<line number="26" hits="0" branch="false"/>
+						<line number="27" hits="0" branch="false"/>
+						<line number="28" hits="0" branch="false"/>
+						<line number="29" hits="0" branch="false"/>
+						<line number="31" hits="0" branch="false"/>
+						<line number="32" hits="0" branch="false"/>
+						<line number="33" hits="0" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+		<package name="pik.repositories" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+			<classes>
+				<class name="pik.repositories.CourseRepository" filename="pik/repositories/CourseRepository.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+					</methods>
+					<lines>
+					</lines>
+				</class>
+				<class name="pik.repositories.MarkRepository" filename="pik/repositories/MarkRepository.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+					</methods>
+					<lines>
+					</lines>
+				</class>
+				<class name="pik.repositories.QuestionRepository" filename="pik/repositories/QuestionRepository.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+					</methods>
+					<lines>
+					</lines>
+				</class>
+				<class name="pik.repositories.UserRepository" filename="pik/repositories/UserRepository.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+					</methods>
+					<lines>
+					</lines>
+				</class>
+			</classes>
+		</package>
+	</packages>
+</coverage>
