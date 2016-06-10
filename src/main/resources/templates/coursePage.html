@@ -13,17 +13,33 @@
 <body>
 
 <nav th:replace="header :: header"></nav>
+<div class="wid">
 
-<div class="container">
-    <h1>Pytania z kursu <span th:text="${courseName}"></span></h1>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Nazwa:</h3>
+            <h3 class="panel-title" th:text="${courseName}"></h3>
+        </div>
+        <div class="panel-body">
+            <div>
+                Opis:
+            </div>
+            <div>
+                <span th:text="${courseDescription}"></span>
+            </div>
+        </div>
+    </div>
+
+    <a th:href="@{'/do-course/' + ${courseId}}" class="btn btn-lg btn-info" role="button">Wykonaj kurs</a>
+
     <br></br>
     <br></br>
 
     <table class="table">
         <thead>
         <tr>
-        <td><b>Pytanie</b></td>
-        <td><b>Odpowiedź</b></td>
+            <td><b>Pytanie</b></td>
+            <td><b>Odpowiedź</b></td>
         </tr>
         </thead>
         <tbody>
@@ -37,21 +53,21 @@
     <br></br>
     <br></br>
     <form action="/add-question" method="POST">
-        <input  type="hidden" name="id" th:value="${courseId}"></input>
+        <input type="hidden" name="id" th:value="${courseId}"></input>
         <label>Pytanie:</label>
-        <input  type="text" name="question"></input>
+        <input class="form-control" type="text" name="question"></input>
         <br></br>
         <label>Odpowiedź:</label>
-        <input  type="text" name="answer"></input>
+        <input class="form-control" type="text" name="answer"></input>
         <br></br><br></br>
-        <input type="submit" value="Dodaj pytanie"></input>
+        <input class="btn btn-lg btn-success" type="submit" value="Dodaj pytanie"></input>
     </form>
     <br></br>
+    <hr></hr>
     <form action="/deleteCourse" method="POST">
-        <input  type="hidden" name="courseId" th:value="${courseId}"></input>
-        <input type="submit" value="Usuń kurs"></input>
+        <input type="hidden" name="courseId" th:value="${courseId}"></input>
+        <input class="btn btn-lg btn-danger" type="submit" value="Usuń kurs"></input>
     </form>
-
 
 
 </div>

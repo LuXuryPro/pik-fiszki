@@ -36,9 +36,11 @@ public class ShowCourseController
         } catch (Exception e) {
         }
         String courseName = courseController.getCourseNameById(courseId);
+        String courseDescription = courseController.getCourseDescriptionById(courseId);
         model.addAttribute("userId", facebookHelper.getId());
         model.addAttribute("courseId", courseId);
         model.addAttribute("courseName", courseName);
+        model.addAttribute("courseDescription", courseDescription);
         return "coursePage";
     }
 

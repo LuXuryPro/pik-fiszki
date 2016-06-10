@@ -15,17 +15,17 @@
 
 <nav th:replace="header :: header"></nav>
 
-<div class="container">
+<div class="wid">
     <h1>Dodaj kurs</h1>
     <br></br>
     <form action="/saveAddCourse" method="POST">
         <label>Nazwa kursu:</label>
-        <input  type="text" name="name"></input>
+        <input class="form-control" type="text" name="name"></input>
         <br></br>
         <label>Opis kursu: </label>
-        <input  type="text" name="description"></input>
+        <input class="form-control" type="text" name="description"></input>
         <br></br>
-        <input type="submit" value="Dodaj"></input>
+        <input class="btn btn-success btn-lg" type="submit" value="Dodaj"></input>
     </form>
 
 </div><!-- /.container -->
