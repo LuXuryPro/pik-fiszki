@@ -107,6 +107,11 @@ public class CourseController {
         return courseDao.get(courseId).getName();
     }
 
+    public String getCourseDescriptionById(BigInteger courseId)
+    {
+        return courseDao.get(courseId).getDescription();
+    }
+
     public List<CourseInfo> getUserCourses(String userId) {
         return courseDao.getOwnedCourses(userId);
     }

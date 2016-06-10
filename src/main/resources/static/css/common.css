@@ -21,6 +21,8 @@ body {
     width: 700px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .center {
@@ -29,4 +31,8 @@ body {
 
 .bigtext {
     font-size: 200%;
+}
+
+.midtext {
+    font-size: 150%;
 }

@@ -21,19 +21,33 @@
             <tbody>
             <tr>
                 <td>Imię</td>
-                <td th:text="${user.firstName}"></td>
+                <td colspan="2" th:text="${user.firstName}"></td>
             </tr>
             <tr>
                 <td>Nazwisko</td>
-                <td th:text="${user.lastName}"></td>
+                <td colspan="2" th:text="${user.lastName}"></td>
             </tr>
             <tr>
                 <td>Email</td>
-                <td th:text="${user.email}"></td>
+                <td colspan="2" th:text="${user.email}"></td>
+            </tr>
+            <tr>
+                <td>Ilość posiadanych kursów</td>
+                <td th:text="${userCourses}"></td>
+                <td>
+                    <a href="/show-course" class="btn btn-info" role="button">Zobacz swoje kursy</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Ilość zasubskrybowanych kursów</td>
+                <td th:text="${userSubs}"></td>
+                <td>
+                    <a href="/show-subscribed-course" class="btn btn-info" role="button">Zobacz zasubskrybowane kursy</a>
+                </td>
             </tr>
             </tbody>
         </table>
-        <a href="preferences" class="btn btn-info" role="button">Edytuj profil</a>
+        <a href="/preferences" class="btn btn-info" role="button">Edytuj profil</a>
     </div>
     <footer th:replace="footer :: footer"></footer>
 </div>

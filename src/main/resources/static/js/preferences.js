@@ -164,7 +164,7 @@ function saveUser() {
         processData: false, //To avoid making query String instead of JSON
         success: function (resposeJsonObject) {
             $("#success")[0].innerHTML = "";
-            var inv = $('<h1><span class="label label-success">Success</span></h1>');
+            var inv = $('<h3><span class="label label-success">Success</span></h3>');
             inv.appendTo($("#success"));
             inv.fadeOut(3000);
         }

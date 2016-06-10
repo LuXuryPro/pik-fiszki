@@ -39,6 +39,7 @@ public class UserCourseController
         FacebookHelper f = new FacebookHelper(principal);
         List<CourseInfo> courseList = courseController.getUserCourses(f.getId());
         model.addAttribute("courseList", courseList);
+        model.addAttribute("courseCount", courseList.size());
 
         return "courses";
     }
@@ -49,6 +50,7 @@ public class UserCourseController
         FacebookHelper f = new FacebookHelper(principal);
         List<CourseInfo> courseList = courseController.getSubscribedCourses(f.getId());
         model.addAttribute("courseList", courseList);
+        model.addAttribute("courseCount", courseList.size());
 
         return "subscribedCourses";
     }

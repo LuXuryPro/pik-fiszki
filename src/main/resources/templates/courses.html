@@ -14,14 +14,19 @@
 
 <nav th:replace="header :: header"></nav>
 
-<div class="container">
-    <h1>Moje kursy</h1>
+<div class="wid">
+    <h1>Moje kursy (<span th:text="${courseCount}"></span>)</h1>
 
 
     <table class="table">
+        <thead>
+        <tr>
+            <td class="bigtext" colspan="3">Nazwa</td>
+        </tr>
+        </thead>
         <tbody>
         <tr th:each="item : ${courseList}">
-            <td th:text="${item.name}"></td>
+            <td class="midtext" th:text="${item.name}"></td>
             <td><a th:href="@{'/show-course/' + ${item.id}}" class="btn btn-info" role="button">Zobacz kurs</a></td>
             <td><a th:href="@{'/do-course/' + ${item.id}}" class="btn btn-info" role="button">Wykonaj kurs</a></td>
         </tr>
