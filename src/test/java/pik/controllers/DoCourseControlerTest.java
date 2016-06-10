@@ -5,6 +5,7 @@ import com.google.gson.stream.JsonReader;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
@@ -19,6 +20,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MockMvc.*;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import pik.JSONDao.DoCourseControlerClientAnswer;
 import pik.JSONDao.DoCourseControlerFishe;
 import pik.JSONDao.DoCourseControllerClientFicheRequest;
 import pik.Util.FacebookHelper;
@@ -29,6 +31,7 @@ import java.lang.reflect.Type;
 import java.math.BigInteger;
 
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.times;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -110,5 +113,43 @@ public class DoCourseControlerTest {
         assertEquals(fiche.getCourseId(), BigInteger.ONE);
         assertEquals(fiche.getQuestionId(), BigInteger.valueOf(10));
     }
+
+    @Test
+    public void testPrecessAnswer() throws Exception {
+        OAuth2AuthenticationDetails oAuth2AuthenticationDetails = PowerMockito.mock(OAuth2AuthenticationDetails.class);
+        PowerMockito.when(oAuth2AuthenticationDetails.getTokenValue()).thenReturn("123456789");
+
+        OAuth2Authentication principal = PowerMockito.mock(OAuth2Authentication.class);
+        PowerMockito.when(principal.getDetails()).thenReturn(oAuth2AuthenticationDetails);
+
+        User user = PowerMockito.mock(User.class);
+        PowerMockito.when(user.getId()).thenReturn("1");
+        PowerMockito.when(user.getFirstName()).thenReturn("Jan");
+        PowerMockito.when(user.getLastName()).thenReturn("Testowy");
+        PowerMockito.when(user.getEmail()).thenReturn("user@example.com");
+
+        FacebookTemplate facebookTemplate = PowerMockito.mock(FacebookTemplate.class);
+        UserOperations userOperations = PowerMockito.mock(UserOperations.class);
+        PowerMockito.when(userOperations.getUserProfile()).thenReturn(user);
+        PowerMockito.when(facebookTemplate.userOperations()).thenReturn(userOperations);
+        PowerMockito.whenNew(FacebookTemplate.class).withAnyArguments().thenReturn(facebookTemplate);
+
+        DoCourseControlerClientAnswer request = new DoCourseControlerClientAnswer();
+        request.setCourseId(BigInteger.valueOf(1));
+        request.setMark(5);
+        request.setQuestionId(BigInteger.ONE);
+
+        Gson gson = new Gson();
+        String json = gson.toJson(request);
+
+        MvcResult result = mockMvc.perform(post("/answer").principal(principal).contentType(MediaType.APPLICATION_JSON).content(json))
+                .andExpect(status().isOk()).andReturn();
+        QuestionInfo qi = new QuestionInfo();
+        qi.setCourseId(BigInteger.valueOf(1));
+        qi.setId(BigInteger.valueOf(1));
+
+        Mockito.verify(this.questionsController, times(1)).markQuestion(qi, "1", 5);
+    }
+
 
 }
