@@ -16,15 +16,29 @@ import pik.exceptions.CourseAccessException;
 import java.math.BigInteger;
 import java.security.Principal;
 
+/**
+ * Kontroler obsługujący interakcję z użytkownikem podczas odpowiadania na pytania
+ */
 @Controller
 public class DoCourseControler {
     private QuestionsController questionsController;
 
+    /**
+     * Konstruktor
+     * @param questionsController komponent odpowiedzialny za dostęp do pytań
+     */
     @Autowired
     public DoCourseControler(QuestionsController questionsController) {
         this.questionsController = questionsController;
     }
 
+    /**
+     * Metoda dla URL /do-course/{1..n} odpowiada za stronę na której udzila się odpowiedzi
+     * @param courseId
+     * @param principal
+     * @param model
+     * @return
+     */
     @RequestMapping("/do-course/{courseID}")
     public String doCourse(@PathVariable(value = "courseID") String courseId, Principal principal, Model model) {
         FacebookHelper facebookHelper = new FacebookHelper(principal);
