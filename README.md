@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/LuXuryPro/pik-fiszki.png?label=ready&title=Ready)](https://waffle.io/LuXuryPro/pik-fiszki)
 # PIK
 
 [![Build Status](https://travis-ci.org/LuXuryPro/pik-fiszki.svg?branch=master)](https://travis-ci.org/LuXuryPro/pik-fiszki)
